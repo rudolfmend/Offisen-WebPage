@@ -2,39 +2,273 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Offisen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body style="font-family: system-ui, sans-serif; max-width: 720px; margin: 80px auto; padding: 0 20px; line-height: 1.6;">
+
+  <title>Offisen – OfficeTech Desktop Automation for Office Workflows</title>
+  <meta name="description" content="Offisen is an OfficeTech desktop automation platform for everyday office workflows. Designed for administrative users to reliably control real desktop applications.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico">
+  <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="assets/favicon/site.webmanifest">
   
-  <h1>Offisen</h1>
-  <p><strong>OfficeTech platform for modern administration.</strong></p>
+  <!-- Theme Color -->
+  <meta name="theme-color" content="#38bdf8">
 
-  <p>
-    Offisen helps teams reduce administrative overhead, simplify office workflows,
-    and focus on meaningful work.
-  </p>
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://offisen.app/">
+  <meta property="og:title" content="Offisen – OfficeTech Desktop Automation">
+  <meta property="og:description" content="No-code desktop automation for everyday office workflows. Reliably control real desktop applications without programming.">
+  <meta property="og:image" content="https://offisen.app/assets/Offisen-trspt-4K-background.png">
 
-  <h2>Administration slows teams down</h2>
-  <p>
-    Too many tools, manual processes, documents, and repetitive tasks.
-    Administration takes time that should be spent on real work.
-  </p>
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://offisen.app/">
+  <meta property="twitter:title" content="Offisen – OfficeTech Desktop Automation">
+  <meta property="twitter:description" content="No-code desktop automation for everyday office workflows. Reliably control real desktop applications without programming.">
+  <meta property="twitter:image" content="https://offisen.app/assets/Offisen-trspt-4K-background.png">
 
-  <h2>A simpler way to manage administration</h2>
-  <p>
-    Offisen is being built as a lightweight OfficeTech platform designed to
-    automate routine tasks, organize documents, and bring clarity into
-    everyday office work.
-  </p>
+  <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
 
-  <h2>Status</h2>
-  <p>
-    Offisen is currently in early development.
-  </p>
-  <p>
-    Get in touch: <a href="mailto:info@offisen.app">info@offisen.app</a>
-  </p>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
+  <div class="container">
+
+    <!-- HEADER / HERO -->
+    <header role="banner">
+      <div class="logo-container">
+        <img src="assets/Offisen-trspt-4K-background.png" alt="Offisen - OfficeTech desktop automation platform logo" class="logo">
+      </div>
+
+      <p class="lead">
+        OfficeTech desktop automation for everyday office workflows
+      </p>
+
+      <p class="subtitle">
+        A no-code platform designed for administrative users to reliably control real desktop applications.
+      </p>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main id="main-content" role="main">
+
+      <!-- INTRO -->
+      <section aria-labelledby="intro-heading" class="hero">
+        <h2 id="intro-heading">Reliable automation for real office applications</h2>
+        <p>
+          Offisen helps automate routine work in desktop applications used in everyday office environments.
+          It interacts directly with windows, buttons, input fields, and dialogs — without requiring APIs or programming.
+        </p>
+        <p>
+          Built for reliability, Offisen keeps workflows running even in legacy or frequently changing applications.
+        </p>
+      </section>
+
+      <!-- PLATFORMS -->
+      <section aria-labelledby="platforms-heading" class="platforms">
+        <h2 id="platforms-heading">Desktop platforms</h2>
+
+        <div class="platform-badges" role="list">
+          <a href="https://www.microsoft.com/store" 
+             class="platform-badge" 
+             target="_blank" 
+             rel="noopener"
+             role="listitem"
+             aria-label="Download from Microsoft Store for Windows 7 through 11">
+            <svg class="platform-icon" viewBox="0 0 88 88" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+              <path d="M0 12.402l35.687-4.86.016 34.423-35.67.203zm35.67 33.529l.028 34.453L.028 75.48.026 45.7zm4.326-39.025L87.314 0v41.527l-47.318.376zm47.329 39.349l-.011 41.34-47.318-6.678-.066-34.739z"/>
+            </svg>
+            <div>
+              <div class="badge-title">Microsoft Store</div>
+              <div class="badge-subtitle">Windows 7–11</div>
+            </div>
+          </a>
+
+          <div class="platform-badge coming-soon" 
+               role="listitem"
+               aria-label="Google Play for ChromeOS - Coming soon">
+            <div>
+              <div class="badge-title">Google Play</div>
+              <div class="badge-subtitle">ChromeOS (coming soon)</div>
+            </div>
+          </div>
+
+          <div class="platform-badge coming-soon" 
+               role="listitem"
+               aria-label="App Store for macOS - Coming soon">
+            <div>
+              <div class="badge-title">App Store</div>
+              <div class="badge-subtitle">macOS (coming soon)</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- USE CASES -->
+      <section aria-labelledby="use-cases-heading" class="use-cases-section">
+        <h2 id="use-cases-heading">Designed for</h2>
+
+        <div class="use-cases" role="list">
+          <article class="use-case" role="listitem">
+            <div class="use-case-icon" aria-hidden="true">🏢</div>
+            <h3>Legacy and internal systems</h3>
+            <p>
+              Automate routine work in older or internal desktop applications that do not provide APIs.
+            </p>
+          </article>
+
+          <article class="use-case" role="listitem">
+            <div class="use-case-icon" aria-hidden="true">📝</div>
+            <h3>Office administration</h3>
+            <p>
+              Reduce time spent on repetitive administrative tasks such as data entry and document handling.
+            </p>
+          </article>
+
+          <article class="use-case" role="listitem">
+            <div class="use-case-icon" aria-hidden="true">🔄</div>
+            <h3>Repeatable office workflows</h3>
+            <p>
+              Turn manual step-by-step office processes into reliable, repeatable desktop workflows.
+            </p>
+          </article>
+
+          <article class="use-case" role="listitem">
+            <div class="use-case-icon" aria-hidden="true">🧩</div>
+            <h3>Non-technical users</h3>
+            <p>
+              Designed for end users in office roles — no scripting, no coding, no IT background required.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- FEATURES -->
+      <section aria-labelledby="features-heading" class="features">
+        <h2 id="features-heading">Key capabilities</h2>
+
+        <div class="features-grid" role="list">
+          <article class="feature" role="listitem">
+            <h3>No-code desktop automation</h3>
+            <p>Create automation flows visually, without programming or scripting.</p>
+          </article>
+
+          <article class="feature" role="listitem">
+            <h3>Works with real applications</h3>
+            <p>Automates desktop applications directly, even when APIs are not available.</p>
+          </article>
+
+          <article class="feature" role="listitem">
+            <h3>Reliable UI detection</h3>
+            <p>Multiple identification strategies keep workflows running when interfaces change.</p>
+          </article>
+
+          <article class="feature" role="listitem">
+            <h3>Input and interaction simulation</h3>
+            <p>Simulates clicks, typing, keyboard shortcuts, and window interactions.</p>
+          </article>
+
+          <article class="feature" role="listitem">
+            <h3>Reusable workflows</h3>
+            <p>Save, load, and reuse automation sequences across different tasks.</p>
+          </article>
+
+          <article class="feature" role="listitem">
+            <h3>Deterministic execution</h3>
+            <p>Predictable and controlled automation without AI-driven uncertainty.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- HOW IT WORKS -->
+      <section aria-labelledby="how-it-works-heading" class="how-it-works">
+        <h2 id="how-it-works-heading">How Offisen works</h2>
+
+        <div class="how-steps" role="list">
+          <article class="how-step" role="listitem">
+            <div class="step-number" aria-label="Step 1">1</div>
+            <h3>Record your work</h3>
+            <p>
+              Perform your task as usual in a desktop application.
+              Offisen records clicks, typing, and window interactions.
+            </p>
+          </article>
+
+          <article class="how-step" role="listitem">
+            <div class="step-number" aria-label="Step 2">2</div>
+            <h3>Review and adjust</h3>
+            <p>
+              Review recorded steps, adjust timing or order, and define how often
+              the workflow should repeat.
+            </p>
+          </article>
+
+          <article class="how-step" role="listitem">
+            <div class="step-number" aria-label="Step 3">3</div>
+            <h3>Run the workflow</h3>
+            <p>
+              Run the workflow whenever needed.
+              Offisen executes the steps reliably, even in legacy or changing applications.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section aria-labelledby="cta-heading" class="cta">
+        <h2 id="cta-heading">Start automating office work</h2>
+        <p>
+          Download Offisen for Windows and simplify everyday desktop workflows.
+        </p>
+        <a href="https://www.microsoft.com/store" 
+           class="cta-button" 
+           target="_blank" 
+           rel="noopener"
+           aria-label="Download Offisen for Windows from Microsoft Store">
+          Download for Windows
+        </a>
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer role="contentinfo">
+      <nav aria-label="Footer navigation">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h4>Offisen</h4>
+            <p>OfficeTech desktop automation</p>
+          </div>
+
+          <div class="footer-section">
+            <h4>Contact</h4>
+            <p><a href="/cdn-cgi/l/email-protection#a6cfc8c0c9e6c9c0c0cfd5c3c888c7d6d6" aria-label="Email us at info@offisen.app"><span class="__cf_email__" data-cfemail="f1989f979eb19e97979882949fdf908181">[email&#160;protected]</span></a></p>
+          </div>
+
+          <div class="footer-section">
+            <h4>Resources</h4>
+            <p><a href="https://github.com/rudolfmend" target="_blank" rel="noopener" aria-label="Visit our GitHub profile (opens in new tab)">GitHub</a></p>
+            <p><a href="https://www.microsoft.com/store" target="_blank" rel="noopener" aria-label="Visit Microsoft Store (opens in new tab)">Microsoft Store</a></p>
+          </div>
+
+          <div class="footer-section">
+            <h4>Legal</h4>
+            <p><a href="privacy-policy.html" aria-label="Read our Privacy Policy">Privacy Policy</a></p>
+          </div>
+        </div>
+      </nav>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 Offisen. All rights reserved.</p>
+        <p>Designed by Rudolf Mendzezof</p>
+      </div>
+    </footer>
+    </div>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 </body>
 </html>

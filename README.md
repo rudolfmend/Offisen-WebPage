@@ -1,5 +1,5 @@
 # Offisen
 
-Early landing page for the Offisen OfficeTech platform.
+Landing page for the Offisen - OfficeTech platform.
 
 https://offisen.app

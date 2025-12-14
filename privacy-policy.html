@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>Privacy Policy – Offisen</title>
+  <meta name="description" content="Privacy Policy for Offisen desktop automation application">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico">
+  <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="assets/favicon/site.webmanifest">
+  
+  <!-- Theme Color -->
+  <meta name="theme-color" content="#38bdf8">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://offisen.app/privacy-policy.html">
+  <meta property="og:title" content="Privacy Policy – Offisen">
+  <meta property="og:description" content="Offisen does not collect, store, or share any personal data. All data stays local on your device.">
+  <meta property="og:image" content="https://offisen.app/assets/Offisen-trspt-4K-background.png">
+
+  <style>
+    :root {
+      --color-bg: #0f172a;
+      --color-card: #1e293b;
+      --color-text: #e5e7eb;
+      --color-muted: #9ca3af;
+      --color-accent: #38bdf8;
+      --color-accent-hover: #0ea5e9;
+      --color-border: #334155;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    /* Skip Link for Screen Readers */
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 0;
+      background: var(--color-accent);
+      color: var(--color-bg);
+      padding: 12px 24px;
+      text-decoration: none;
+      font-weight: 600;
+      z-index: 100;
+      border-radius: 0 0 8px 0;
+      transition: top 0.2s ease;
+    }
+
+    .skip-link:focus {
+      top: 0;
+      outline: 3px solid var(--color-accent-hover);
+      outline-offset: 2px;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 48px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin: 0 0 8px;
+      color: var(--color-text);
+    }
+
+    .effective-date {
+      color: var(--color-muted);
+      font-size: 0.95rem;
+    }
+
+    h2 {
+      font-size: 1.75rem;
+      margin: 48px 0 16px;
+      color: var(--color-accent);
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      margin: 32px 0 12px;
+      color: var(--color-text);
+    }
+
+    p {
+      margin: 16px 0;
+      color: var(--color-muted);
+    }
+
+    ul, ol {
+      margin: 16px 0;
+      padding-left: 24px;
+      color: var(--color-muted);
+    }
+
+    li {
+      margin: 8px 0;
+    }
+
+    code {
+      background: rgba(56, 189, 248, 0.1);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: monospace;
+      color: var(--color-accent);
+    }
+
+    .info-box {
+      background: var(--color-card);
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      padding: 24px;
+      margin: 24px 0;
+    }
+
+    .info-box h3 {
+      margin-top: 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .info-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .highlight {
+      background: rgba(56, 189, 248, 0.1);
+      border-left: 3px solid var(--color-accent);
+      padding: 16px 20px;
+      margin: 24px 0;
+      border-radius: 4px;
+    }
+
+    .highlight strong {
+      color: var(--color-accent);
+    }
+
+    a {
+      color: var(--color-accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+      color: var(--color-accent-hover);
+    }
+
+    a:focus {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 2px;
+    }
+
+    footer {
+      margin-top: 64px;
+      padding-top: 32px;
+      border-top: 1px solid var(--color-border);
+      text-align: center;
+      color: var(--color-muted);
+      font-size: 0.9rem;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 32px;
+      color: var(--color-accent);
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    .back-link:focus {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 2px;
+    }
+
+    @media (max-width: 640px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      .container {
+        padding: 32px 16px 64px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <div class="container">
+    <a href="/" class="back-link" aria-label="Go back to Offisen homepage">← Back to Offisen</a>
+
+    <header role="banner">
+      <h1>Privacy Policy</h1>
+      <p class="effective-date">Effective Date: <time datetime="2025-01-01">January 1, 2025</time></p>
+    </header>
+
+    <main id="main-content" role="main">
+
+      <section aria-labelledby="introduction-heading">
+        <h2 id="introduction-heading">Introduction</h2>
+        <p>
+          Offisen is a desktop automation application designed to help users automate routine office workflows 
+          by interacting with desktop applications. This application provides no-code automation capabilities 
+          for repetitive administrative tasks.
+        </p>
+      </section>
+
+      <section aria-labelledby="data-collection-heading">
+        <h2 id="data-collection-heading">Data Collection</h2>
+        <p>
+          <strong>Offisen does not collect, store, or share any personal data of its users.</strong>
+        </p>
+
+        <p>The application:</p>
+        <ul role="list">
+          <li>Does not record any user data</li>
+          <li>Does not track user activity</li>
+          <li>Does not collect information about the device</li>
+          <li>Does not communicate with any remote servers</li>
+          <li>Does not store any data outside the user's local device</li>
+          <li>Does not use cookies or similar tracking technologies</li>
+          <li>Does not transmit automation sequences or workflows to external servers</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="data-storage-heading">
+        <h2 id="data-storage-heading">Data Storage</h2>
+        <p>
+          Offisen stores automation workflow data in two local locations on your device:
+        </p>
+
+        <article class="info-box" aria-labelledby="app-storage-heading">
+          <h3 id="app-storage-heading"><span aria-hidden="true">📁</span> Application Data Storage</h3>
+          <p><strong>Automatic Save Location:</strong> Automation sequences and configurations are automatically saved to the application's private storage folder in Windows LocalState directory</p>
+          <p><strong>File Location:</strong> <code>%LocalAppData%\Packages\[AppPackage]\LocalState\</code></p>
+          <p><strong>Purpose:</strong> Preserving automation workflows and settings between application sessions</p>
+          <p><strong>Access:</strong> Only accessible by the Offisen application and the user account</p>
+        </article>
+
+        <article class="info-box" aria-labelledby="export-storage-heading">
+          <h3 id="export-storage-heading"><span aria-hidden="true">📤</span> User Export Location</h3>
+          <p><strong>Manual Export Location:</strong> When users export automation workflows, files are saved to user-specified locations (typically Documents folder)</p>
+          <p><strong>File Format:</strong> Proprietary format (.acc files) with user-defined filename</p>
+          <p><strong>Purpose:</strong> User-initiated workflow backup and sharing</p>
+          <p><strong>Control:</strong> User has full control over export location and timing</p>
+        </article>
+
+        <div class="highlight" role="note" aria-label="Important information about data storage">
+          <p><strong>Important Note:</strong> All data storage is entirely local to your device. No automation workflows, 
+          configurations, or any other data are transmitted to external servers or shared with third parties. 
+          Users maintain complete control over their data and can delete it at any time through the application 
+          interface or by removing the files directly.</p>
+        </div>
+      </section>
+
+      <section aria-labelledby="gdpr-heading">
+        <h2 id="gdpr-heading"><span aria-hidden="true">🇪🇺</span> GDPR Compliance (European Union)</h2>
+        <p>
+          Since the application does not collect, process, or transfer any personal data as defined in the 
+          General Data Protection Regulation (GDPR) of the European Union, the application is not subject 
+          to the obligations set out in this regulation.
+        </p>
+        <p><strong>GDPR Reference:</strong> Regulation (EU) 2016/679</p>
+      </section>
+
+      <section aria-labelledby="global-compliance-heading">
+        <h2 id="global-compliance-heading"><span aria-hidden="true">🌍</span> Global Privacy Law Compliance</h2>
+        <p>
+          Offisen application complies with major international privacy and data protection laws, 
+          including but not limited to:
+        </p>
+
+        <article aria-labelledby="usa-compliance-heading">
+          <h3 id="usa-compliance-heading"><span aria-hidden="true">🇺🇸</span> United States</h3>
+          <ul role="list">
+            <li>California Consumer Privacy Act (CCPA)</li>
+            <li>Children's Online Privacy Protection Act (COPPA)</li>
+          </ul>
+        </article>
+
+        <article aria-labelledby="canada-compliance-heading">
+          <h3 id="canada-compliance-heading"><span aria-hidden="true">🇨🇦</span> Canada</h3>
+          <ul role="list">
+            <li>Personal Information Protection and Electronic Documents Act (PIPEDA)</li>
+            <li>Provincial privacy laws</li>
+          </ul>
+        </article>
+
+        <article aria-labelledby="uk-compliance-heading">
+          <h3 id="uk-compliance-heading"><span aria-hidden="true">🇬🇧</span> United Kingdom</h3>
+          <ul role="list">
+            <li>UK Data Protection Act 2018</li>
+            <li>UK GDPR</li>
+          </ul>
+        </article>
+
+        <article aria-labelledby="australia-compliance-heading">
+          <h3 id="australia-compliance-heading"><span aria-hidden="true">🇦🇺</span> Australia</h3>
+          <ul role="list">
+            <li>Privacy Act 1988</li>
+            <li>Australian Privacy Principles (APPs)</li>
+          </ul>
+        </article>
+
+        <article aria-labelledby="japan-compliance-heading">
+          <h3 id="japan-compliance-heading"><span aria-hidden="true">🇯🇵</span> Japan</h3>
+          <ul role="list">
+            <li>Act on Protection of Personal Information (APPI)</li>
+          </ul>
+        </article>
+
+        <article aria-labelledby="korea-compliance-heading">
+          <h3 id="korea-compliance-heading"><span aria-hidden="true">🇰🇷</span> South Korea</h3>
+          <ul role="list">
+            <li>Personal Information Protection Act (PIPA)</li>
+          </ul>
+        </article>
+
+        <article aria-labelledby="brazil-compliance-heading">
+          <h3 id="brazil-compliance-heading"><span aria-hidden="true">🇧🇷</span> Brazil</h3>
+          <ul role="list">
+            <li>Lei Geral de Proteção de Dados (LGPD)</li>
+          </ul>
+        </article>
+
+        <div class="highlight" role="note" aria-label="Compliance status information">
+          <p><strong>Compliance Status:</strong> Since Offisen does not collect, process, store, or transmit 
+          any personal identifiable information (PII), it inherently complies with all major global privacy regulations.</p>
+        </div>
+      </section>
+
+      <section aria-labelledby="personal-data-heading">
+        <h2 id="personal-data-heading">Personal Identifiers and Sensitive Data</h2>
+        <p>
+          Offisen does not collect, access, or process any of the following types of personal identifiers 
+          or sensitive data:
+        </p>
+        <ul role="list">
+          <li>Names, addresses, phone numbers, or email addresses</li>
+          <li>Social security numbers, national ID numbers, or government identifiers</li>
+          <li>Financial information, credit card numbers, or banking details</li>
+          <li>Biometric data, health information, or medical records</li>
+          <li>Location data, GPS coordinates, or geolocation information</li>
+          <li>Device identifiers, IP addresses, or hardware specifications</li>
+          <li>Browsing history, usage patterns, or behavioral data</li>
+          <li>Any other personally identifiable information as defined by applicable privacy laws</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="workflow-privacy-heading">
+        <h2 id="workflow-privacy-heading">Automation Workflow Privacy</h2>
+        <p>
+          When using Offisen to automate desktop applications, please note:
+        </p>
+        <ul role="list">
+          <li>Automation workflows are stored locally on your device only</li>
+          <li>If workflows contain sensitive information (passwords, credentials, personal data), 
+              they remain entirely under your control</li>
+          <li>You are responsible for managing and protecting your automation workflow files</li>
+          <li>Sharing workflow files (.acc) with others is entirely voluntary and at your discretion</li>
+          <li>Offisen does not access or monitor the content of applications you automate</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="changes-heading">
+        <h2 id="changes-heading">Changes to Privacy Policy</h2>
+        <p>
+          If there are future changes to the application's functionality that could affect the processing 
+          of personal data, this policy will be updated and users will be informed of the changes through:
+        </p>
+        <ul role="list">
+          <li>Application update notifications</li>
+          <li>Updates to this privacy policy page</li>
+          <li>Microsoft Store update notes</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="contact-heading">
+        <h2 id="contact-heading">Contact</h2>
+        <p>
+          If you have any questions regarding this privacy policy or data protection practices, 
+          you can contact us at:
+        </p>
+        <p>
+          <strong>Email:</strong> <a href="/cdn-cgi/l/email-protection#83eaede5ecc3ece5e5eaf0e6edade2f3f3" aria-label="Send email to info@offisen.app"><span class="__cf_email__" data-cfemail="91f8fff7fed1fef7f7f8e2f4ffbff0e1e1">[email&#160;protected]</span></a>
+        </p>
+        <p>
+          <strong>Subject Line:</strong> Offisen - Privacy Policy Inquiry
+        </p>
+      </section>
+
+    </main>
+
+    <footer role="contentinfo">
+      <p>&copy; 2025 Offisen. All rights reserved.</p>
+      </nav>
+        <a href="/index.html">Back to Offisen</a> 
+        <p>Designed by Rudolf Mendzezof</p>
+        </div>
+    </footer>
+    </div>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+</body>
+</html>
