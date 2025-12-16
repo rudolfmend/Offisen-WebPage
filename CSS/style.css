@@ -59,6 +59,15 @@ body {
 }
 
 /* Header */
+header picture,
+header img {
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1; 
+  object-fit: contain;
+}
+
+
 header {
   text-align: center;
   margin-bottom: 80px;
@@ -73,7 +82,7 @@ header {
   width: 800px;
   height: auto;
   display: block;
-  margin: -190px auto;
+  margin: -190px auto 0px auto;
   object-fit: cover;
   object-position: center top;
 }

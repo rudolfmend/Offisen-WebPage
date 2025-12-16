@@ -19,17 +19,17 @@
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://offisen.app/">
+  <meta property="og:url" content="https://www.offisen.app/">
   <meta property="og:title" content="Offisen – OfficeTech Desktop Automation">
   <meta property="og:description" content="No-code desktop automation for everyday office workflows. Reliably control real desktop applications without programming.">
-  <meta property="og:image" content="https://offisen.app/assets/Offisen-trspt-4K-background.png">
+  <meta property="og:image" content="https://offisen.app/assets/Offisen-hero-1440.webp">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://offisen.app/">
   <meta property="twitter:title" content="Offisen – OfficeTech Desktop Automation">
   <meta property="twitter:description" content="No-code desktop automation for everyday office workflows. Reliably control real desktop applications without programming.">
-  <meta property="twitter:image" content="https://offisen.app/assets/Offisen-trspt-4K-background.png">
+  <meta property="twitter:image" content="https://offisen.app/assets/Offisen-hero-768.webp">
 
   <!-- Microsoft Clarity -->
   <script type="text/javascript">
@@ -41,7 +41,52 @@
   </script>
 
   <link rel="stylesheet" href="CSS/style.css">
+  <link rel="canonical" href="https://www.offisen.app/">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Offisen",
+  "description": "OfficeTech desktop automation platform for everyday office workflows. Designed for administrative users to reliably control real desktop applications.",
+  "operatingSystem": "Windows",
+  "applicationCategory": "BusinessApplication",
+  "url": "https://www.offisen.app/",
+  "image": "https://www.offisen.app/assets/Offisen-hero-1440.webp",
+  "author": {
+    "@type": "Person",
+    "name": "Rudolf Mendzezof"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0.99",
+    "priceCurrency": "EUR",
+    "availability": "https://schema.org/InStock",
+    "url": "https://www.microsoft.com/store"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Offisen",
+  "url": "https://www.offisen.app/",
+  "logo": "https://www.offisen.app/assets/Offisen-logo.webp",
+  "sameAs": [
+    "https://github.com/rudolfmend"
+  ],
+  "founder": {
+    "@type": "Person",
+    "name": "Rudolf Mendzezof"
+  }
+}
+</script>
+
 </head>
+
 <body>
 
   <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -50,13 +95,24 @@
 
     <!-- HEADER / HERO -->
     <header role="banner">
-      <div class="logo-container">
-        <img src="assets/Offisen-trspt-4K-background.png" alt="Offisen - OfficeTech desktop automation platform logo" class="logo">
-      </div>
 
-      <p class="lead">
-        OfficeTech desktop automation for everyday office workflows
-      </p>
+      <picture>
+        <source
+          srcset="assets/Offisen-hero-768.webp"
+          media="(max-width: 768px)">
+        <source
+          srcset="assets/Offisen-hero-1440.webp"
+          media="(min-width: 769px)">
+        <img
+          src="assets/Offisen-hero-1440.webp"
+          alt="Offisen desktop automation platform"
+          width="1000"
+          height="1000"
+          fetchpriority="high"
+          decoding="async">
+      </picture>
+
+      <h1>OfficeTech desktop automation for everyday office workflows</h1>
 
       <p class="subtitle">
         A no-code platform designed for administrative users to reliably control real desktop applications.
@@ -278,6 +334,5 @@
       </div>
     </footer>
     </div>
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 </body>
 </html>
