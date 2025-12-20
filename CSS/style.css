@@ -404,7 +404,7 @@ footer {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 32px;
-  margin-bottom: 32px;
+  margin-bottom: 150px;
 }
 
 .footer-section h4 {
