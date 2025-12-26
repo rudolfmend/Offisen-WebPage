@@ -76,15 +76,6 @@
   }
   </script>
 
-  <script>
-  (function () {
-    const theme = localStorage.getItem('theme');
-    if (theme) {
-      document.documentElement.setAttribute('data-theme', theme);
-    }
-  })();
-</script>
-
 </head>
 
 <body>
@@ -113,7 +104,7 @@
       <!-- INTRO -->
       <section aria-labelledby="intro-heading" class="hero">
         <h2 id="intro-heading">Reliable automation for real office applications</h2>
-        <p>Offisen helps automate routine work in desktop applications used in everyday office environments. It interacts directly with windows, buttons, input fields, and dialogs — without requiring APIs or programming.</p>
+        <p>Offisen helps automate routine work in desktop applications used in everyday office environments. It interacts directly with windows, buttons, input fields, and dialogs â€” without requiring APIs or programming.</p>
         <p>Built for reliability, Offisen keeps workflows running even in legacy or frequently changing applications.</p>
       </section>
 
@@ -254,36 +245,7 @@
     </footer>
   </div>
 
-  <script>
-  (function () {
-    const root = document.documentElement;
-    const toggle = document.querySelector('.theme-toggle');
-    const icon = document.getElementById('theme-icon');
-
-    const savedTheme = localStorage.getItem('theme');
-    const systemPrefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
-
-    if (savedTheme) {
-      root.setAttribute('data-theme', savedTheme);
-    } else if (systemPrefersLight) {
-      root.setAttribute('data-theme', 'light');
-    }
-
-    updateIcon();
-
-    toggle.addEventListener('click', () => {
-      const currentTheme = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
-      root.setAttribute('data-theme', currentTheme);
-      localStorage.setItem('theme', currentTheme);
-      updateIcon();
-    });
-
-    function updateIcon() {
-      const isLight = root.getAttribute('data-theme') === 'light';
-      icon.textContent = isLight ? '🌞' : '🌙';
-    }
-  })();
-</script>
+    <script src="/JS/theme.js" defer></script>
 
 </body>
 </html>

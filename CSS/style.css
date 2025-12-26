@@ -64,7 +64,7 @@ header img {
   max-width: 100%;
   height: auto;
   display: block;
-  margin-bottom: -190px;
+  margin-bottom: -190px;  /* PC desktop - veľké rozlíšenie */
 }
 
 header {
@@ -653,3 +653,12 @@ html[data-theme="light"] {
 .theme-toggle span {
   font-size: 1.2rem;
 }
+
+/*Mobile size overrides for header image margin fix */
+@media (max-width: 768px) {
+  header picture,
+  header img {
+    margin-bottom: 0;
+  }
+}
+
