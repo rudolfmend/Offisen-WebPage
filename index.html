@@ -30,17 +30,17 @@
   <meta name="twitter:creator" content="@rudolfmend">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico">
+   <link rel="icon" type="image/x-icon" href="/assets/favicon/favicon.ico">
   <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon/favicon-96x96.png">
-  <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg">
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
-  <link rel="manifest" href="assets/favicon/site.webmanifest">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="/assets/favicon/site.webmanifest">
   <meta name="apple-mobile-web-app-title" content="Offisen">
   <meta name="msapplication-TileColor" content="#38bdf8">
-  <meta name="msapplication-TileImage" content="assets/favicon/mstile-150x150.png">
+  <meta name="msapplication-TileImage" content="/assets/favicon/mstile-150x150.png">
 
-  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="/CSS/style.css">
 
   <script type="application/ld+json">
   {
@@ -75,18 +75,33 @@
     }
   }
   </script>
+
+  <script>
+  (function () {
+    const theme = localStorage.getItem('theme');
+    if (theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+    }
+  })();
+</script>
+
 </head>
 
 <body>
+
+  <button class="theme-toggle" aria-label="Toggle light and dark mode">
+    <span id="theme-icon">🌙</span>
+  </button>
+
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <div class="container">
     <!-- HEADER / HERO -->
     <header>
       <picture>
-        <source srcset="assets/Offisen-hero-768.webp" media="(max-width: 768px)">
-        <source srcset="assets/Offisen-hero-1440.webp" media="(min-width: 769px)">
-        <img src="assets/Offisen-hero-1440.webp" alt="Offisen desktop automation platform" width="1000" height="1000" fetchpriority="high" decoding="async">
+        <source srcset="/assets/Offisen-hero-768.webp" media="(max-width: 768px)">
+        <source srcset="/assets/Offisen-hero-1440.webp" media="(min-width: 769px)">
+        <img src="/assets/Offisen-hero-1440.webp" alt="Offisen desktop automation platform" width="1000" height="1000" fetchpriority="high" decoding="async">
       </picture>
 
       <h1>OfficeTech desktop automation for everyday office workflows</h1>
@@ -228,7 +243,7 @@
 
           <div class="footer-section">
             <h4>Legal</h4>
-            <p><a href="privacy-policy.html" aria-label="Read our Privacy Policy">Privacy Policy</a></p>
+            <p><a href="/privacy-policy" aria-label="Read our Privacy Policy">Privacy Policy</a></p>
           </div>
         </div>
       </nav>
@@ -238,5 +253,37 @@
       </div>
     </footer>
   </div>
+
+  <script>
+  (function () {
+    const root = document.documentElement;
+    const toggle = document.querySelector('.theme-toggle');
+    const icon = document.getElementById('theme-icon');
+
+    const savedTheme = localStorage.getItem('theme');
+    const systemPrefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+
+    if (savedTheme) {
+      root.setAttribute('data-theme', savedTheme);
+    } else if (systemPrefersLight) {
+      root.setAttribute('data-theme', 'light');
+    }
+
+    updateIcon();
+
+    toggle.addEventListener('click', () => {
+      const currentTheme = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      root.setAttribute('data-theme', currentTheme);
+      localStorage.setItem('theme', currentTheme);
+      updateIcon();
+    });
+
+    function updateIcon() {
+      const isLight = root.getAttribute('data-theme') === 'light';
+      icon.textContent = isLight ? '🌞' : '🌙';
+    }
+  })();
+</script>
+
 </body>
 </html>

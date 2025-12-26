@@ -3,232 +3,61 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
+  <link rel="stylesheet" href="/CSS/style.css">
+
   <title>Privacy Policy – Offisen</title>
   <meta name="description" content="Privacy Policy for Offisen desktop automation application">
 
   <link rel="canonical" href="https://www.offisen.app/privacy-policy">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico">
-  <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon/favicon-96x96.png">
-  <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg">
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
-  <link rel="manifest" href="assets/favicon/site.webmanifest">
+  <link rel="icon" type="image/x-icon" href="/assets/favicon/favicon.ico">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="/assets/favicon/site.webmanifest">
   
   <!-- Theme Color -->
   <meta name="theme-color" content="#38bdf8">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://offisen.app/privacy-policy.html">
+  <meta property="og:url" content="https://www.offisen.app/privacy-policy">
   <meta property="og:title" content="Privacy Policy – Offisen">
   <meta property="og:description" content="Offisen does not collect, store, or share any personal data. All data stays local on your device.">
-  <meta property="og:image" content="https://offisen.app/assets/Offisen-trspt-4K-background.png">
 
-  <style>
-    :root {
-      --color-bg: #0f172a;
-      --color-card: #1e293b;
-      --color-text: #e5e7eb;
-      --color-muted: #9ca3af;
-      --color-accent: #38bdf8;
-      --color-accent-hover: #0ea5e9;
-      --color-border: #334155;
+  <meta property="og:image" content="https://www.offisen.app/assets/Offisen-hero-1440.webp">
+  <meta property="og:image:width" content="1440">
+  <meta property="og:image:height" content="810">
+
+<script>
+  (function () {
+    const theme = localStorage.getItem('theme');
+    if (theme) {
+      document.documentElement.setAttribute('data-theme', theme);
     }
+  })();
+</script>
 
-    * {
-      box-sizing: border-box;
-    }
-
-    /* Skip Link for Screen Readers */
-    .skip-link {
-      position: absolute;
-      top: -100px;
-      left: 0;
-      background: var(--color-accent);
-      color: var(--color-bg);
-      padding: 12px 24px;
-      text-decoration: none;
-      font-weight: 600;
-      z-index: 100;
-      border-radius: 0 0 8px 0;
-      transition: top 0.2s ease;
-    }
-
-    .skip-link:focus {
-      top: 0;
-      outline: 3px solid var(--color-accent-hover);
-      outline-offset: 2px;
-    }
-
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: var(--color-bg);
-      color: var(--color-text);
-      line-height: 1.6;
-    }
-
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 40px 20px 80px;
-    }
-
-    header {
-      text-align: center;
-      margin-bottom: 48px;
-      padding-bottom: 32px;
-      border-bottom: 1px solid var(--color-border);
-    }
-
-    h1 {
-      font-size: 2.5rem;
-      margin: 0 0 8px;
-      color: var(--color-text);
-    }
-
-    .effective-date {
-      color: var(--color-muted);
-      font-size: 0.95rem;
-    }
-
-    h2 {
-      font-size: 1.75rem;
-      margin: 48px 0 16px;
-      color: var(--color-accent);
-    }
-
-    h3 {
-      font-size: 1.25rem;
-      margin: 32px 0 12px;
-      color: var(--color-text);
-    }
-
-    p {
-      margin: 16px 0;
-      color: var(--color-muted);
-    }
-
-    ul, ol {
-      margin: 16px 0;
-      padding-left: 24px;
-      color: var(--color-muted);
-    }
-
-    li {
-      margin: 8px 0;
-    }
-
-    code {
-      background: rgba(56, 189, 248, 0.1);
-      padding: 2px 6px;
-      border-radius: 4px;
-      font-family: monospace;
-      color: var(--color-accent);
-    }
-
-    .info-box {
-      background: var(--color-card);
-      border: 1px solid var(--color-border);
-      border-radius: 8px;
-      padding: 24px;
-      margin: 24px 0;
-    }
-
-    .info-box h3 {
-      margin-top: 0;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .info-box p:last-child {
-      margin-bottom: 0;
-    }
-
-    .highlight {
-      background: rgba(56, 189, 248, 0.1);
-      border-left: 3px solid var(--color-accent);
-      padding: 16px 20px;
-      margin: 24px 0;
-      border-radius: 4px;
-    }
-
-    .highlight strong {
-      color: var(--color-accent);
-    }
-
-    a {
-      color: var(--color-accent);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-      color: var(--color-accent-hover);
-    }
-
-    a:focus {
-      outline: 2px solid var(--color-accent);
-      outline-offset: 2px;
-    }
-
-    footer {
-      margin-top: 64px;
-      padding-top: 32px;
-      border-top: 1px solid var(--color-border);
-      text-align: center;
-      color: var(--color-muted);
-      font-size: 0.9rem;
-    }
-
-    .back-link {
-      display: inline-block;
-      margin-bottom: 32px;
-      color: var(--color-accent);
-      text-decoration: none;
-      font-size: 0.95rem;
-    }
-
-    .back-link:hover {
-      text-decoration: underline;
-    }
-
-    .back-link:focus {
-      outline: 2px solid var(--color-accent);
-      outline-offset: 2px;
-    }
-
-    @media (max-width: 640px) {
-      h1 {
-        font-size: 2rem;
-      }
-
-      h2 {
-        font-size: 1.5rem;
-      }
-
-      .container {
-        padding: 32px 16px 64px;
-      }
-    }
-  </style>
 </head>
 <body>
 
+  <button class="theme-toggle" aria-label="Toggle light and dark mode">
+    <span id="theme-icon">🌙</span>
+  </button>
+
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <div class="container">
-    <a href="/" class="back-link" aria-label="Go back to Offisen homepage">← Back to Offisen</a>
+    <div class="container page-privacy">
 
-    <header role="banner">
-      <h1>Privacy Policy</h1>
-      <p class="effective-date">Effective Date: <time datetime="2025-01-01">January 1, 2025</time></p>
-    </header>
+      <a href="/" class="back-link" aria-label="Go back to Offisen homepage">← Back to Offisen</a>
 
-    <main id="main-content" role="main">
+      <header role="banner">
+        <h1>Privacy Policy</h1>
+        <p class="effective-date">Effective Date: <time datetime="2025-01-01">January 1, 2025</time></p>
+      </header>
+
+      <main id="main-content" role="main">
 
       <section aria-labelledby="introduction-heading">
         <h2 id="introduction-heading">Introduction</h2>
@@ -431,14 +260,44 @@
         </p>
       </section>
 
-    </main>
+      </main>
 
-    <footer role="contentinfo">
-      
-        <a href="/index.html">Back to main page</a> 
-        <p>&copy; 2025 Offisen. &nbsp; All rights reserved. &nbsp; Designed by Rudolf Mendzezof</p>
-        </div>
-    </footer>
+      <footer role="contentinfo">
+        <a href="/">Back to main page</a> 
+       <p>&copy; 2025 Offisen. All rights reserved. Designed by Rudolf Mendzezof</p>
+      </footer>
     </div>
-</body>
+
+    <script>
+  (function () {
+    const root = document.documentElement;
+    const toggle = document.querySelector('.theme-toggle');
+    const icon = document.getElementById('theme-icon');
+
+    const savedTheme = localStorage.getItem('theme');
+    const systemPrefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+
+    if (savedTheme) {
+      root.setAttribute('data-theme', savedTheme);
+    } else if (systemPrefersLight) {
+      root.setAttribute('data-theme', 'light');
+    }
+
+    updateIcon();
+
+    toggle.addEventListener('click', () => {
+      const currentTheme = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      root.setAttribute('data-theme', currentTheme);
+      localStorage.setItem('theme', currentTheme);
+      updateIcon();
+    });
+
+    function updateIcon() {
+      const isLight = root.getAttribute('data-theme') === 'light';
+      icon.textContent = isLight ? '🌞' : '🌙';
+    }
+  })();
+</script>
+
+  </body>
 </html>
