@@ -7,24 +7,18 @@
   const savedTheme = localStorage.getItem('theme');
   const systemPrefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
 
-  if (savedTheme) {
-    root.setAttribute('data-theme', savedTheme);
-  } else if (systemPrefersLight) {
-    root.setAttribute('data-theme', 'light');
-  }
-
+  const initial = savedTheme ?? (systemPrefersLight ? 'light' : 'dark');
+  root.setAttribute('data-theme', initial);
   updateIcon();
 
   toggle.addEventListener('click', () => {
-    const next =
-      root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+    const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
     root.setAttribute('data-theme', next);
     localStorage.setItem('theme', next);
     updateIcon();
   });
 
   function updateIcon() {
-    icon.textContent =
-      root.getAttribute('data-theme') === 'light' ? '🌞' : '🌙';
+    icon.textContent = root.getAttribute('data-theme') === 'light' ? '🌞' : '🌙';
   }
 })();

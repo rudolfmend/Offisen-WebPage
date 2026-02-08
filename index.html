@@ -8,6 +8,8 @@
   <meta name="description" content="Offisen is an OfficeTech desktop automation platform for everyday office workflows. Designed for administrative users to reliably control real desktop applications.">
   <meta name="robots" content="index, follow">
 
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://static.cloudflareinsights.com; script-src-elem 'self' https://static.cloudflareinsights.com; style-src 'self'; img-src 'self' data: https:; connect-src 'self' https://cloudflareinsights.com https://static.cloudflareinsights.com; font-src 'self' data:; object-src 'none'; base-uri 'self';">
+
   <link rel="canonical" href="https://www.offisen.app/">
 
   <meta name="theme-color" content="#38bdf8">
@@ -20,14 +22,14 @@
   <meta property="og:url" content="https://www.offisen.app/">
   <meta property="og:title" content="OfficeTech Desktop Automation for Office Workflows | Offisen">
   <meta property="og:description" content="No-code desktop automation for everyday office workflows. Reliably control real desktop applications without programming.">
-  <meta property="og:image" content="https://www.offisen.app/assets/Offisen-hero-1440.webp">
+  <meta property="og:image" content="https://www.offisen.app/assets/Offisen-hero-trsp-bg-2048x2048.webp">
   <meta property="og:locale" content="en_US">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="OfficeTech Desktop Automation for Office Workflows | Offisen">
   <meta name="twitter:description" content="No-code desktop automation for everyday office workflows.">
-  <meta name="twitter:image" content="https://www.offisen.app/assets/Offisen-hero-1440.webp">
+  <meta name="twitter:image" content="https://www.offisen.app/assets/Offisen-hero-trsp-bg-2048x2048.webp">
   <meta name="twitter:site" content="@offisenapp">
   <meta name="twitter:creator" content="@rudolfmend">
 
@@ -40,7 +42,7 @@
   <meta name="apple-mobile-web-app-title" content="Offisen">
   <meta name="msapplication-TileColor" content="#38bdf8">
   <meta name="msapplication-TileImage" content="/assets/favicon/mstile-150x150.png">
-  <link rel="stylesheet" href="/CSS/style.css?v=5">
+  <link rel="stylesheet" href="/CSS/style.css?v=9">
 
   <script type="application/ld+json">
   {
@@ -51,7 +53,7 @@
     "operatingSystem": "Windows",
     "applicationCategory": "BusinessApplication",
     "url": "https://www.offisen.app/",
-    "image": "https://www.offisen.app/assets/Offisen-hero-1440.webp",
+    "image": "https://www.offisen.app/assets/Offisen-hero-trsp-bg-2048x2048.webp",
     "author": {
       "@type": "Person",
       "name": "Rudolf Mendzezof"
@@ -65,7 +67,7 @@
     "@type": "Organization",
     "name": "Offisen",
     "url": "https://www.offisen.app/",
-    "logo": "https://www.offisen.app/assets/Offisen-logo.webp",
+    "logo": "https://www.offisen.app/assets/offisen-logo-white-bg.webp",
     "sameAs": [
       "https://github.com/rudolfmend"
     ],
@@ -86,16 +88,21 @@
   
   <div class="container">
     <!-- HEADER / HERO -->
-    <header>
-      <picture>
-        <source srcset="/assets/Offisen-hero-768.webp" media="(max-width: 768px)">
-        <source srcset="/assets/Offisen-hero-1440.webp" media="(min-width: 769px)">
-        <img src="/assets/Offisen-hero-1440.webp" alt="Offisen desktop automation platform" width="1000" height="1000" fetchpriority="high" decoding="async">
-      </picture>
+  <header>
+    <a href="/" class="site-logo" aria-label="Offisen homepage">
+      <img
+        src="/assets/Offisen-hero-trsp-bg-2048x2048.webp"
+        alt="Offisen logo"
+        width="220"
+        height="220"
+        decoding="async">
+    </a>
 
-      <h1>OfficeTech desktop automation for everyday office workflows</h1>
-      <p class="subtitle">A no-code platform designed for administrative users to reliably control real desktop applications.</p>
-    </header>
+    <h1>OfficeTech desktop automation for everyday office workflows</h1>
+    <p class="subtitle">A no-code platform designed for administrative users to reliably control real desktop applications.</p>
+  </header>
+
+
 
     <!-- MAIN CONTENT -->
     <main id="main-content">
