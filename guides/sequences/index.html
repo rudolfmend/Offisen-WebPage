@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Save and reuse a sequence | Offisen User guide</title>
+  <meta name="description" content="Keep a workflow for next time. Learn what stays saved, how to prepare your workspace and what to check when you run it again.">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://static.cloudflareinsights.com; script-src-elem 'self' https://static.cloudflareinsights.com; style-src 'self'; img-src 'self' data: https:; connect-src 'self' https://cloudflareinsights.com https://static.cloudflareinsights.com; font-src 'self' data:; object-src 'none'; base-uri 'self';">
+  <link rel="canonical" href="https://www.offisen.app/guides/sequences/">
+  <meta name="theme-color" content="#38bdf8">
+  <meta name="color-scheme" content="light dark">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Offisen">
+  <meta property="og:title" content="Save and reuse a sequence | Offisen">
+  <meta property="og:description" content="Keep a workflow for next time. Learn what stays saved, how to prepare your workspace and what to check when you run it again.">
+  <meta property="og:url" content="https://www.offisen.app/guides/sequences/">
+  <meta property="og:image" content="https://www.offisen.app/assets/Offisen-hero-trsp-bg-2048x2048.webp">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Save and reuse a sequence | Offisen">
+  <meta name="twitter:description" content="Keep a workflow for next time. Learn what stays saved, how to prepare your workspace and what to check when you run it again.">
+  <meta name="twitter:image" content="https://www.offisen.app/assets/Offisen-hero-trsp-bg-2048x2048.webp">
+  <link rel="icon" type="image/x-icon" href="/assets/favicon/favicon.ico">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon/favicon-96x96.png">
+  <link rel="apple-touch-icon" href="/assets/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="/assets/favicon/site.webmanifest">
+  <link rel="stylesheet" href="/CSS/style.css?v=9">
+  <link rel="stylesheet" href="/CSS/guides.css?v=1">
+</head>
+<body class="guide-page">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <div class="container guide-container">
+    <header class="guide-masthead">
+      <a href="/" class="guide-brand" aria-label="Offisen homepage"><img src="/assets/Offisen-hero-trsp-bg-800x800.webp" width="52" height="52" alt=""><span>Offisen</span></a>
+      <span class="guide-brand-label">Documentation</span>
+      <nav aria-label="Guide navigation">
+        <a href="/guides/sequences/" aria-current="page">User guide</a>
+        <a href="/guides/sequences/technical/">Technical guide</a>
+      </nav>
+      <button class="theme-toggle" type="button" aria-label="Toggle light and dark mode"><span id="theme-icon" aria-hidden="true">🌙</span></button>
+    </header>
+    <nav class="guide-breadcrumb" aria-label="Breadcrumb"><ol>
+<li><a href="/">Home</a></li>
+<li><a href="/guides/sequences/">Sequence guides</a></li>
+<li aria-current="page">User guide</li>
+</ol></nav>
+    <main id="main-content" tabindex="-1">
+      <div class="guide-hero">
+        <p class="guide-eyebrow">Offisen for Windows · User guide</p>
+        <h1>Save and reuse a sequence</h1>
+        <p class="guide-intro">Keep a workflow for next time. Learn what stays saved, how to prepare your workspace and what to check when you run it again.</p>
+        <p class="guide-meta">Updated <time datetime="2026-09-10">10 September 2026</time></p>
+      </div>
+      <div class="guide-shell">
+        <aside class="guide-contents"><nav aria-labelledby="contents-heading"><h2 id="contents-heading">On this page</h2>
+<ol>
+<li><a href="#saved">What your file keeps</a></li>
+<li><a href="#prepare">Prepare your workspace</a></li>
+<li><a href="#run">Run a saved sequence</a></li>
+<li><a href="#cursor">Where will text be entered?</a></li>
+<li><a href="#troubleshooting">When something goes wrong</a></li>
+<li><a href="#limits">When to check the sequence again</a></li>
+<li><a href="#help">Need help?</a></li>
+</ol>
+<a class="guide-other" href="/guides/sequences/technical/">Technical guide →</a></nav></aside>
+        <article class="guide-article" aria-label="User guide"><div class="guide-quickstart" aria-label="Reuse at a glance">
+<div>
+<span>01</span><strong>Save the sequence</strong><p>Keep the steps you want to use again.</p>
+</div>
+<div>
+<span>02</span><strong>Prepare the target</strong><p>Open the right app and starting view.</p>
+</div>
+<div>
+<span>03</span><strong>Run and check</strong><p>Start with one repeat and review the result.</p>
+</div>
+</div>
+<section id="saved" aria-labelledby="saved-heading"><h2 id="saved-heading">What your file keeps</h2>
+<p>A sequence is a saved set of actions, such as clicks, typing and keyboard shortcuts. Offisen stores it in an <code>.acseq</code> file so you can use the same workflow again without recording it from scratch.</p>
+ <p>The last successfully saved version keeps:</p>
+ <ul>
+<li>The sequence name, description and steps in their saved order.</li>
+<li>The recorded text, keys, values and other settings held by those steps.</li>
+<li>Available information that helps Offisen find the target window and controls again.</li>
+<li>The sequence’s chosen text-cursor mode.</li>
+</ul>
+<aside class="guide-note"><p class="guide-note-title">Save your changes before you close Offisen</p>
+<p>Changes are available next time only if they have been saved successfully. Seeing a sequence in the editor does not by itself confirm that its latest changes are on disk.</p></aside></section><section id="prepare" aria-labelledby="prepare-heading"><h2 id="prepare-heading">Prepare your workspace</h2>
+<p>Open the application and the document, sheet or tab that the sequence needs. Put them in the starting state used when recording, including any required dialog, selected field and scroll position.</p>
+ <p>A saved sequence does not restore an application session, sign you in or recover an unsaved document. Keep the intended window ready, and avoid leaving several indistinguishable copies of it open.</p>
+<aside class="guide-note"><p class="guide-note-title">Check repeats after reopening Offisen</p>
+<p>A new Offisen session starts with <strong>1 repeat</strong> and <strong>infinite playback off</strong>. These controls are separate from the saved steps. Check them before pressing Play.</p></aside></section><section id="run" aria-labelledby="run-heading"><h2 id="run-heading">Run a saved sequence</h2>
+<ol class="guide-steps">
+<li>
+<h3>Save the sequence you want to keep</h3>
+<p>After recording or editing, give the sequence a recognisable name and use <strong>Save All</strong>. Check that saving completes successfully.</p>
+</li>
+<li>
+<h3>Reopen and prepare the target application</h3>
+<p>After a restart, open the right application and document. Restore the required starting state and wait until the controls you need are ready.</p>
+</li>
+<li>
+<h3>Select the saved sequence</h3>
+<p>Choose it from the sequence list, or use <strong>Open</strong> to load its <code>.acseq</code> file. Check the name and saved steps.</p>
+</li>
+<li>
+<h3>Check the cursor and choose one repeat</h3>
+<p>If the sequence is configured to use your current text cursor, place it in the correct editable field or document. For the first check, select <strong>1 repeat</strong> and turn infinite playback off.</p>
+</li>
+<li>
+<h3>Press Play and check the result</h3>
+<p>Watch the first run. Use <strong>Stop</strong> if the workflow targets the wrong place or behaves unexpectedly. Check what has already happened before trying again: another run may repeat completed actions.</p>
+</li>
+</ol></section><section id="cursor" aria-labelledby="cursor-heading"><h2 id="cursor-heading">Where will text be entered?</h2>
+<p>The saved text-cursor mode affects where text-entry parts of the sequence run. With recorded targeting, Offisen uses the recorded target and caret-placement instructions. A mode that uses the current cursor instead expects you to prepare the live text-entry destination.</p>
+ <p>If text appears in the wrong place, stop playback and check both the active document and the sequence’s cursor setting. Reopening a sequence does not restore a live cursor position from an earlier session.</p></section><section id="troubleshooting" aria-labelledby="troubleshooting-heading"><h2 id="troubleshooting-heading">When something goes wrong</h2>
+<div class="guide-faq">
+<details><summary>The saved sequence is missing or will not open</summary><p>Locate the <code>.acseq</code> file and check that it is available on this computer. If it is in a synced folder, let the download or sync finish. If the file is damaged, use a working copy or record the workflow again.</p></details><details><summary>The target application or control cannot be found</summary><p>Open the correct application, document and dialog, then wait until they are ready. Check whether the application’s title, language or layout has changed since recording.</p></details><details><summary>OFS-1806: Offisen cannot choose a target window</summary><p>More than one window may match the saved information. Save any work in those windows, close the unnecessary copies and try again with one clear target.</p></details><details><summary>OFS-1402: Offisen cannot safely determine a click position</summary><p>Restore the window’s previous size and proportions, and check for changes to monitors or display scaling. This can happen even when the DPI value has not changed. If the problem continues in your new layout, record the workflow again in that layout.</p></details><details><summary>Text or a click goes to the wrong place</summary><p>Press Stop. Check the document, sheet or tab, scroll position and text-cursor mode. Finding the right application window alone does not confirm that the content inside it is in the right state.</p></details><details><summary>The first attempt stops, but a later attempt works</summary><p>The target may not have been ready, but this alone does not establish the cause. Check the reported error, wait for the intended view to finish opening and restore the starting state before trying again.</p></details>
+</div></section><section id="limits" aria-labelledby="limits-heading"><h2 id="limits-heading">When to check the sequence again</h2>
+<p>Repeat the one-run check after an application update, a change of interface language, a different layout or a move to another computer. An older recording may need to be replaced if the file format or target application has changed.</p>
+ <p>Successful reuse after restarting the target application has been verified in a test scenario. That result does not guarantee the same outcome in every application or on another PC. Keep a copy of a working sequence before changing it.</p></section><section id="help" aria-labelledby="help-heading"><h2 id="help-heading">Need help?</h2>
+<p>Email <a href="mailto:info@offisen.app">info@offisen.app</a> with your Offisen version, the application you are automating, the failing step and the exact error message. Mention what you restarted and what changed before the problem began.</p>
+ <p>Before sharing an <code>.acseq</code> file, check the text and values recorded in it.</p>
+ <a class="guide-next" href="/guides/sequences/technical/"><span>For administrators and technical users</span><strong>Read the technical guide →</strong></a></section></article>
+      </div>
+    </main>
+    <footer class="guide-footer"><p>© 2026 Offisen · Desktop automation</p>
+<nav aria-label="Footer navigation"><a href="/">Home</a><a href="/guides/sequences/technical/">Technical guide</a><a href="/privacy-policy/">Privacy Policy</a><a href="mailto:info@offisen.app">Contact</a></nav></footer>
+  </div>
+  <script src="/JS/theme.js" defer></script>
+</body>
+</html>
