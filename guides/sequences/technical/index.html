@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How saved sequences find their target again | Offisen Technical guide</title>
+  <meta name="description" content="A technical reference for saved data, target rediscovery, repeat settings and the practical limits of reuse after a restart.">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://static.cloudflareinsights.com; script-src-elem 'self' https://static.cloudflareinsights.com; style-src 'self'; img-src 'self' data: https:; connect-src 'self' https://cloudflareinsights.com https://static.cloudflareinsights.com; font-src 'self' data:; object-src 'none'; base-uri 'self';">
+  <link rel="canonical" href="https://www.offisen.app/guides/sequences/technical/">
+  <meta name="theme-color" content="#38bdf8">
+  <meta name="color-scheme" content="light dark">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Offisen">
+  <meta property="og:title" content="How saved sequences find their target again | Offisen">
+  <meta property="og:description" content="A technical reference for saved data, target rediscovery, repeat settings and the practical limits of reuse after a restart.">
+  <meta property="og:url" content="https://www.offisen.app/guides/sequences/technical/">
+  <meta property="og:image" content="https://www.offisen.app/assets/Offisen-hero-trsp-bg-2048x2048.webp">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How saved sequences find their target again | Offisen">
+  <meta name="twitter:description" content="A technical reference for saved data, target rediscovery, repeat settings and the practical limits of reuse after a restart.">
+  <meta name="twitter:image" content="https://www.offisen.app/assets/Offisen-hero-trsp-bg-2048x2048.webp">
+  <link rel="icon" type="image/x-icon" href="/assets/favicon/favicon.ico">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon/favicon-96x96.png">
+  <link rel="apple-touch-icon" href="/assets/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="/assets/favicon/site.webmanifest">
+  <link rel="stylesheet" href="/CSS/style.css?v=9">
+  <link rel="stylesheet" href="/CSS/guides.css?v=1">
+</head>
+<body class="guide-page">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <div class="container guide-container">
+    <header class="guide-masthead">
+      <a href="/" class="guide-brand" aria-label="Offisen homepage"><img src="/assets/Offisen-hero-trsp-bg-800x800.webp" width="52" height="52" alt=""><span>Offisen</span></a>
+      <span class="guide-brand-label">Documentation</span>
+      <nav aria-label="Guide navigation">
+        <a href="/guides/sequences/">User guide</a>
+        <a href="/guides/sequences/technical/" aria-current="page">Technical guide</a>
+      </nav>
+      <button class="theme-toggle" type="button" aria-label="Toggle light and dark mode"><span id="theme-icon" aria-hidden="true">🌙</span></button>
+    </header>
+    <nav class="guide-breadcrumb" aria-label="Breadcrumb"><ol>
+<li><a href="/">Home</a></li>
+<li><a href="/guides/sequences/">Sequence guides</a></li>
+<li aria-current="page">Technical guide</li>
+</ol></nav>
+    <main id="main-content" tabindex="-1">
+      <div class="guide-hero">
+        <p class="guide-eyebrow">Offisen for Windows · Technical guide</p>
+        <h1>How saved sequences find their target again</h1>
+        <p class="guide-intro">A technical reference for saved data, target rediscovery, repeat settings and the practical limits of reuse after a restart.</p>
+        <p class="guide-meta">Updated <time datetime="2026-09-10">10 September 2026</time></p>
+      </div>
+      <div class="guide-shell">
+        <aside class="guide-contents"><nav aria-labelledby="contents-heading"><h2 id="contents-heading">On this page</h2>
+<ol>
+<li><a href="#scope">Purpose and verified scope</a></li>
+<li><a href="#persistence">What is saved — and what is live</a></li>
+<li><a href="#resolution">How the target is found again</a></li>
+<li><a href="#cursor">Text entry and launch settings</a></li>
+<li><a href="#procedure">A repeatable operating procedure</a></li>
+<li><a href="#troubleshooting">Troubleshooting and recovery</a></li>
+<li><a href="#limits">Limits of reuse and portability</a></li>
+<li><a href="#support">Information to collect for support</a></li>
+</ol>
+<a class="guide-other" href="/guides/sequences/">User guide →</a></nav></aside>
+        <article class="guide-article" aria-label="Technical guide"><section id="scope" aria-labelledby="scope-heading"><h2 id="scope-heading">Purpose and verified scope</h2>
+<p>A saved <code>.acseq</code> file preserves a sequence for later playback. Its target information allows Offisen to look for a currently running window when the original window no longer exists.</p>
+ <p>Recorded manual validation with TestBench Target covered loading a saved sequence, closing and reopening the target application, rediscovering its new window and successfully replaying a recorded click. A client-area coordinate fallback was also verified after a target restart.</p>
+<aside class="guide-note"><p class="guide-note-title">Interpret the restart evidence precisely</p>
+<p>The documented test covers restarting the <strong>target application</strong>. Reuse on the same PC after an application or Windows restart is a supported design requirement; a separate full Windows restart test and a different-PC test are not established by this validation.</p></aside></section><section id="persistence" aria-labelledby="persistence-heading"><h2 id="persistence-heading">What is saved — and what is live</h2>
+<div class="guide-table-wrap" role="region" aria-label="Main sequence data and runtime state" tabindex="0"><table class="guide-table">
+<caption>Main sequence data and runtime state</caption>
+<thead><tr>
+<th scope="col">Area</th>
+<th scope="col">Saved behaviour and practical meaning</th>
+</tr></thead>
+<tbody>
+<tr>
+<th scope="row">Sequence content</th>
+<td>The name, description and ordered command list. Commands carry their type, recorded values, text or key data and applicable parameters. Only the last successfully saved state is available on reload.</td>
+</tr>
+<tr>
+<th scope="row">Window identity</th>
+<td>
+<code>TargetWindowIdentity</code> contains the process name, window title and Win32 window class. These describe the target; they are not a persistent reference to a running window.</td>
+</tr>
+<tr>
+<th scope="row">Element information</th>
+<td>Available recorded control information, such as automation ID, name, class and control type. Presence and strength vary with the target application and the captured control.</td>
+</tr>
+<tr>
+<th scope="row">Geometry</th>
+<td>Captured element-relative information and, where available, client-area-relative coordinates, client dimensions and window DPI. Stored geometry does not guarantee that the same control will occupy that position later.</td>
+</tr>
+<tr>
+<th scope="row">Text-cursor mode</th>
+<td>
+<code>CurrentTextCursorMode</code> is saved with the sequence. The mode is persistent; the current caret position and its live destination are not a saved application session.</td>
+</tr>
+<tr>
+<th scope="row">Runtime window handle</th>
+<td>
+<code>WindowHandle</code> and <code>WindowHandleValue</code> are excluded from the saved command data. A loaded command starts without a live handle. A process ID is not part of the persisted target identity.</td>
+</tr>
+<tr>
+<th scope="row">Whole-run repeats</th>
+<td>The finite repeat count and infinite-playback flag are held in memory. A new Offisen process starts at <strong>1 repeat, infinite off</strong>. These are separate from repeat parameters stored on individual commands.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Saving a sequence does not save the target document, open tabs, sign-in state or the application’s current view. Prepare those separately before reuse.</p></section><section id="resolution" aria-labelledby="resolution-heading"><h2 id="resolution-heading">How the target is found again</h2>
+<h3>Window selection</h3>
+ <p>In the ordinary recorded-target path, a known process name restricts the candidate windows. Exact normalised title matches take precedence over substring matches. The recorded Win32 class can narrow a tie; it is not a mandatory filter that rejects an otherwise unique title-and-process match.</p>
+ <p>When several windows remain plausible, additional element evidence may distinguish them. If a unique target cannot be established, playback is blocked with <strong>OFS-1806</strong>. Merely bringing one of two indistinguishable windows to the foreground is not a reliable way to resolve this ambiguity.</p>
+ <h3>Control and pointer resolution</h3>
+ <p>Finding a window and finding the intended control are separate decisions. A sufficiently matched live control provides a stronger anchor than window geometry alone. When live element resolution is unavailable, a recorded client-area-relative fallback may be usable if the required metadata and current geometry pass the safety checks.</p>
+ <p>The fallback is anchored to the window’s client area, excluding its title bar and borders. It does not establish that the same button, content or responsive-layout position is present. Unsafe or unavailable coordinate conversion blocks the affected pointer command with <strong>OFS-1402</strong>.</p>
+<aside class="guide-note"><p class="guide-note-title">The same DPI value does not prove compatible geometry</p>
+<p>A window can be found and activated correctly while its recorded click still cannot be replayed safely. A materially different width-to-height scaling ratio can cause OFS-1402 even when the captured and current DPI are identical.</p></aside></section><section id="cursor" aria-labelledby="cursor-heading"><h2 id="cursor-heading">Text entry and launch settings</h2>
+<div class="guide-table-wrap" role="region" aria-label="Saved text-cursor modes" tabindex="0"><table class="guide-table">
+<caption>Saved text-cursor modes</caption>
+<thead><tr>
+<th scope="col">Mode</th>
+<th scope="col">Text-entry behaviour</th>
+</tr></thead>
+<tbody>
+<tr>
+<th scope="row"><code>Recorded</code></th>
+<td>Uses the recorded targeting and caret-placement behaviour. This is the default for a new sequence.</td>
+</tr>
+<tr>
+<th scope="row"><code>AtStart</code></th>
+<td>Only the first qualifying text-entry cluster uses the current live caret target. Later clusters use their recorded targeting.</td>
+</tr>
+<tr>
+<th scope="row"><code>Always</code></th>
+<td>Each qualifying text-entry cluster uses the current live caret target.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Current-caret modes are deliberate targeting overrides. Prepare the intended editable destination before playback; do not interpret the saved mode as restoration of an old cursor location.</p>
+ <p>Whole-run repeat options are captured at the start of a new playback run. Changing them after that affects a subsequent launch. Check the displayed repeat count and infinite option before each validation run.</p></section><section id="procedure" aria-labelledby="procedure-heading"><h2 id="procedure-heading">A repeatable operating procedure</h2>
+<ol class="guide-steps">
+<li>
+<h3>Establish a known starting state</h3>
+<p>Open the required application, document, sheet and view. Record any important layout or display assumptions. Use one unambiguous target where possible.</p>
+</li>
+<li>
+<h3>Record, inspect and save</h3>
+<p>Review the command order, payloads and cursor mode. Use Save All and confirm successful saving. Retain the working <code>.acseq</code> before making further changes.</p>
+</li>
+<li>
+<h3>Restart and reload deliberately</h3>
+<p>Close and reopen the components being tested, then prepare the target state again. Select the saved sequence or load its file through Open. State explicitly whether the test restarted the target app, Offisen or Windows.</p>
+</li>
+<li>
+<h3>Run once and inspect the outcome</h3>
+<p>Set one repeat and disable infinite playback. Press Play. Confirm the actual application result, including the intended document and control, rather than relying only on completion status.</p>
+</li>
+<li>
+<h3>Stop, diagnose and restore before retrying</h3>
+<p>If a step fails or targets the wrong place, use Stop. Capture the failing step and diagnostic reason. Inspect changes already made and restore the starting state before another run.</p>
+</li>
+</ol></section><section id="troubleshooting" aria-labelledby="troubleshooting-heading"><h2 id="troubleshooting-heading">Troubleshooting and recovery</h2>
+<div class="guide-table-wrap" role="region" aria-label="Common failures during saved-sequence reuse" tabindex="0"><table class="guide-table">
+<caption>Common failures during saved-sequence reuse</caption>
+<thead><tr>
+<th scope="col">Symptom</th>
+<th scope="col">Checks and next action</th>
+</tr></thead>
+<tbody>
+<tr>
+<th scope="row">File missing or unreadable</th>
+<td>Check the actual file path, access, non-zero file size and sync availability. Use a working copy or re-record if the file is damaged or incompatible.</td>
+</tr>
+<tr>
+<th scope="row">Window or control not found</th>
+<td>Confirm the application is open and ready. Compare the document title, interface language, required dialog and control availability with the recording.</td>
+</tr>
+<tr>
+<th scope="row">
+<strong>OFS-1806</strong><br>Ambiguous target</th>
+<td>Inspect the number of matching windows. Save work and close unnecessary copies. Identical process names, titles and window classes may still be indistinguishable without stronger element evidence.</td>
+</tr>
+<tr>
+<th scope="row">
+<strong>OFS-1402</strong><br>Unsafe coordinate conversion</th>
+<td>Inspect the failure reason and captured/current client geometry, DPI and monitor setup. Restore compatible window proportions or re-record in the intended layout. Do not assume that any OFS-1402 means the DPI values differ.</td>
+</tr>
+<tr>
+<th scope="row">Wrong text destination or content</th>
+<td>Stop playback. Check cursor mode, editable focus, active document, sheet/tab and scroll position. Window identity alone does not prove the intended content state.</td>
+</tr>
+<tr>
+<th scope="row">Intermittent success after retry</th>
+<td>Check target readiness and the recorded diagnostic evidence. A later success does not establish the root cause of the first failure. Restore the starting state before repeating the workflow.</td>
+</tr>
+</tbody>
+</table></div></section><section id="limits" aria-labelledby="limits-heading"><h2 id="limits-heading">Limits of reuse and portability</h2>
+<ul>
+<li>
+<strong>Application changes:</strong> titles, languages, control identifiers, layout, dialogs and content can change. Revalidate after changes to the target environment.</li>
+ <li>
+<strong>Ambiguous or weak targets:</strong> identical windows, controls with little identifying information and transient or title-less popups can limit rediscovery.</li>
+ <li>
+<strong>Coordinate fallback:</strong> compatible geometry is weaker evidence than a resolved control. Scrolling, content changes or rearranged toolbars can alter what occupies the same position.</li>
+ <li>
+<strong>Different computers:</strong> the identity model supports rediscovery, but a successful restart test on one PC does not establish compatibility on another. Test the intended applications and display configuration independently.</li>
+ <li>
+<strong>Historical files:</strong> compatibility with recordings from older identity and geometry schemas is not guaranteed. Use a current recording when an old file cannot be reused reliably.</li>
+ <li>
+<strong>Partial execution:</strong> do not assume that stopping or blocking playback undoes earlier actions or that a fresh launch resumes at the failed step. Inspect the target state before retrying.</li>
+</ul></section><section id="support" aria-labelledby="support-heading"><h2 id="support-heading">Information to collect for support</h2>
+<p>Record the Offisen and target-application versions, the sequence step, exact error code and failure reason, available diagnostic output, number of matching windows and relevant display or layout changes. Specify what was restarted and whether the problem reproduces from the same starting state.</p>
+ <p>Contact <a href="mailto:info@offisen.app">info@offisen.app</a>. Inspect recorded text and values before sharing an <code>.acseq</code> file.</p>
+ <a class="guide-next" href="/guides/sequences/"><span>For everyday use</span><strong>Open the simple user guide →</strong></a></section></article>
+      </div>
+    </main>
+    <footer class="guide-footer"><p>© 2026 Offisen · Desktop automation</p>
+<nav aria-label="Footer navigation"><a href="/">Home</a><a href="/guides/sequences/">User guide</a><a href="/privacy-policy/">Privacy Policy</a><a href="mailto:info@offisen.app">Contact</a></nav></footer>
+  </div>
+  <script src="/JS/theme.js" defer></script>
+</body>
+</html>
