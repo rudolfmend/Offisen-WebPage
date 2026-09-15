@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>OFS-1809: Recorded Target Could Not Be Resolved | Offisen Support</title>
+  <meta name="description" content="What Offisen error OFS-1809 means and how to resolve a target window identification failure safely.">
+  <meta name="robots" content="index, follow">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#38bdf8">
+
+  <link rel="canonical" href="https://www.offisen.app/support/codes/OFS-1809/">
+  <link rel="icon" type="image/x-icon" href="/assets/favicon/favicon.ico">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="/assets/favicon/site.webmanifest">
+  <link rel="stylesheet" href="/CSS/style.css?v=10">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.offisen.app/support/codes/OFS-1809/">
+  <meta property="og:title" content="OFS-1809: Recorded target could not be resolved">
+  <meta property="og:description" content="Offisen stopped playback because it could not safely identify the window recorded by the sequence.">
+  <meta property="og:image" content="https://www.offisen.app/assets/Offisen-hero-trsp-bg-2048x2048.webp">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <button class="theme-toggle" aria-label="Toggle light and dark mode">
+    <span id="theme-icon">🌙</span>
+  </button>
+
+  <div class="container page-docs">
+    <a href="/guide/#troubleshooting" class="back-link" aria-label="Go back to the troubleshooting guide">← Back to troubleshooting</a>
+
+    <header>
+      <span class="error-code">OFS-1809</span>
+      <h1>Recorded target could not be resolved</h1>
+      <p class="subtitle">Offisen could not safely identify the window this sequence was recorded against, so playback was stopped before input could be sent to the wrong place.</p>
+    </header>
+
+    <main id="main-content">
+      <section class="support-summary" aria-labelledby="meaning-heading">
+        <h2 id="meaning-heading">What this means</h2>
+        <p>The intended window may be closed or may have changed. The recorded target information may also be missing or incomplete.</p>
+        <p>This error belongs to target identification during playback. It is a blocking safety error: Offisen does not continue when it cannot resolve the target with enough confidence.</p>
+      </section>
+
+      <section class="support-action" aria-labelledby="action-heading">
+        <h2 id="action-heading">What to do</h2>
+        <ol>
+          <li>Open the application and window that the sequence was originally recorded against.</li>
+          <li>Return the application to the expected starting screen.</li>
+          <li>Select the sequence and try playback again.</li>
+          <li>If the application or its window has permanently changed, record the sequence again.</li>
+        </ol>
+      </section>
+
+      <section aria-labelledby="example-heading">
+        <h2 id="example-heading">Example</h2>
+        <p>If a sequence was recorded in a browser window and that window is now closed, renamed, or displaying a different application state, Offisen may be unable to resolve it safely. Open the intended browser window, return to the expected page, and retry.</p>
+      </section>
+
+      <section aria-labelledby="details-heading">
+        <h2 id="details-heading">Diagnostic details</h2>
+        <div class="table-scroll" role="region" aria-label="OFS-1809 diagnostic details" tabindex="0">
+          <table class="details-table">
+            <tbody>
+              <tr><th scope="row">Code</th><td>OFS-1809</td></tr>
+              <tr><th scope="row">Symbol</th><td>TargetWindowResolutionFailed</td></tr>
+              <tr><th scope="row">Domain</th><td>Window activation and focus</td></tr>
+              <tr><th scope="row">Layer</th><td>Target identification</td></tr>
+              <tr><th scope="row">Phase</th><td>Playback</td></tr>
+              <tr><th scope="row">Severity</th><td>Blocking error</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section aria-labelledby="support-heading">
+        <h2 id="support-heading">If the problem continues</h2>
+        <p>Record the same task again and test the new sequence. If a newly recorded sequence also produces OFS-1809, keep the diagnostic report and contact <a href="mailto:info@offisen.app">info@offisen.app</a>.</p>
+        <p>Include the error code, correlation ID, timestamp, target application, and a short description of what happened. Review the report before sharing it and remove anything you do not want to send.</p>
+      </section>
+    </main>
+
+    <footer>
+      <p><a href="/guide/">User Guide</a> · <a href="/">Offisen homepage</a> · <a href="/privacy-policy/">Privacy Policy</a></p>
+      <p>&copy; 2026 Offisen. All rights reserved. Designed by Rudolf Mendzezof</p>
+    </footer>
+  </div>
+
+  <script src="/JS/theme.js" defer></script>
+</body>
+</html>

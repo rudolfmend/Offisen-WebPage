@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Offisen User Guide | Record, Save and Run Sequences</title>
+  <meta name="description" content="Learn how to record, save, run, repeat, pause and troubleshoot desktop automation sequences in Offisen for Windows.">
+  <meta name="robots" content="index, follow">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#38bdf8">
+
+  <link rel="canonical" href="https://www.offisen.app/guide/">
+  <link rel="icon" type="image/x-icon" href="/assets/favicon/favicon.ico">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="/assets/favicon/site.webmanifest">
+  <link rel="stylesheet" href="/CSS/style.css?v=10">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.offisen.app/guide/">
+  <meta property="og:title" content="Offisen User Guide">
+  <meta property="og:description" content="A straightforward guide to recording and running reusable desktop automation sequences.">
+  <meta property="og:image" content="https://www.offisen.app/assets/Offisen-hero-trsp-bg-2048x2048.webp">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <button class="theme-toggle" aria-label="Toggle light and dark mode">
+    <span id="theme-icon">🌙</span>
+  </button>
+
+  <div class="container page-docs">
+    <a href="/" class="back-link" aria-label="Go back to Offisen homepage">← Back to Offisen</a>
+
+    <header>
+      <p class="eyebrow">Help and documentation</p>
+      <h1>Offisen User Guide</h1>
+      <p class="subtitle">Learn the essentials: record a familiar task, save it as a sequence, and let Offisen run it again when you need it.</p>
+    </header>
+
+    <main id="main-content">
+      <nav class="docs-nav" aria-label="Guide contents">
+        <strong>In this guide</strong>
+        <ul>
+          <li><a href="#before-you-start">Before you start</a></li>
+          <li><a href="#first-automation">Your first automation</a></li>
+          <li><a href="#sequences">Working with sequences</a></li>
+          <li><a href="#playback">Playback and repeat</a></li>
+          <li><a href="#compact-mode">Compact mode</a></li>
+          <li><a href="#shortcuts">Keyboard shortcuts</a></li>
+          <li><a href="#safe-use">Using Offisen safely</a></li>
+          <li><a href="#troubleshooting">Troubleshooting</a></li>
+        </ul>
+      </nav>
+
+      <section aria-labelledby="what-is-offisen">
+        <h2 id="what-is-offisen">What Offisen does</h2>
+        <p>Offisen helps you repeat routine work in Windows desktop applications. You perform a task while Offisen records the interaction, save the result as a sequence, and run that sequence again later.</p>
+        <p>You do not need to write a script. Offisen works with application windows and controls such as buttons, input fields, and dialogs.</p>
+        <div class="notice">
+          <strong>Start with a small, predictable task.</strong> A short routine with clear steps is the easiest way to create your first successful automation.
+        </div>
+      </section>
+
+      <section aria-labelledby="before-you-start-heading">
+        <h2 id="before-you-start-heading"><span id="before-you-start">Before you start</span></h2>
+        <ul>
+          <li>Open the application in which you want to record the task.</li>
+          <li>Prepare safe sample data when the task can change, submit, send, or delete information.</li>
+          <li>Place the target application in the state from which you normally begin the routine.</li>
+          <li>Close unrelated windows if they could be mistaken for the intended target.</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="first-automation-heading">
+        <h2 id="first-automation-heading"><span id="first-automation">Create your first automation</span></h2>
+        <ol>
+          <li><strong>Start recording.</strong> Select <strong>REC</strong> in Offisen or press <kbd>F7</kbd>.</li>
+          <li><strong>Perform the task.</strong> Work in the target application as you normally would. Keep the first recording short and deliberate.</li>
+          <li><strong>Stop recording.</strong> Select <strong>STOP</strong> or press <kbd>F8</kbd> when the routine is complete.</li>
+          <li><strong>Name and save the sequence.</strong> Use a name that describes the result, such as “Export weekly report”. Save your sequences before closing Offisen.</li>
+          <li><strong>Return to the starting state.</strong> Prepare the target application as it was before recording.</li>
+          <li><strong>Run the sequence.</strong> Select the saved sequence and choose <strong>PLAY</strong>. Watch the first run and confirm that it produces the expected result.</li>
+        </ol>
+      </section>
+
+      <section aria-labelledby="sequences-heading">
+        <h2 id="sequences-heading"><span id="sequences">Working with sequences</span></h2>
+        <p>A sequence is a saved set of recorded actions. Saved sequences remain available after Offisen is restarted.</p>
+        <div class="docs-card">
+          <h3>Keep sequences easy to recognize</h3>
+          <ul>
+            <li>Use a name based on the task or result.</li>
+            <li>Keep separate sequences for routines that start from different screens or applications.</li>
+            <li>Test a sequence again after the target application receives a significant update.</li>
+            <li>Use <strong>File → Open sequences folder</strong> when you need direct access to your sequence files.</li>
+          </ul>
+        </div>
+        <p>You can select, rename, duplicate, delete, and move sequences in the main window. Review the selected sequence before changing its playback options.</p>
+      </section>
+
+      <section aria-labelledby="playback-heading">
+        <h2 id="playback-heading"><span id="playback">Playback and repeat</span></h2>
+        <p>Select the sequence you want to run before pressing <strong>PLAY</strong>. Offisen takes a snapshot of the selected playback settings when the run begins, so later changes apply to the next run.</p>
+
+        <h3>Repeat options</h3>
+        <ul>
+          <li><strong>Finite repeat:</strong> enter how many times the sequence should run.</li>
+          <li><strong>Infinite repeat:</strong> choose the infinity option to continue until you stop playback.</li>
+        </ul>
+
+        <h3>Start condition</h3>
+        <p>If <strong>Run only if target is ready</strong> is enabled, Offisen waits up to the selected number of seconds for the intended target. Playback does not begin if the target cannot be resolved safely.</p>
+
+        <h3>Stop on error</h3>
+        <p>Enable <strong>Stop on error</strong> when playback should end instead of continuing after a command fails.</p>
+
+        <h3>Pause, resume, and stop</h3>
+        <p>You can pause a running sequence, resume it when ready, or stop it completely. After stopping, prepare the target application again before starting a new run.</p>
+      </section>
+
+      <section aria-labelledby="compact-mode-heading">
+        <h2 id="compact-mode-heading"><span id="compact-mode">Compact mode</span></h2>
+        <p>Compact mode keeps the essential recording and playback controls in a smaller window. The current sequence must be selected before playback can start. Repeat information is shown as a count such as <strong>3×</strong> or as <strong>∞</strong>.</p>
+        <p>Use the compact-view shortcut to move between the main and compact windows without interrupting your workflow.</p>
+      </section>
+
+      <section aria-labelledby="shortcuts-heading">
+        <h2 id="shortcuts-heading"><span id="shortcuts">Keyboard shortcuts</span></h2>
+        <div class="table-scroll" role="region" aria-label="Keyboard shortcuts" tabindex="0">
+          <table class="shortcut-table">
+            <thead>
+              <tr><th scope="col">Action</th><th scope="col">Shortcut</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Start recording</td><td><kbd>F7</kbd></td></tr>
+              <tr><td>Stop recording</td><td><kbd>F8</kbd></td></tr>
+              <tr><td>Pause or resume playback</td><td><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Space</kbd></td></tr>
+              <tr><td>Stop playback</td><td>Hold <kbd>Esc</kbd> for 1 second</td></tr>
+              <tr><td>Toggle compact view</td><td><kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>C</kbd></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>If the primary compact-view shortcut is unavailable on your system, Offisen may use <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>C</kbd> instead.</p>
+      </section>
+
+      <section aria-labelledby="safe-use-heading">
+        <h2 id="safe-use-heading"><span id="safe-use">Using Offisen safely</span></h2>
+        <ul>
+          <li>Observe the first playback of every new or changed sequence.</li>
+          <li>Test with non-critical data before using a sequence on important records.</li>
+          <li>Make sure the intended application and window are open before playback.</li>
+          <li>Do not continue when Offisen reports that it cannot identify the target safely.</li>
+          <li>Use pause or stop whenever the target application is no longer in the expected state.</li>
+        </ul>
+        <p>Offisen blocks playback when it cannot safely resolve the recorded target. This is designed to prevent input from being sent to the wrong place.</p>
+      </section>
+
+      <section aria-labelledby="troubleshooting-heading">
+        <h2 id="troubleshooting-heading"><span id="troubleshooting">Troubleshooting</span></h2>
+
+        <h3>The Play button is unavailable</h3>
+        <p>Make sure a sequence is selected. In compact mode, playback also requires a valid selected sequence.</p>
+
+        <h3>The sequence does not start</h3>
+        <p>Open the intended target application and return it to the expected starting screen. If a start condition is enabled, check its waiting time and try again.</p>
+
+        <h3>Playback stops with a diagnostic code</h3>
+        <p>Use the support address shown by Offisen. For example, see <a href="/support/codes/OFS-1809/">OFS-1809: recorded target could not be resolved</a>.</p>
+
+        <h3>A previously working sequence no longer works</h3>
+        <p>Check whether the target application, window title, starting screen, or workflow has changed. If the change is permanent, record the sequence again from the new starting state.</p>
+
+        <h3>You need more help</h3>
+        <p>Keep the diagnostic report and its correlation ID. Contact <a href="mailto:info@offisen.app">info@offisen.app</a> and describe what you expected, what happened, and whether the issue can be repeated.</p>
+      </section>
+    </main>
+
+    <footer>
+      <p><a href="/">Offisen homepage</a> · <a href="/privacy-policy/">Privacy Policy</a></p>
+      <p>&copy; 2026 Offisen. All rights reserved. Designed by Rudolf Mendzezof</p>
+    </footer>
+  </div>
+
+  <script src="/JS/theme.js" defer></script>
+</body>
+</html>
