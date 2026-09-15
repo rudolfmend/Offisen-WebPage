@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>OFS-1202: FilterKeys may affect keyboard input | Offisen Support</title>
+  <meta name="description" content="What Offisen warning OFS-1202 means and how Windows FilterKeys can affect recording or playback.">
+  <meta name="robots" content="index, follow">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#38bdf8">
+
+  <link rel="canonical" href="https://www.offisen.app/support/codes/OFS-1202/">
+  <link rel="icon" type="image/x-icon" href="/assets/favicon/favicon.ico">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="/assets/favicon/site.webmanifest">
+  <link rel="stylesheet" href="/CSS/style.css?v=10">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.offisen.app/support/codes/OFS-1202/">
+  <meta property="og:title" content="OFS-1202: FilterKeys may affect keyboard input">
+  <meta property="og:description" content="Windows FilterKeys is enabled. Short or rapidly repeated key presses may be delayed or ignored during recording or playback.">
+  <meta property="og:image" content="https://www.offisen.app/assets/Offisen-hero-trsp-bg-2048x2048.webp">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <button class="theme-toggle" aria-label="Toggle light and dark mode">
+    <span id="theme-icon">🌙</span>
+  </button>
+
+  <div class="container page-docs">
+    <a href="/support/codes/" class="back-link" aria-label="Go back to all diagnostic codes">← All diagnostic codes</a>
+
+    <header>
+      <span class="error-code">OFS-1202</span>
+      <h1>FilterKeys may affect keyboard input</h1>
+      <p class="subtitle">Windows FilterKeys is enabled. Short or rapidly repeated key presses may be delayed or ignored during recording or playback.</p>
+    </header>
+
+    <main id="main-content">
+      <section class="support-summary" aria-labelledby="meaning-heading">
+        <h2 id="meaning-heading">What this means</h2>
+        <p>FilterKeys is a Windows accessibility feature that can change how short, repeated, or held key presses are accepted. Offisen does not change this setting; it asks you to decide whether to continue with the current configuration.</p>
+      </section>
+
+      <section class="support-action" aria-labelledby="action-heading">
+        <h2 id="action-heading">What to do</h2>
+        <ol>
+          <li>Decide whether FilterKeys is enabled intentionally.</li>
+          <li>If you rely on FilterKeys, continue and carefully verify the recorded or played keyboard result.</li>
+          <li>Otherwise, turn FilterKeys off in Windows Settings under Accessibility → Keyboard.</li>
+          <li>Retry the recording or playback and compare the result.</li>
+        </ol>
+      </section>
+
+      <section aria-labelledby="why-heading">
+        <h2 id="why-heading">Why this can happen</h2>
+        <ul>
+          <li>FilterKeys was enabled in Windows accessibility settings.</li>
+          <li>A keyboard shortcut enabled FilterKeys unintentionally.</li>
+          <li>An organization or accessibility profile configured key delay, repeat, or bounce behavior.</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="example-heading">
+        <h2 id="example-heading">Example</h2>
+        <p>A very short key press may be ignored when FilterKeys is configured to reject brief input. A recorded sequence can then differ from the action you performed even though the keyboard itself is working.</p>
+      </section>
+
+      <section aria-labelledby="details-heading">
+        <h2 id="details-heading">Diagnostic details</h2>
+        <div class="table-scroll" role="region" aria-label="OFS-1202 diagnostic details" tabindex="0">
+          <table class="details-table">
+            <tbody>
+              <tr><th scope="row">Code</th><td>OFS-1202</td></tr>
+              <tr><th scope="row">Symbol</th><td>FilterKeysMaySuppressInput</td></tr>
+              <tr><th scope="row">Domain</th><td>Accessibility input</td></tr>
+              <tr><th scope="row">Layer</th><td>Environment and configuration</td></tr>
+              <tr><th scope="row">Phase</th><td>Recording or playback</td></tr>
+              <tr><th scope="row">Severity</th><td>Warning</td></tr>
+              <tr><th scope="row">Retryable</th><td>Yes</td></tr>
+              <tr><th scope="row">Privacy</th><td>Safe support context</td></tr>
+              <tr><th scope="row">Safety policy</th><td>Continue only after confirmation</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section aria-labelledby="support-heading">
+        <h2 id="support-heading">If the problem continues</h2>
+        <p>If keyboard behavior still differs after FilterKeys is disabled, keep the support report and note whether the issue occurred during recording, playback, or both.</p>
+        <p>Include the error code, correlation ID, timestamp, Offisen version, target application when relevant, and a short description of what happened. Review the report before sharing it and remove anything you do not want to send.</p>
+        <p>Contact <a href="mailto:info@offisen.app">info@offisen.app</a>.</p>
+      </section>
+    </main>
+
+    <footer>
+      <p><a href="/support/codes/">Diagnostic codes</a> · <a href="/guide/">User Guide</a> · <a href="/">Offisen homepage</a> · <a href="/privacy-policy/">Privacy Policy</a></p>
+      <p>&copy; 2026 Offisen. All rights reserved. Designed by Rudolf Mendzezof</p>
+    </footer>
+  </div>
+
+  <script src="/JS/theme.js" defer></script>
+</body>
+</html>

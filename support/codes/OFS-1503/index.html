@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>OFS-1503: Keyboard focus could not be verified | Offisen Support</title>
+  <meta name="description" content="How to resolve Offisen error OFS-1503 when keyboard focus cannot be verified safely.">
+  <meta name="robots" content="index, follow">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#38bdf8">
+
+  <link rel="canonical" href="https://www.offisen.app/support/codes/OFS-1503/">
+  <link rel="icon" type="image/x-icon" href="/assets/favicon/favicon.ico">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="/assets/favicon/site.webmanifest">
+  <link rel="stylesheet" href="/CSS/style.css?v=10">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.offisen.app/support/codes/OFS-1503/">
+  <meta property="og:title" content="OFS-1503: Keyboard focus could not be verified">
+  <meta property="og:description" content="Keyboard focus did not remain in the expected target window or control. No text or key input was sent.">
+  <meta property="og:image" content="https://www.offisen.app/assets/Offisen-hero-trsp-bg-2048x2048.webp">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <button class="theme-toggle" aria-label="Toggle light and dark mode">
+    <span id="theme-icon">🌙</span>
+  </button>
+
+  <div class="container page-docs">
+    <a href="/support/codes/" class="back-link" aria-label="Go back to all diagnostic codes">← All diagnostic codes</a>
+
+    <header>
+      <span class="error-code">OFS-1503</span>
+      <h1>Keyboard focus could not be verified</h1>
+      <p class="subtitle">Keyboard focus did not remain in the expected target window or control. No text or key input was sent.</p>
+    </header>
+
+    <main id="main-content">
+      <section class="support-summary" aria-labelledby="meaning-heading">
+        <h2 id="meaning-heading">What this means</h2>
+        <p>The target window may be visible, but Offisen could not confirm that the intended field or control had keyboard focus. Sending text without that confirmation could type into the wrong place.</p>
+      </section>
+
+      <section class="support-action" aria-labelledby="action-heading">
+        <h2 id="action-heading">What to do</h2>
+        <ol>
+          <li>Bring the intended target window to the foreground.</li>
+          <li>Click the exact input field or control that should receive the keyboard action.</li>
+          <li>Close applications, overlays, clipboard tools, or IME switchers that may take focus.</li>
+          <li>Return the target application to the same layout and state used during recording.</li>
+          <li>Retry playback.</li>
+        </ol>
+      </section>
+
+      <section aria-labelledby="why-heading">
+        <h2 id="why-heading">Why this can happen</h2>
+        <ul>
+          <li>Another window or control took keyboard focus.</li>
+          <li>The intended field moved or changed after recording.</li>
+          <li>An overlay, popup, screen reader, clipboard manager, or input method intercepted focus.</li>
+          <li>Window activation succeeded but the focused input control could not be verified.</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="example-heading">
+        <h2 id="example-heading">Example</h2>
+        <p>A sequence is ready to type into a form field, but a notification or another field receives focus. Offisen detects that mismatch and stops before typing.</p>
+      </section>
+
+      <section aria-labelledby="details-heading">
+        <h2 id="details-heading">Diagnostic details</h2>
+        <div class="table-scroll" role="region" aria-label="OFS-1503 diagnostic details" tabindex="0">
+          <table class="details-table">
+            <tbody>
+              <tr><th scope="row">Code</th><td>OFS-1503</td></tr>
+              <tr><th scope="row">Symbol</th><td>FocusVerificationFailed</td></tr>
+              <tr><th scope="row">Domain</th><td>Window activation and focus</td></tr>
+              <tr><th scope="row">Layer</th><td>Activation and focus</td></tr>
+              <tr><th scope="row">Phase</th><td>Playback</td></tr>
+              <tr><th scope="row">Severity</th><td>Blocking error</td></tr>
+              <tr><th scope="row">Retryable</th><td>Yes</td></tr>
+              <tr><th scope="row">Privacy</th><td>Safe support context</td></tr>
+              <tr><th scope="row">Safety policy</th><td>Block before text or key input</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section aria-labelledby="support-heading">
+        <h2 id="support-heading">If the problem continues</h2>
+        <p>If focus visibly appears correct but the error repeats, copy the support report. It may contain technical control types and class names, but not the text or accessible names of the fields.</p>
+        <p>Include the error code, correlation ID, timestamp, Offisen version, target application when relevant, and a short description of what happened. Review the report before sharing it and remove anything you do not want to send.</p>
+        <p>Contact <a href="mailto:info@offisen.app">info@offisen.app</a>.</p>
+      </section>
+    </main>
+
+    <footer>
+      <p><a href="/support/codes/">Diagnostic codes</a> · <a href="/guide/">User Guide</a> · <a href="/">Offisen homepage</a> · <a href="/privacy-policy/">Privacy Policy</a></p>
+      <p>&copy; 2026 Offisen. All rights reserved. Designed by Rudolf Mendzezof</p>
+    </footer>
+  </div>
+
+  <script src="/JS/theme.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>OFS-1808: Click relocated into window chrome was blocked | Offisen Support</title>
+  <meta name="description" content="How to resolve Offisen error OFS-1808 when a scaled click would land on a title bar or window button.">
+  <meta name="robots" content="index, follow">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#38bdf8">
+
+  <link rel="canonical" href="https://www.offisen.app/support/codes/OFS-1808/">
+  <link rel="icon" type="image/x-icon" href="/assets/favicon/favicon.ico">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="/assets/favicon/site.webmanifest">
+  <link rel="stylesheet" href="/CSS/style.css?v=10">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.offisen.app/support/codes/OFS-1808/">
+  <meta property="og:title" content="OFS-1808: Click relocated into window chrome was blocked">
+  <meta property="og:description" content="A click recorded only against a generic window area would now land outside the content area, for example on the title bar or a caption button.">
+  <meta property="og:image" content="https://www.offisen.app/assets/Offisen-hero-trsp-bg-2048x2048.webp">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <button class="theme-toggle" aria-label="Toggle light and dark mode">
+    <span id="theme-icon">🌙</span>
+  </button>
+
+  <div class="container page-docs">
+    <a href="/support/codes/" class="back-link" aria-label="Go back to all diagnostic codes">← All diagnostic codes</a>
+
+    <header>
+      <span class="error-code">OFS-1808</span>
+      <h1>Click relocated into window chrome was blocked</h1>
+      <p class="subtitle">A click recorded only against a generic window area would now land outside the content area, for example on the title bar or a caption button.</p>
+    </header>
+
+    <main id="main-content">
+      <section class="support-summary" aria-labelledby="meaning-heading">
+        <h2 id="meaning-heading">What this means</h2>
+        <p>The recording did not identify a specific actionable control. After the window moved or resized, the recalculated point fell into non-client window chrome, where it could close, minimize, maximize, move, or resize the window. Offisen blocks the click.</p>
+      </section>
+
+      <section class="support-action" aria-labelledby="action-heading">
+        <h2 id="action-heading">What to do</h2>
+        <ol>
+          <li>Move and resize the target window roughly to the position and size used during recording.</li>
+          <li>Retry playback.</li>
+          <li>If the problem continues, record the step again while clicking directly on a specific button, field, menu item, or other control.</li>
+          <li>Avoid using a blank window area as the target when a specific control is available.</li>
+        </ol>
+      </section>
+
+      <section aria-labelledby="why-heading">
+        <h2 id="why-heading">Why this can happen</h2>
+        <ul>
+          <li>The target window moved or changed size.</li>
+          <li>The click was recorded against the whole window or another generic container.</li>
+          <li>Proportional coordinate adjustment placed the point on the title bar, caption controls, or resize border.</li>
+          <li>The window could not confirm that the point belongs to its client area.</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="example-heading">
+        <h2 id="example-heading">Example</h2>
+        <p>A click recorded against a large window is replayed after the window becomes smaller. The scaled point lands near the Close button, so Offisen blocks it instead of risking closing the application.</p>
+      </section>
+
+      <section aria-labelledby="details-heading">
+        <h2 id="details-heading">Diagnostic details</h2>
+        <div class="table-scroll" role="region" aria-label="OFS-1808 diagnostic details" tabindex="0">
+          <table class="details-table">
+            <tbody>
+              <tr><th scope="row">Code</th><td>OFS-1808</td></tr>
+              <tr><th scope="row">Symbol</th><td>GenericContainerChromeTargetBlocked</td></tr>
+              <tr><th scope="row">Domain</th><td>Pointer and mouse</td></tr>
+              <tr><th scope="row">Layer</th><td>Target identification</td></tr>
+              <tr><th scope="row">Phase</th><td>Playback</td></tr>
+              <tr><th scope="row">Severity</th><td>Blocking error</td></tr>
+              <tr><th scope="row">Retryable</th><td>Yes</td></tr>
+              <tr><th scope="row">Privacy</th><td>Safe support context</td></tr>
+              <tr><th scope="row">Safety policy</th><td>Block before pointer input</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section aria-labelledby="support-heading">
+        <h2 id="support-heading">If the problem continues</h2>
+        <p>If the click is clearly on a specific control and the error repeats, copy the report. It contains geometry and hit-test metadata, but not element names, window titles, or screenshots.</p>
+        <p>Include the error code, correlation ID, timestamp, Offisen version, target application when relevant, and a short description of what happened. Review the report before sharing it and remove anything you do not want to send.</p>
+        <p>Contact <a href="mailto:info@offisen.app">info@offisen.app</a>.</p>
+      </section>
+    </main>
+
+    <footer>
+      <p><a href="/support/codes/">Diagnostic codes</a> · <a href="/guide/">User Guide</a> · <a href="/">Offisen homepage</a> · <a href="/privacy-policy/">Privacy Policy</a></p>
+      <p>&copy; 2026 Offisen. All rights reserved. Designed by Rudolf Mendzezof</p>
+    </footer>
+  </div>
+
+  <script src="/JS/theme.js" defer></script>
+</body>
+</html>

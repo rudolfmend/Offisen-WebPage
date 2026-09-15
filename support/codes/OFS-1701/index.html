@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>OFS-1701: Global keyboard shortcut could not be activated | Offisen Support</title>
+  <meta name="description" content="How to resolve Offisen warning OFS-1701 when both global shortcut combinations are unavailable.">
+  <meta name="robots" content="index, follow">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#38bdf8">
+
+  <link rel="canonical" href="https://www.offisen.app/support/codes/OFS-1701/">
+  <link rel="icon" type="image/x-icon" href="/assets/favicon/favicon.ico">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="/assets/favicon/site.webmanifest">
+  <link rel="stylesheet" href="/CSS/style.css?v=10">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.offisen.app/support/codes/OFS-1701/">
+  <meta property="og:title" content="OFS-1701: Global keyboard shortcut could not be activated">
+  <meta property="og:description" content="Neither the primary nor fallback global keyboard shortcut could be registered. The corresponding shortcut action is unavailable.">
+  <meta property="og:image" content="https://www.offisen.app/assets/Offisen-hero-trsp-bg-2048x2048.webp">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <button class="theme-toggle" aria-label="Toggle light and dark mode">
+    <span id="theme-icon">🌙</span>
+  </button>
+
+  <div class="container page-docs">
+    <a href="/support/codes/" class="back-link" aria-label="Go back to all diagnostic codes">← All diagnostic codes</a>
+
+    <header>
+      <span class="error-code">OFS-1701</span>
+      <h1>Global keyboard shortcut could not be activated</h1>
+      <p class="subtitle">Neither the primary nor fallback global keyboard shortcut could be registered. The corresponding shortcut action is unavailable.</p>
+    </header>
+
+    <main id="main-content">
+      <section class="support-summary" aria-labelledby="meaning-heading">
+        <h2 id="meaning-heading">What this means</h2>
+        <p>Another application or Windows component may already own the same key combination. Offisen continues to work, but you must use its visible controls for the affected action. Holding Esc for emergency stop remains available during playback.</p>
+      </section>
+
+      <section class="support-action" aria-labelledby="action-heading">
+        <h2 id="action-heading">What to do</h2>
+        <ol>
+          <li>Use the controls in the Offisen window for the affected action.</li>
+          <li>Check whether another running application uses the same shortcut combinations.</li>
+          <li>Close or reconfigure the conflicting application when practical.</li>
+          <li>Restart Offisen so it can try registering the shortcuts again.</li>
+        </ol>
+      </section>
+
+      <section aria-labelledby="why-heading">
+        <h2 id="why-heading">Why this can happen</h2>
+        <ul>
+          <li>Another application registered the same global shortcut.</li>
+          <li>A keyboard utility, overlay, accessibility tool, or system component reserved the combination.</li>
+          <li>Windows rejected both the primary and fallback registration attempts.</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="example-heading">
+        <h2 id="example-heading">Example</h2>
+        <p>A communication or keyboard utility may already use the playback shortcut globally. Offisen cannot take it over, but playback can still be paused or resumed from the app window.</p>
+      </section>
+
+      <section aria-labelledby="details-heading">
+        <h2 id="details-heading">Diagnostic details</h2>
+        <div class="table-scroll" role="region" aria-label="OFS-1701 diagnostic details" tabindex="0">
+          <table class="details-table">
+            <tbody>
+              <tr><th scope="row">Code</th><td>OFS-1701</td></tr>
+              <tr><th scope="row">Symbol</th><td>GlobalHotkeyRegistrationFailed</td></tr>
+              <tr><th scope="row">Domain</th><td>Global hotkeys</td></tr>
+              <tr><th scope="row">Layer</th><td>Input capture</td></tr>
+              <tr><th scope="row">Phase</th><td>Hotkey registration</td></tr>
+              <tr><th scope="row">Severity</th><td>Warning</td></tr>
+              <tr><th scope="row">Retryable</th><td>Yes, usually after restarting</td></tr>
+              <tr><th scope="row">Privacy</th><td>Safe support context</td></tr>
+              <tr><th scope="row">Safety policy</th><td>Shortcut disabled; playback remains available</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section aria-labelledby="support-heading">
+        <h2 id="support-heading">If the problem continues</h2>
+        <p>If both shortcut attempts fail after other keyboard utilities are closed, send the support report. It contains the attempted combinations and Windows error values.</p>
+        <p>Include the error code, correlation ID, timestamp, Offisen version, target application when relevant, and a short description of what happened. Review the report before sharing it and remove anything you do not want to send.</p>
+        <p>Contact <a href="mailto:info@offisen.app">info@offisen.app</a>.</p>
+      </section>
+    </main>
+
+    <footer>
+      <p><a href="/support/codes/">Diagnostic codes</a> · <a href="/guide/">User Guide</a> · <a href="/">Offisen homepage</a> · <a href="/privacy-policy/">Privacy Policy</a></p>
+      <p>&copy; 2026 Offisen. All rights reserved. Designed by Rudolf Mendzezof</p>
+    </footer>
+  </div>
+
+  <script src="/JS/theme.js" defer></script>
+</body>
+</html>

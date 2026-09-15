@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>OFS-1904: Input processing hit an internal error | Offisen Support</title>
+  <meta name="description" content="How to respond to Offisen error OFS-1904 when processing a keyboard or mouse event fails unexpectedly.">
+  <meta name="robots" content="index, follow">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#38bdf8">
+
+  <link rel="canonical" href="https://www.offisen.app/support/codes/OFS-1904/">
+  <link rel="icon" type="image/x-icon" href="/assets/favicon/favicon.ico">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="/assets/favicon/site.webmanifest">
+  <link rel="stylesheet" href="/CSS/style.css?v=10">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.offisen.app/support/codes/OFS-1904/">
+  <meta property="og:title" content="OFS-1904: Input processing hit an internal error">
+  <meta property="og:description" content="Processing a global keyboard or mouse event failed unexpectedly. Offisen stopped the active operation because input events could otherwise be lost or recorded incorrectly.">
+  <meta property="og:image" content="https://www.offisen.app/assets/Offisen-hero-trsp-bg-2048x2048.webp">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <button class="theme-toggle" aria-label="Toggle light and dark mode">
+    <span id="theme-icon">🌙</span>
+  </button>
+
+  <div class="container page-docs">
+    <a href="/support/codes/" class="back-link" aria-label="Go back to all diagnostic codes">← All diagnostic codes</a>
+
+    <header>
+      <span class="error-code">OFS-1904</span>
+      <h1>Input processing hit an internal error</h1>
+      <p class="subtitle">Processing a global keyboard or mouse event failed unexpectedly. Offisen stopped the active operation because input events could otherwise be lost or recorded incorrectly.</p>
+    </header>
+
+    <main id="main-content">
+      <section class="support-summary" aria-labelledby="meaning-heading">
+        <h2 id="meaning-heading">What this means</h2>
+        <p>An exception occurred inside the low-level input-processing path during recording or playback. Offisen contains the failure and stops the affected operation rather than continue with incomplete input handling.</p>
+      </section>
+
+      <section class="support-action" aria-labelledby="action-heading">
+        <h2 id="action-heading">What to do</h2>
+        <ol>
+          <li>Try the recording or playback again once.</li>
+          <li>If the error returns, stop using the affected sequence for important data until the cause is understood.</li>
+          <li>Copy the support report and restart Offisen.</li>
+          <li>Review the report before sharing it, then contact support.</li>
+        </ol>
+      </section>
+
+      <section aria-labelledby="why-heading">
+        <h2 id="why-heading">Why this can happen</h2>
+        <ul>
+          <li>A keyboard or mouse event triggered an unexpected internal exception.</li>
+          <li>A component involved in low-level input processing failed.</li>
+          <li>A repeatable interaction exposed an unhandled input-processing condition.</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="example-heading">
+        <h2 id="example-heading">Example</h2>
+        <p>A particular mouse or keyboard event causes an internal input subscriber to throw. Offisen catches the failure, stops the active operation, and records the technical exception information for diagnosis.</p>
+      </section>
+
+      <section aria-labelledby="details-heading">
+        <h2 id="details-heading">Diagnostic details</h2>
+        <div class="table-scroll" role="region" aria-label="OFS-1904 diagnostic details" tabindex="0">
+          <table class="details-table">
+            <tbody>
+              <tr><th scope="row">Code</th><td>OFS-1904</td></tr>
+              <tr><th scope="row">Symbol</th><td>HookCallbackProcessingFailed</td></tr>
+              <tr><th scope="row">Domain</th><td>Hooks and runtime health</td></tr>
+              <tr><th scope="row">Layer</th><td>Input capture</td></tr>
+              <tr><th scope="row">Phase</th><td>Recording or playback</td></tr>
+              <tr><th scope="row">Severity</th><td>Blocking error</td></tr>
+              <tr><th scope="row">Retryable</th><td>Yes</td></tr>
+              <tr><th scope="row">Privacy</th><td>Requires consent</td></tr>
+              <tr><th scope="row">Safety policy</th><td>Stop active operation</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section aria-labelledby="support-heading">
+        <h2 id="support-heading">If the problem continues</h2>
+        <p>The report may contain an exception type and exception message. Exception messages can occasionally include local paths, usernames, or other machine-specific details. Review the report carefully and share it only with your consent.</p>
+        <p>Include the error code, correlation ID, timestamp, Offisen version, and what you were doing immediately before the error.</p>
+        <p>Contact <a href="mailto:info@offisen.app">info@offisen.app</a>.</p>
+      </section>
+    </main>
+
+    <footer>
+      <p><a href="/support/codes/">Diagnostic codes</a> · <a href="/guide/">User Guide</a> · <a href="/">Offisen homepage</a> · <a href="/privacy-policy/">Privacy Policy</a></p>
+      <p>&copy; 2026 Offisen. All rights reserved. Designed by Rudolf Mendzezof</p>
+    </footer>
+  </div>
+
+  <script src="/JS/theme.js" defer></script>
+</body>
+</html>

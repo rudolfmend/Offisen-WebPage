@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>OFS-9001: Offisen hit an unexpected internal error | Offisen Support</title>
+  <meta name="description" content="How to respond to fatal Offisen error OFS-9001 and preserve useful diagnostic information.">
+  <meta name="robots" content="index, follow">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#38bdf8">
+
+  <link rel="canonical" href="https://www.offisen.app/support/codes/OFS-9001/">
+  <link rel="icon" type="image/x-icon" href="/assets/favicon/favicon.ico">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="/assets/favicon/site.webmanifest">
+  <link rel="stylesheet" href="/CSS/style.css?v=10">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.offisen.app/support/codes/OFS-9001/">
+  <meta property="og:title" content="OFS-9001: Offisen hit an unexpected internal error">
+  <meta property="og:description" content="An unhandled internal error occurred. Offisen stopped active recording or playback to avoid continuing in an unsafe state.">
+  <meta property="og:image" content="https://www.offisen.app/assets/Offisen-hero-trsp-bg-2048x2048.webp">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <button class="theme-toggle" aria-label="Toggle light and dark mode">
+    <span id="theme-icon">🌙</span>
+  </button>
+
+  <div class="container page-docs">
+    <a href="/support/codes/" class="back-link" aria-label="Go back to all diagnostic codes">← All diagnostic codes</a>
+
+    <header>
+      <span class="error-code">OFS-9001</span>
+      <h1>Offisen hit an unexpected internal error</h1>
+      <p class="subtitle">An unhandled internal error occurred. Offisen stopped active recording or playback to avoid continuing in an unsafe state.</p>
+    </header>
+
+    <main id="main-content">
+      <section class="support-summary" aria-labelledby="meaning-heading">
+        <h2 id="meaning-heading">What this means</h2>
+        <p>No more specific diagnostic guard classified the failure. This is a fatal catch-all error, so Offisen stops ongoing automation and may require a restart.</p>
+      </section>
+
+      <section class="support-action" aria-labelledby="action-heading">
+        <h2 id="action-heading">What to do</h2>
+        <ol>
+          <li>Copy the support report before restarting Offisen.</li>
+          <li>Review the report and remove anything you do not want to share.</li>
+          <li>Restart Offisen using the dialog action when available, or close and reopen it manually.</li>
+          <li>Check whether the same action causes the error again.</li>
+          <li>If it repeats, contact support with the report and a short description of what happened immediately before the failure.</li>
+        </ol>
+      </section>
+
+      <section aria-labelledby="why-heading">
+        <h2 id="why-heading">Why this can happen</h2>
+        <ul>
+          <li>An unexpected exception reached a global application error handler.</li>
+          <li>A background task failed without a more specific diagnostic classification.</li>
+          <li>The application encountered an internal state it could not continue from safely.</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="example-heading">
+        <h2 id="example-heading">Example</h2>
+        <p>An unexpected exception occurs during playback and no specialized guard recognizes it. Offisen stops playback, preserves a bounded technical summary, and asks you to restart rather than continue in an uncertain state.</p>
+      </section>
+
+      <section aria-labelledby="details-heading">
+        <h2 id="details-heading">Diagnostic details</h2>
+        <div class="table-scroll" role="region" aria-label="OFS-9001 diagnostic details" tabindex="0">
+          <table class="details-table">
+            <tbody>
+              <tr><th scope="row">Code</th><td>OFS-9001</td></tr>
+              <tr><th scope="row">Symbol</th><td>UnexpectedInternalFailure</td></tr>
+              <tr><th scope="row">Domain</th><td>Internal</td></tr>
+              <tr><th scope="row">Layer</th><td>Diagnostics and support</td></tr>
+              <tr><th scope="row">Phase</th><td>Internal; affected operation may be recording, playback, or none</td></tr>
+              <tr><th scope="row">Severity</th><td>Fatal</td></tr>
+              <tr><th scope="row">Retryable</th><td>No; restart and investigate</td></tr>
+              <tr><th scope="row">Privacy</th><td>Requires consent</td></tr>
+              <tr><th scope="row">Safety policy</th><td>Stop active operation; restart may be required</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section aria-labelledby="support-heading">
+        <h2 id="support-heading">If the problem continues</h2>
+        <p>The report may contain the exception type, message, and stack trace. These details can include local paths, usernames, or incidental machine-specific information. Review the report carefully and share it only with your consent.</p>
+        <p>Include the error code, correlation ID, timestamp, Offisen version, and what you were doing immediately before the error.</p>
+        <p>Contact <a href="mailto:info@offisen.app">info@offisen.app</a>.</p>
+      </section>
+    </main>
+
+    <footer>
+      <p><a href="/support/codes/">Diagnostic codes</a> · <a href="/guide/">User Guide</a> · <a href="/">Offisen homepage</a> · <a href="/privacy-policy/">Privacy Policy</a></p>
+      <p>&copy; 2026 Offisen. All rights reserved. Designed by Rudolf Mendzezof</p>
+    </footer>
+  </div>
+
+  <script src="/JS/theme.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>OFS-1803: Pointer could not be positioned safely | Offisen Support</title>
+  <meta name="description" content="How to resolve Offisen error OFS-1803 when a pointer target is outside the desktop or cannot be reached exactly.">
+  <meta name="robots" content="index, follow">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#38bdf8">
+
+  <link rel="canonical" href="https://www.offisen.app/support/codes/OFS-1803/">
+  <link rel="icon" type="image/x-icon" href="/assets/favicon/favicon.ico">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="/assets/favicon/site.webmanifest">
+  <link rel="stylesheet" href="/CSS/style.css?v=10">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.offisen.app/support/codes/OFS-1803/">
+  <meta property="og:title" content="OFS-1803: Pointer could not be positioned safely">
+  <meta property="og:description" content="The resolved pointer position was outside the available desktop or Windows could not place the pointer at the exact target. No mouse button input was sent.">
+  <meta property="og:image" content="https://www.offisen.app/assets/Offisen-hero-trsp-bg-2048x2048.webp">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <button class="theme-toggle" aria-label="Toggle light and dark mode">
+    <span id="theme-icon">🌙</span>
+  </button>
+
+  <div class="container page-docs">
+    <a href="/support/codes/" class="back-link" aria-label="Go back to all diagnostic codes">← All diagnostic codes</a>
+
+    <header>
+      <span class="error-code">OFS-1803</span>
+      <h1>Pointer could not be positioned safely</h1>
+      <p class="subtitle">The resolved pointer position was outside the available desktop or Windows could not place the pointer at the exact target. No mouse button input was sent.</p>
+    </header>
+
+    <main id="main-content">
+      <section class="support-summary" aria-labelledby="meaning-heading">
+        <h2 id="meaning-heading">What this means</h2>
+        <p>Offisen calculated a screen position for a recorded pointer action, but that position was not safe in the current desktop layout. It blocks the mouse button action to prevent an unintended click.</p>
+      </section>
+
+      <section class="support-action" aria-labelledby="action-heading">
+        <h2 id="action-heading">What to do</h2>
+        <ol>
+          <li>Check that every monitor used during recording is connected and arranged as expected.</li>
+          <li>Confirm the target window is visible and not minimized.</li>
+          <li>Close or reconfigure software that restricts pointer movement, including some remote-desktop or accessibility tools.</li>
+          <li>Bring the target application to the foreground and retry playback.</li>
+          <li>If the display layout changed permanently, record the workflow again.</li>
+        </ol>
+      </section>
+
+      <section aria-labelledby="why-heading">
+        <h2 id="why-heading">Why this can happen</h2>
+        <ul>
+          <li>A monitor was disconnected, rearranged, or changed resolution.</li>
+          <li>The calculated point lies outside the current virtual desktop.</li>
+          <li>Windows could not move the pointer to the requested coordinate.</li>
+          <li>Remote-desktop, virtualization, or accessibility software constrained the pointer.</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="example-heading">
+        <h2 id="example-heading">Example</h2>
+        <p>A workflow recorded on a second monitor can point outside the desktop after that monitor is disconnected. Offisen refuses to click at a substituted location.</p>
+      </section>
+
+      <section aria-labelledby="details-heading">
+        <h2 id="details-heading">Diagnostic details</h2>
+        <div class="table-scroll" role="region" aria-label="OFS-1803 diagnostic details" tabindex="0">
+          <table class="details-table">
+            <tbody>
+              <tr><th scope="row">Code</th><td>OFS-1803</td></tr>
+              <tr><th scope="row">Symbol</th><td>PointerPositionInvalid</td></tr>
+              <tr><th scope="row">Domain</th><td>Pointer and mouse</td></tr>
+              <tr><th scope="row">Layer</th><td>Command execution</td></tr>
+              <tr><th scope="row">Phase</th><td>Playback</td></tr>
+              <tr><th scope="row">Severity</th><td>Blocking error</td></tr>
+              <tr><th scope="row">Retryable</th><td>Yes</td></tr>
+              <tr><th scope="row">Privacy</th><td>Safe support context</td></tr>
+              <tr><th scope="row">Safety policy</th><td>Block before mouse button input</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section aria-labelledby="support-heading">
+        <h2 id="support-heading">If the problem continues</h2>
+        <p>If the monitor layout has not changed and the error repeats, include the report and describe the monitor arrangement and any remote-desktop or pointer-management software in use.</p>
+        <p>Include the error code, correlation ID, timestamp, Offisen version, target application when relevant, and a short description of what happened. Review the report before sharing it and remove anything you do not want to send.</p>
+        <p>Contact <a href="mailto:info@offisen.app">info@offisen.app</a>.</p>
+      </section>
+    </main>
+
+    <footer>
+      <p><a href="/support/codes/">Diagnostic codes</a> · <a href="/guide/">User Guide</a> · <a href="/">Offisen homepage</a> · <a href="/privacy-policy/">Privacy Policy</a></p>
+      <p>&copy; 2026 Offisen. All rights reserved. Designed by Rudolf Mendzezof</p>
+    </footer>
+  </div>
+
+  <script src="/JS/theme.js" defer></script>
+</body>
+</html>

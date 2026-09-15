@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Offisen Diagnostic Codes | Support</title>
+  <meta name="description" content="Find explanations and recommended actions for every public Offisen diagnostic code.">
+  <meta name="robots" content="index, follow">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#38bdf8">
+
+  <link rel="canonical" href="https://www.offisen.app/support/codes/">
+  <link rel="icon" type="image/x-icon" href="/assets/favicon/favicon.ico">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="/assets/favicon/site.webmanifest">
+  <link rel="stylesheet" href="/CSS/style.css?v=10">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.offisen.app/support/codes/">
+  <meta property="og:title" content="Offisen diagnostic codes">
+  <meta property="og:description" content="Find the meaning and recommended action for an Offisen diagnostic code.">
+  <meta property="og:image" content="https://www.offisen.app/assets/Offisen-hero-trsp-bg-2048x2048.webp">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <button class="theme-toggle" aria-label="Toggle light and dark mode">
+    <span id="theme-icon">🌙</span>
+  </button>
+
+  <div class="container page-docs">
+    <a href="/guide/#troubleshooting" class="back-link" aria-label="Go back to the troubleshooting guide">← Back to troubleshooting</a>
+
+    <header>
+      <p class="eyebrow">Offisen Support</p>
+      <h1>Diagnostic codes</h1>
+      <p class="subtitle">Find the code shown by Offisen to understand what happened, why the operation was limited or stopped, and what to do next.</p>
+    </header>
+
+    <main id="main-content">
+      <section class="support-summary" aria-labelledby="find-code-heading">
+        <h2 id="find-code-heading">Find your code</h2>
+        <p>Codes stay the same in every Offisen language. Select the exact <strong>OFS-XXXX</strong> code shown in the problem dialog or diagnostic report.</p>
+        <p>Blocking errors stop an unsafe action. Warnings explain a limitation or changed behavior but may allow the operation to continue.</p>
+      </section>
+
+      <section aria-labelledby="environment-permissions-and-input">
+        <h2 id="environment-permissions-and-input">Environment, permissions, and input</h2>
+        <div class="table-scroll" role="region" aria-label="Environment, permissions, and input" tabindex="0">
+          <table class="details-table">
+            <thead><tr><th scope="col">Code</th><th scope="col">Message</th><th scope="col">Severity</th></tr></thead>
+            <tbody>
+              <tr><td><a href="/support/codes/OFS-1001/">OFS-1001</a></td><td>Target application requires higher permissions</td><td>Blocking error</td></tr>
+              <tr><td><a href="/support/codes/OFS-1103/">OFS-1103</a></td><td>Keyboard layout could not be identified</td><td>Warning</td></tr>
+              <tr><td><a href="/support/codes/OFS-1202/">OFS-1202</a></td><td>FilterKeys may affect keyboard input</td><td>Warning</td></tr>
+              <tr><td><a href="/support/codes/OFS-1301/">OFS-1301</a></td><td>Input method (IME) text may not be captured correctly</td><td>Warning</td></tr>
+              <tr><td><a href="/support/codes/OFS-1402/">OFS-1402</a></td><td>Pointer position could not be converted</td><td>Blocking error</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section aria-labelledby="window-activation-and-session-safety">
+        <h2 id="window-activation-and-session-safety">Window activation and session safety</h2>
+        <div class="table-scroll" role="region" aria-label="Window activation and session safety" tabindex="0">
+          <table class="details-table">
+            <thead><tr><th scope="col">Code</th><th scope="col">Message</th><th scope="col">Severity</th></tr></thead>
+            <tbody>
+              <tr><td><a href="/support/codes/OFS-1501/">OFS-1501</a></td><td>Target window could not be activated</td><td>Blocking error</td></tr>
+              <tr><td><a href="/support/codes/OFS-1502/">OFS-1502</a></td><td>Automatic recovery could not be verified</td><td>Blocking error</td></tr>
+              <tr><td><a href="/support/codes/OFS-1503/">OFS-1503</a></td><td>Keyboard focus could not be verified</td><td>Blocking error</td></tr>
+              <tr><td><a href="/support/codes/OFS-1504/">OFS-1504</a></td><td>Current text cursor position could not be used</td><td>Blocking error</td></tr>
+              <tr><td><a href="/support/codes/OFS-1602/">OFS-1602</a></td><td>Windows session was locked</td><td>Blocking error</td></tr>
+              <tr><td><a href="/support/codes/OFS-1701/">OFS-1701</a></td><td>Global keyboard shortcut could not be activated</td><td>Warning</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section aria-labelledby="target-identification-and-pointer-safety">
+        <h2 id="target-identification-and-pointer-safety">Target identification and pointer safety</h2>
+        <div class="table-scroll" role="region" aria-label="Target identification and pointer safety" tabindex="0">
+          <table class="details-table">
+            <thead><tr><th scope="col">Code</th><th scope="col">Message</th><th scope="col">Severity</th></tr></thead>
+            <tbody>
+              <tr><td><a href="/support/codes/OFS-1803/">OFS-1803</a></td><td>Pointer could not be positioned safely</td><td>Blocking error</td></tr>
+              <tr><td><a href="/support/codes/OFS-1804/">OFS-1804</a></td><td>Unable to safely click inside a popup or flyout</td><td>Blocking error</td></tr>
+              <tr><td><a href="/support/codes/OFS-1805/">OFS-1805</a></td><td>Playback target no longer belongs to the expected application</td><td>Blocking error</td></tr>
+              <tr><td><a href="/support/codes/OFS-1806/">OFS-1806</a></td><td>Multiple matching target windows found</td><td>Blocking error</td></tr>
+              <tr><td><a href="/support/codes/OFS-1807/">OFS-1807</a></td><td>Multiple equally likely targets found for this action</td><td>Blocking error</td></tr>
+              <tr><td><a href="/support/codes/OFS-1808/">OFS-1808</a></td><td>Click relocated into window chrome was blocked</td><td>Blocking error</td></tr>
+              <tr><td><a href="/support/codes/OFS-1809/">OFS-1809</a></td><td>Recorded target could not be resolved</td><td>Blocking error</td></tr>
+              <tr><td><a href="/support/codes/OFS-1810/">OFS-1810</a></td><td>Taskbar action was not recorded</td><td>Warning</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section aria-labelledby="runtime-health-and-internal-errors">
+        <h2 id="runtime-health-and-internal-errors">Runtime health and internal errors</h2>
+        <div class="table-scroll" role="region" aria-label="Runtime health and internal errors" tabindex="0">
+          <table class="details-table">
+            <thead><tr><th scope="col">Code</th><th scope="col">Message</th><th scope="col">Severity</th></tr></thead>
+            <tbody>
+              <tr><td><a href="/support/codes/OFS-1903/">OFS-1903</a></td><td>Input processing took too long</td><td>Blocking error</td></tr>
+              <tr><td><a href="/support/codes/OFS-1904/">OFS-1904</a></td><td>Input processing hit an internal error</td><td>Blocking error</td></tr>
+              <tr><td><a href="/support/codes/OFS-9001/">OFS-9001</a></td><td>Offisen hit an unexpected internal error</td><td>Fatal</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section aria-labelledby="report-heading">
+        <h2 id="report-heading">Before sharing a diagnostic report</h2>
+        <p>Review the report and remove anything you do not want to send. Most listed codes use privacy-safe technical context. <strong>OFS-1904</strong> and <strong>OFS-9001</strong> may include exception details and require your consent before sharing.</p>
+        <p>For additional help, contact <a href="mailto:info@offisen.app">info@offisen.app</a> and include the code, correlation ID, timestamp, Offisen version, and a short description of what happened.</p>
+      </section>
+    </main>
+
+    <footer>
+      <p><a href="/guide/">User Guide</a> · <a href="/">Offisen homepage</a> · <a href="/privacy-policy/">Privacy Policy</a></p>
+      <p>&copy; 2026 Offisen. All rights reserved. Designed by Rudolf Mendzezof</p>
+    </footer>
+  </div>
+
+  <script src="/JS/theme.js" defer></script>
+</body>
+</html>

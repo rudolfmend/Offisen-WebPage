@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>OFS-1806: Multiple matching target windows found | Offisen Support</title>
+  <meta name="description" content="How to resolve Offisen error OFS-1806 when more than one live window equally matches the recorded target.">
+  <meta name="robots" content="index, follow">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#38bdf8">
+
+  <link rel="canonical" href="https://www.offisen.app/support/codes/OFS-1806/">
+  <link rel="icon" type="image/x-icon" href="/assets/favicon/favicon.ico">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="/assets/favicon/site.webmanifest">
+  <link rel="stylesheet" href="/CSS/style.css?v=10">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.offisen.app/support/codes/OFS-1806/">
+  <meta property="og:title" content="OFS-1806: Multiple matching target windows found">
+  <meta property="og:description" content="Offisen found more than one equally plausible target window and stopped before activating one or sending input.">
+  <meta property="og:image" content="https://www.offisen.app/assets/Offisen-hero-trsp-bg-2048x2048.webp">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <button class="theme-toggle" aria-label="Toggle light and dark mode">
+    <span id="theme-icon">🌙</span>
+  </button>
+
+  <div class="container page-docs">
+    <a href="/support/codes/" class="back-link" aria-label="Go back to all diagnostic codes">← All diagnostic codes</a>
+
+    <header>
+      <span class="error-code">OFS-1806</span>
+      <h1>Multiple matching target windows found</h1>
+      <p class="subtitle">Offisen found more than one equally plausible target window and stopped before activating one or sending input.</p>
+    </header>
+
+    <main id="main-content">
+      <section class="support-summary" aria-labelledby="meaning-heading">
+        <h2 id="meaning-heading">What this means</h2>
+        <p>Several live windows match the recorded window identity closely enough that Offisen cannot safely choose between them. Selecting whichever window Windows lists first would be a guess.</p>
+      </section>
+
+      <section class="support-action" aria-labelledby="action-heading">
+        <h2 id="action-heading">What to do</h2>
+        <ol>
+          <li>Identify the windows belonging to the recorded target application.</li>
+          <li>Close the extra matching window or change its title or state so the intended target is unique.</li>
+          <li>Bring the intended window to the expected starting screen.</li>
+          <li>Retry playback.</li>
+          <li>If the workflow routinely uses several identical windows, record it in a state that gives the intended window a distinct identity.</li>
+        </ol>
+      </section>
+
+      <section aria-labelledby="why-heading">
+        <h2 id="why-heading">Why this can happen</h2>
+        <ul>
+          <li>Two documents or browser windows have the same or equally matching title.</li>
+          <li>Several windows of the same application expose indistinguishable recorded identity.</li>
+          <li>Element probing could not resolve a single safe winner among the matching windows.</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="example-heading">
+        <h2 id="example-heading">Example</h2>
+        <p>Two browser windows display the same page title. Both match the recorded target equally well, so Offisen refuses to choose one and risk entering data into the wrong window.</p>
+      </section>
+
+      <section aria-labelledby="details-heading">
+        <h2 id="details-heading">Diagnostic details</h2>
+        <div class="table-scroll" role="region" aria-label="OFS-1806 diagnostic details" tabindex="0">
+          <table class="details-table">
+            <tbody>
+              <tr><th scope="row">Code</th><td>OFS-1806</td></tr>
+              <tr><th scope="row">Symbol</th><td>WindowResolutionAmbiguous</td></tr>
+              <tr><th scope="row">Domain</th><td>Window activation and focus</td></tr>
+              <tr><th scope="row">Layer</th><td>Target identification</td></tr>
+              <tr><th scope="row">Phase</th><td>Playback</td></tr>
+              <tr><th scope="row">Severity</th><td>Blocking error</td></tr>
+              <tr><th scope="row">Retryable</th><td>Yes, after removing the ambiguity</td></tr>
+              <tr><th scope="row">Privacy</th><td>Safe support context</td></tr>
+              <tr><th scope="row">Safety policy</th><td>Block before activation</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section aria-labelledby="support-heading">
+        <h2 id="support-heading">If the problem continues</h2>
+        <p>If only one matching window appears visible, copy the report and note whether hidden dialogs, secondary windows, or multiple browser windows were open. The report contains counts and technical scores, not window titles.</p>
+        <p>Include the error code, correlation ID, timestamp, Offisen version, target application when relevant, and a short description of what happened. Review the report before sharing it and remove anything you do not want to send.</p>
+        <p>Contact <a href="mailto:info@offisen.app">info@offisen.app</a>.</p>
+      </section>
+    </main>
+
+    <footer>
+      <p><a href="/support/codes/">Diagnostic codes</a> · <a href="/guide/">User Guide</a> · <a href="/">Offisen homepage</a> · <a href="/privacy-policy/">Privacy Policy</a></p>
+      <p>&copy; 2026 Offisen. All rights reserved. Designed by Rudolf Mendzezof</p>
+    </footer>
+  </div>
+
+  <script src="/JS/theme.js" defer></script>
+</body>
+</html>

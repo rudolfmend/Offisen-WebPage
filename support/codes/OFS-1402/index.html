@@ -32,7 +32,7 @@
   </button>
 
   <div class="container page-docs">
-    <a href="/guide/#troubleshooting" class="back-link" aria-label="Go back to the troubleshooting guide">← Back to troubleshooting</a>
+    <a href="/support/codes/" class="back-link" aria-label="Go back to all diagnostic codes">← All diagnostic codes</a>
 
     <header>
       <span class="error-code">OFS-1402</span>
@@ -52,7 +52,7 @@
         <ol>
           <li>Make sure the intended application and target window are open and fully loaded.</li>
           <li>Return the application to the screen and state used when the sequence was recorded.</li>
-          <li>Restore the target window if it is minimized, and make sure the expected button, field, or other control is available.</li>
+          <li>Make sure the target window is not minimized or hidden, and that the expected button, field, or other control is available.</li>
           <li>If monitors, display scaling, or screen arrangement have changed, restore the original display setup when possible.</li>
           <li>Try playback again.</li>
           <li>If the application or display setup has changed permanently, record the sequence again in the current environment.</li>
@@ -86,6 +86,8 @@
               <tr><th scope="row">Layer</th><td>Target identification</td></tr>
               <tr><th scope="row">Phase</th><td>Playback</td></tr>
               <tr><th scope="row">Severity</th><td>Blocking error</td></tr>
+              <tr><th scope="row">Retryable</th><td>Yes, after checking the target and display environment</td></tr>
+              <tr><th scope="row">Privacy</th><td>Safe support context</td></tr>
               <tr><th scope="row">Safety policy</th><td>Block before pointer input</td></tr>
             </tbody>
           </table>
@@ -95,12 +97,13 @@
       <section aria-labelledby="support-heading">
         <h2 id="support-heading">If the problem continues</h2>
         <p>Record the same task again in the current window and monitor setup, then test the new sequence. If a newly recorded sequence also produces OFS-1402, keep the diagnostic report and contact <a href="mailto:info@offisen.app">info@offisen.app</a>.</p>
+        <p>The report is classified as safe support context. It may include the target process name, window handle, DPI, display dimensions, and coordinate details. It does not include recorded text, document content, clipboard data, or screenshots.</p>
         <p>Include the error code, correlation ID, timestamp, target application, display configuration, and a short description of what happened. Review the report before sharing it and remove anything you do not want to send.</p>
       </section>
     </main>
 
     <footer>
-      <p><a href="/guide/">User Guide</a> · <a href="/">Offisen homepage</a> · <a href="/privacy-policy/">Privacy Policy</a></p>
+      <p><a href="/support/codes/">Diagnostic codes</a> · <a href="/guide/">User Guide</a> · <a href="/">Offisen homepage</a> · <a href="/privacy-policy/">Privacy Policy</a></p>
       <p>&copy; 2026 Offisen. All rights reserved. Designed by Rudolf Mendzezof</p>
     </footer>
   </div>
