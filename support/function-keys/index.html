@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>How Offisen Records and Plays F1–F12 Function Keys</title>
+  <meta name="description" content="Learn how Offisen records and plays F1–F12 function keys, handles modifier combinations, and avoids conflicts with application shortcuts.">
+  <meta name="robots" content="index, follow">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#38bdf8">
+
+  <link rel="canonical" href="https://www.offisen.app/support/function-keys/">
+  <link rel="icon" type="image/x-icon" href="/assets/favicon/favicon.ico">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="/assets/favicon/site.webmanifest">
+  <link rel="stylesheet" href="/CSS/style.css?v=10">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.offisen.app/support/function-keys/">
+  <meta property="og:title" content="How Offisen handles F1–F12 function keys">
+  <meta property="og:description" content="Learn how Offisen records and plays function keys while leaving them available to the target application.">
+  <meta property="og:image" content="https://www.offisen.app/assets/Offisen-hero-trsp-bg-2048x2048.webp">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <button class="theme-toggle" aria-label="Toggle light and dark mode">
+    <span id="theme-icon">🌙</span>
+  </button>
+
+  <div class="container page-docs">
+    <a href="/guide/#function-keys" class="back-link" aria-label="Go back to function keys in the user guide">← Back to the User Guide</a>
+
+    <header>
+      <p class="eyebrow">Offisen Support</p>
+      <h1>How Offisen handles F1–F12 function keys</h1>
+      <p class="subtitle">Offisen records function keys for the target application without reserving them as its own recording or playback shortcuts.</p>
+    </header>
+
+    <main id="main-content">
+      <section class="support-summary" aria-labelledby="overview-heading">
+        <h2 id="overview-heading">Function keys in automation sequences</h2>
+        <p>Offisen supports the <kbd>F1</kbd> through <kbd>F12</kbd> function keys as recorded commands for the target application. They are treated like other keyboard input that forms part of an automation sequence.</p>
+        <p>However, Offisen does not reserve F1–F12 for its own local or global shortcuts. This allows the keys to retain their normal meaning in applications such as browsers, spreadsheets, development tools, and business software.</p>
+      </section>
+
+      <section aria-labelledby="recording-heading">
+        <h2 id="recording-heading">What happens when I press an F-key while recording?</h2>
+        <p>When recording is active and you press F1 through F12, the physical key press continues to the application you are currently using.</p>
+        <ul>
+          <li><kbd>F2</kbd> may start editing or renaming an item.</li>
+          <li><kbd>F5</kbd> may refresh a page or application.</li>
+          <li><kbd>F7</kbd> may run an application-specific command.</li>
+          <li><kbd>F12</kbd> may open a tool or perform another function defined by the application.</li>
+        </ul>
+        <p>Offisen observes the key press without preventing the target application from receiving it. The result therefore happens normally in the application while Offisen records the input for later playback.</p>
+      </section>
+
+      <section aria-labelledby="saved-heading">
+        <h2 id="saved-heading">What is saved in the sequence?</h2>
+        <p>Offisen saves the function key as a keyboard command in the recorded sequence. Supported commands include:</p>
+        <ul>
+          <li>F1 through F12 without modifiers;</li>
+          <li><kbd>Shift</kbd> + F1 through F12;</li>
+          <li><kbd>Ctrl</kbd> + F1 through F12;</li>
+          <li><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + F1 through F12;</li>
+          <li><kbd>Alt</kbd> + F1 through F12;</li>
+          <li>other supported combinations of <kbd>Ctrl</kbd>, <kbd>Shift</kbd>, and <kbd>Alt</kbd>.</li>
+        </ul>
+        <p>The key and its modifier state are stored together so that playback can reproduce the original command.</p>
+        <div class="notice">
+          <strong>Windows-key combinations are handled separately.</strong> Offisen does not record shortcuts containing the Windows key because they normally control Windows itself, can change the active window, and may interrupt the automation context.
+        </div>
+      </section>
+
+      <section aria-labelledby="playback-heading">
+        <h2 id="playback-heading">What happens during playback?</h2>
+        <p>During playback, Offisen sends the saved function-key command to the verified target application in the same way as other recorded keyboard commands.</p>
+        <ul>
+          <li>A recorded <kbd>F5</kbd> command is played as F5.</li>
+          <li>A recorded <kbd>Ctrl</kbd> + <kbd>F5</kbd> command is played with Ctrl held.</li>
+          <li>A recorded <kbd>Shift</kbd> + <kbd>F10</kbd> command is played with Shift held.</li>
+        </ul>
+        <p>Offisen does not replace a function key with another key or silently remove it from the sequence.</p>
+        <p>Function keys can perform different actions in different applications. The result therefore depends on the application receiving the command. Offisen applies its normal target-window and playback safety checks before sending recorded input. If the required target cannot be identified safely, playback follows the normal target-protection behavior instead of intentionally sending the command to an unrelated window.</p>
+      </section>
+
+      <section aria-labelledby="shortcuts-heading">
+        <h2 id="shortcuts-heading">Does Offisen use F1–F12 as its own shortcuts?</h2>
+        <p>No. Offisen does not use F1 through F12, either alone or with modifiers, as local or global shortcuts for controlling recording or playback.</p>
+        <ul>
+          <li><kbd>F7</kbd> does not start recording.</li>
+          <li><kbd>F8</kbd> does not stop recording or playback.</li>
+          <li><kbd>F6</kbd> does not pause or resume playback.</li>
+          <li><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>F12</kbd> is not used as a fallback shortcut.</li>
+        </ul>
+        <p>This separation is intentional. Function keys commonly have important meanings in the application being automated. Reserving them globally for Offisen could prevent the application from receiving the intended command or could cause Offisen to react unexpectedly.</p>
+        <p>Offisen uses controls that do not depend on F1–F12, including visible Record, Play, Pause, and Stop controls. The supported playback Pause/Resume shortcut is <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Space</kbd>, while the emergency playback stop uses a long press of <kbd>Esc</kbd>.</p>
+      </section>
+
+      <section aria-labelledby="laptops-heading">
+        <h2 id="laptops-heading">What about laptops and media keys?</h2>
+        <p>On some laptops, the top keyboard row controls volume, brightness, or media functions unless the <kbd>Fn</kbd> key or Fn Lock is used.</p>
+        <p>This behavior is normally managed by the keyboard hardware, its firmware, or the device manufacturer’s software. Offisen can record an F1–F12 command only when Windows reports the input as the corresponding function key.</p>
+        <p>If pressing <kbd>F5</kbd> changes the screen brightness instead of producing F5 in the active application, use the laptop’s Fn or Fn Lock setting according to the device manufacturer’s instructions.</p>
+      </section>
+
+      <section aria-labelledby="why-heading">
+        <h2 id="why-heading">Why are function keys supported for sequences but not for Offisen shortcuts?</h2>
+        <p>The two uses have different effects:</p>
+        <ul>
+          <li>A recorded function key is an intentional part of a sequence and is sent to its selected target application.</li>
+          <li>A global Offisen shortcut could intercept the same key while the user is working in any application.</li>
+        </ul>
+        <p>Supporting function keys as target-application commands makes automation more complete. Avoiding them as Offisen shortcuts reduces conflicts with browsers, office applications, development tools, and other software.</p>
+        <p><strong>In short, F1–F12 belong to the application being automated, not to Offisen’s global controls.</strong></p>
+      </section>
+
+      <section aria-labelledby="future-heading">
+        <h2 id="future-heading">Possible future improvements</h2>
+        <p>Future versions of Offisen may provide additional keyboard-command options, clearer sequence inspection, or more detailed warnings for commands that can significantly change an application’s state.</p>
+        <p>Offisen may also introduce configurable shortcuts. Any such feature should be explicit and user-controlled, with conflict detection and a safe way to restore the default settings. Function keys will not be silently reserved as global Offisen shortcuts.</p>
+        <p>Support for Windows-key combinations may be reconsidered only if they can be recorded and played without weakening target-window protection or unexpectedly invoking Windows system commands.</p>
+      </section>
+    </main>
+
+    <footer>
+      <p><a href="/guide/">User Guide</a> · <a href="/support/codes/">Diagnostic codes</a> · <a href="/">Offisen homepage</a> · <a href="/privacy-policy/">Privacy Policy</a></p>
+      <p>&copy; 2026 Offisen. All rights reserved. Designed by Rudolf Mendzezof</p>
+    </footer>
+  </div>
+
+  <script src="/JS/theme.js" defer></script>
+</body>
+</html>
