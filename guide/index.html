@@ -118,6 +118,15 @@
         <h3>Stop on error</h3>
         <p>Enable <strong>Stop on error</strong> when playback should end instead of continuing after a command fails.</p>
 
+        <h3>Text position</h3>
+        <p>Choose how Offisen handles the text cursor when a sequence enters text.</p>
+        <ul>
+          <li><strong>Recorded:</strong> uses the cursor positions captured during recording. This is the default and most predictable mode.</li>
+          <li><strong>Current at start:</strong> the first text entry uses the current cursor position. Later text entries use their recorded positions.</li>
+          <li><strong>Always current:</strong> every text entry uses the current cursor position instead of the recorded position.</li>
+        </ul>
+        <p>Use <strong>Recorded</strong> when the sequence should reproduce the original text placement. Use one of the current-position modes when you intentionally want playback to continue from the text cursor position that is active when the sequence runs.</p>
+
         <h3>Pause, resume, and stop</h3>
         <p>You can pause a running sequence, resume it when ready, or stop it completely. After stopping, prepare the target application again before starting a new run.</p>
       </section>
