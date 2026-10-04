@@ -8,7 +8,7 @@
   <title>Privacy Policy – Offisen</title>
   <meta name="description" content="Privacy Policy for Offisen desktop automation application">
 
-  <link rel="canonical" href="https://www.offisen.app/privacy-policy">
+  <link rel="canonical" href="https://www.offisen.app/privacy-policy/">
 
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="/assets/favicon/favicon.ico">
@@ -24,9 +24,9 @@
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.offisen.app/privacy-policy">
+  <meta property="og:url" content="https://www.offisen.app/privacy-policy/">
   <meta property="og:title" content="Privacy Policy – Offisen">
-  <meta property="og:description" content="Offisen does not collect, store, or share any personal data. All data stays local on your device.">
+  <meta property="og:description" content="Learn how Offisen uses and stores workflow data, handles diagnostics, and works with Microsoft Store and other services.">
 
   <meta property="og:image" content="https://www.offisen.app/assets/Offisen-hero-trsp-bg-2048x2048.webp">
   <meta property="og:image:width" content="1440">
@@ -47,217 +47,67 @@
 
       <header role="banner">
         <h1>Privacy Policy</h1>
-        <p class="effective-date">Effective Date: <time datetime="2025-01-01">January 1, 2025</time></p>
+        <p class="effective-date">Last updated: <time datetime="2026-10-04">October 4, 2026</time></p>
       </header>
 
       <main id="main-content" role="main">
 
-      <section aria-labelledby="introduction-heading">
-        <h2 id="introduction-heading">Introduction</h2>
-        <p>
-          Offisen is a desktop automation application designed to help users automate routine office workflows 
-          by interacting with desktop applications. This application provides no-code automation capabilities 
-          for repetitive administrative tasks.
-        </p>
-      </section>
+        <section aria-labelledby="introduction-heading">
+          <h2 id="introduction-heading">1. Introduction and Scope</h2>
+          <p>This Privacy Policy explains how Offisen uses and stores data when automating workflows, the control you have over that data, and when third-party services are involved.</p>
+          <p>This policy applies to the Offisen application. Third-party services, such as Microsoft Store, also have their own privacy policies.</p>
+          <p>Offisen is provided by Rudolf Mendzezof. You can send questions about privacy to <a href="mailto:info@offisen.app">info@offisen.app</a>.</p>
+        </section>
 
-      <section aria-labelledby="data-collection-heading">
-        <h2 id="data-collection-heading">Data Collection</h2>
-        <p>
-          <strong>Offisen does not collect, store, or share any personal data of its users.</strong>
-        </p>
+        <section aria-labelledby="automation-data-heading">
+          <h2 id="automation-data-heading">2. Data Used for Automation</h2>
+          <p>When recording and running workflows, Offisen processes information about your actions, such as clicks, keystrokes, and text you enter. It also uses information needed to identify the applications, windows, and controls involved in your workflow.</p>
+          <p>This information is used to create, edit, and replay automated workflows according to your instructions.</p>
+          <p>Recorded content may include personal or sensitive information if it forms part of your workflow. Before recording, consider what information you include, particularly when entering passwords or other confidential information.</p>
+        </section>
 
-        <p>The application:</p>
-        <ul role="list">
-          <li>Does not record any user data</li>
-          <li>Does not track user activity</li>
-          <li>Does not collect information about the device</li>
-          <li>Does not communicate with any remote servers</li>
-          <li>Does not store any data outside the user's local device</li>
-          <li>Does not use cookies or similar tracking technologies</li>
-          <li>Does not transmit automation sequences or workflows to external servers</li>
-        </ul>
-      </section>
+        <section aria-labelledby="data-storage-heading">
+          <h2 id="data-storage-heading">3. Data Storage and Security</h2>
+          <p>Offisen stores automated workflows, settings, and related operational data locally on your device. Saved workflows remain available for future use until you delete them. Deleting a workflow does not delete any backup or shared copies.</p>
+          <p>Access to locally stored data depends on your device’s security and the permissions associated with your user account. Offisen does not itself encrypt workflow files, and their contents may be readable outside the application.</p>
+          <p>If your workflows contain confidential information, protect your device and all copies of these files against unauthorized access.</p>
+        </section>
 
-      <section aria-labelledby="data-storage-heading">
-        <h2 id="data-storage-heading">Data Storage</h2>
-        <p>
-          Offisen stores automation workflow data in two local locations on your device:
-        </p>
+        <section aria-labelledby="diagnostics-heading">
+          <h2 id="diagnostics-heading">4. Diagnostics and Optional Features</h2>
+          <p>Offisen uses diagnostic information to identify and explain problems that occur while using the application. This may include error codes and descriptions, the time a problem occurred, and technical details related to the workflow being run. This information is processed locally to display messages and help troubleshoot problems.</p>
+          <p>A separate optional feature counts occurrences of diagnostic codes. This feature is disabled by default and can be enabled or disabled in settings. It records only the diagnostic code, its severity, and the number of occurrences; it does not include recorded text or workflow contents. In the current version, these summaries are stored locally and are not sent to the developer or a telemetry server. Disabling the feature stops further counting but does not automatically delete summaries already saved on your device.</p>
+          <p>If you choose to provide a diagnostic report or other materials when requesting support, review their contents before sending them and remove any information you do not wish to share. Information you provide for support is used to respond to your request and investigate the reported problem.</p>
+          <p>If a future version introduces transmission of optional diagnostic summaries outside your device, we will explain what information would be sent, why it would be sent, and who would receive it before you enable that transmission. Sending these summaries will require your explicit consent, which you will be able to withdraw in settings.</p>
+        </section>
 
-        <article class="info-box" aria-labelledby="app-storage-heading">
-          <h3 id="app-storage-heading"><span aria-hidden="true">📁</span> Application Data Storage</h3>
-          <p><strong>Automatic Save Location:</strong> Automation sequences and configurations are automatically saved to the application's private storage folder in Windows LocalState directory</p>
-          <p><strong>File Location:</strong> <code>%LocalAppData%\Packages\[AppPackage]\LocalState\</code></p>
-          <p><strong>Purpose:</strong> Preserving automation workflows and settings between application sessions</p>
-          <p><strong>Access:</strong> Only accessible by the Offisen application and the user account</p>
-        </article>
+        <section aria-labelledby="third-party-services-heading">
+          <h2 id="third-party-services-heading">5. Microsoft Store and Other Third-Party Services</h2>
+          <p>Offisen uses Microsoft Store to distribute the application, obtain information about subscription offers, verify licenses, and complete purchases. These services may require an internet connection. Offisen receives the information needed to display and verify your entitlement to use the application.</p>
+          <p>Microsoft handles Microsoft account sign-in, payments, and subscription management. Offisen does not receive your Microsoft account password or full payment card details through the purchase interface. Microsoft’s processing of information is governed by its <a href="https://privacy.microsoft.com/privacystatement" target="_blank" rel="noopener">Privacy Statement</a> and the terms of the relevant services.</p>
+          <p>Automated workflows are not sent to Microsoft for license verification or subscription purchases.</p>
+          <p>If you use Offisen to control an application or online service that sends information over the internet, running your workflow may cause information to be sent through that application or service. Its own privacy policy applies to that processing. Likewise, when you open an external link from Offisen, the privacy policy of the website you visit applies.</p>
+        </section>
 
-        <article class="info-box" aria-labelledby="export-storage-heading">
-          <h3 id="export-storage-heading"><span aria-hidden="true">📤</span> User Export Location</h3>
-          <p><strong>Manual Export Location:</strong> When users export automation workflows, files are saved to user-specified locations (typically Documents folder)</p>
-          <p><strong>File Format:</strong> Proprietary format (.acc files) with user-defined filename</p>
-          <p><strong>Purpose:</strong> User-initiated workflow backup and sharing</p>
-          <p><strong>Control:</strong> User has full control over export location and timing</p>
-        </article>
+        <section aria-labelledby="control-sharing-heading">
+          <h2 id="control-sharing-heading">6. Your Control and Sharing</h2>
+          <p>You can manage and delete your automated workflows within the application. You can also copy locally stored files for backup purposes or remove them from your device. You can change your choices for optional features in settings.</p>
+          <p>You decide whether to share workflow files or materials for support. Before sharing, check for personal information, passwords, or other confidential information, including information about other people. Share only information you are authorized to disclose.</p>
+          <p>If you place files in cloud storage or a synchronized folder, or send them through a third-party service, that provider’s policies also apply to those copies. Deleting the original file in Offisen does not delete copies held in backups, by external services, or by recipients.</p>
+        </section>
 
-        <div class="highlight" role="note" aria-label="Important information about data storage">
-          <p><strong>Important Note:</strong> All data storage is entirely local to your device. No automation workflows, 
-          configurations, or any other data are transmitted to external servers or shared with third parties. 
-          Users maintain complete control over their data and can delete it at any time through the application 
-          interface or by removing the files directly.</p>
-        </div>
-      </section>
-
-      <section aria-labelledby="gdpr-heading">
-        <h2 id="gdpr-heading"><span aria-hidden="true">🇪🇺</span> GDPR Compliance (European Union)</h2>
-        <p>
-          Since the application does not collect, process, or transfer any personal data as defined in the 
-          General Data Protection Regulation (GDPR) of the European Union, the application does not trigger GDPR data controller obligations
-          set out in this regulation.
-        </p>
-        <p>
-          <strong>GDPR Reference:</strong>
-          <a href="https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng" target="_blank" rel="noopener">
-                  Regulation (EU) 2016/679
-          </a>
-        </p>      
-
-      </section>
-
-      <section aria-labelledby="global-compliance-heading">
-        <h2 id="global-compliance-heading"><span aria-hidden="true">🌍</span> Global Privacy Law Compliance</h2>
-        <p>
-          Offisen application is designed to comply with major international privacy and data protection laws, 
-          including but not limited to:
-        </p>
-
-        <article aria-labelledby="usa-compliance-heading">
-          <h3 id="usa-compliance-heading"><span aria-hidden="true">🇺🇸</span> United States</h3>
-          <ul role="list">
-            <li>California Consumer Privacy Act (CCPA)</li>
-            <li>Children's Online Privacy Protection Act (COPPA)</li>
-          </ul>
-        </article>
-
-        <article aria-labelledby="canada-compliance-heading">
-          <h3 id="canada-compliance-heading"><span aria-hidden="true">🇨🇦</span> Canada</h3>
-          <ul role="list">
-            <li>Personal Information Protection and Electronic Documents Act (PIPEDA)</li>
-            <li>Provincial privacy laws</li>
-          </ul>
-        </article>
-
-        <article aria-labelledby="uk-compliance-heading">
-          <h3 id="uk-compliance-heading"><span aria-hidden="true">🇬🇧</span> United Kingdom</h3>
-          <ul role="list">
-            <li>UK Data Protection Act 2018</li>
-            <li>UK GDPR</li>
-          </ul>
-        </article>
-
-        <article aria-labelledby="australia-compliance-heading">
-          <h3 id="australia-compliance-heading"><span aria-hidden="true">🇦🇺</span> Australia</h3>
-          <ul role="list">
-            <li>Privacy Act 1988</li>
-            <li>Australian Privacy Principles (APPs)</li>
-          </ul>
-        </article>
-
-        <article aria-labelledby="japan-compliance-heading">
-          <h3 id="japan-compliance-heading"><span aria-hidden="true">🇯🇵</span> Japan</h3>
-          <ul role="list">
-            <li>Act on Protection of Personal Information (APPI)</li>
-          </ul>
-        </article>
-
-        <article aria-labelledby="korea-compliance-heading">
-          <h3 id="korea-compliance-heading"><span aria-hidden="true">🇰🇷</span> South Korea</h3>
-          <ul role="list">
-            <li>Personal Information Protection Act (PIPA)</li>
-          </ul>
-        </article>
-
-        <article aria-labelledby="brazil-compliance-heading">
-          <h3 id="brazil-compliance-heading"><span aria-hidden="true">🇧🇷</span> Brazil</h3>
-          <ul role="list">
-            <li>Lei Geral de Proteção de Dados (LGPD)</li>
-          </ul>
-        </article>
-
-        <div class="highlight" role="note" aria-label="Compliance status information">
-          <p><strong>Compliance Status:</strong> Since Offisen does not collect, process, store, or transmit 
-          any personal identifiable information (PII), it inherently complies with all major global privacy regulations.</p>
-        </div>
-      </section>
-
-      <section aria-labelledby="personal-data-heading">
-        <h2 id="personal-data-heading">Personal Identifiers and Sensitive Data</h2>
-        <p>
-          Offisen does not collect, access, or process any of the following types of personal identifiers 
-          or sensitive data:
-        </p>
-        <ul role="list">
-          <li>Names, addresses, phone numbers, or email addresses</li>
-          <li>Social security numbers, national ID numbers, or government identifiers</li>
-          <li>Financial information, credit card numbers, or banking details</li>
-          <li>Biometric data, health information, or medical records</li>
-          <li>Location data, GPS coordinates, or geolocation information</li>
-          <li>Device identifiers, IP addresses, or hardware specifications</li>
-          <li>Browsing history, usage patterns, or behavioral data</li>
-          <li>Any other personally identifiable information as defined by applicable privacy laws</li>
-        </ul>
-      </section>
-
-      <section aria-labelledby="workflow-privacy-heading">
-        <h2 id="workflow-privacy-heading">Automation Workflow Privacy</h2>
-        <p>
-          When using Offisen to automate desktop applications, please note:
-        </p>
-        <ul role="list">
-          <li>Automation workflows are stored locally on your device only</li>
-          <li>If workflows contain sensitive information (passwords, credentials, personal data), 
-              they remain entirely under your control</li>
-          <li>You are responsible for managing and protecting your automation workflow files</li>
-          <li>Sharing workflow files (.acc) with others is entirely voluntary and at your discretion</li>
-          <li>Offisen does not access or monitor the content of applications you automate</li>
-        </ul>
-      </section>
-
-      <section aria-labelledby="changes-heading">
-        <h2 id="changes-heading">Changes to Privacy Policy</h2>
-        <p>
-          If there are future changes to the application's functionality that could affect the processing 
-          of personal data, this policy will be updated and users will be informed of the changes through:
-        </p>
-        <ul role="list">
-          <li>Application update notifications</li>
-          <li>Updates to this privacy policy page</li>
-          <li>Microsoft Store update notes</li>
-        </ul>
-      </section>
-
-      <section aria-labelledby="contact-heading">
-        <h2 id="contact-heading">Contact</h2>
-        <p>
-          If you have any questions regarding this privacy policy or data protection practices, 
-          you can contact us at:
-        </p>
-        <p>
-          <strong>Email:</strong>
-          <a href="mailto:info@offisen.app">info@offisen.app</a>
-        </p>
-        <p>
-          <strong>Subject Line:</strong> 
-          Offisen - Privacy Policy Inquiry          
-        </p>
-      </section>
+        <section aria-labelledby="contact-updates-heading">
+          <h2 id="contact-updates-heading">7. Contact and Policy Updates</h2>
+          <p>If you have questions about privacy in Offisen or information you have provided when requesting support, contact Rudolf Mendzezof at <a href="mailto:info@offisen.app">info@offisen.app</a>. Include only the information needed to address your request.</p>
+          <p>We will update this policy to reflect changes in how data is processed or which services are used. The current version is available at <a href="https://www.offisen.app/privacy-policy/">https://www.offisen.app/privacy-policy/</a>. The date of the latest update appears at the beginning of this policy.</p>
+          <p>We will notify you of material changes to how data is processed through the application or a notice accompanying an application update. Publishing an updated policy does not replace your consent where consent is required.</p>
+        </section>
 
       </main>
 
       <footer role="contentinfo">
         <a href="/">Back to main page</a> 
-       <p>&copy; 2025 Offisen. All rights reserved. Designed by Rudolf Mendzezof</p>
+       <p>&copy; 2026 Offisen. All rights reserved. Designed by Rudolf Mendzezof</p>
       </footer>
     </div>
 
