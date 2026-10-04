@@ -762,3 +762,41 @@ html[data-theme="light"] {
 .theme-toggle span {
   font-size: 1.2rem;
 }
+
+/* Homepage: navigation, guide links and Time for you section. */
+html { scroll-behavior: smooth; }
+.homepage main section[id] { scroll-margin-top: 24px; }
+.homepage header { padding-top: 24px; margin-bottom: 40px; }
+.homepage header .site-logo { position: static; display: inline-block; margin-bottom: 12px; }
+.homepage header .site-logo img { height: 110px; max-width: 100%; }
+.homepage .section-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 36px; max-width: 860px; margin: 0 auto 32px; padding: 8px 0 18px; border-bottom: 2px solid var(--color-accent); }
+.homepage .section-nav a { display: inline-block; padding: 10px 12px; border-radius: 8px; color: var(--color-text-main); font-size: 1.12rem; font-weight: 600; text-decoration: none; }
+.homepage .section-nav a:hover { background: var(--color-card); color: var(--color-accent); }
+.homepage a:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 4px; border-radius: 4px; }
+.homepage .guide-link { color: var(--color-accent); font-weight: 600; text-decoration: underline; text-underline-offset: 4px; }
+.homepage .guide-link:hover { color: var(--color-accent-hover); }
+.homepage .header-guide { margin: 20px 0 0; }
+.homepage .guide-prompt { text-align: center; margin: 28px 0 0; }
+.homepage .time-for-you { text-align: center; margin: 0 0 80px; padding: 56px clamp(20px, 5vw, 56px); border: 1px solid #e7c96a; border-radius: 20px; background: linear-gradient(135deg, #fff0a8 0%, #fff9df 45%, #ffffff 100%); color: #493b20; }
+.homepage .time-for-you h2 { margin: 0 0 24px; font-size: clamp(1.6rem, 3vw, 2.1rem); letter-spacing: -.02em; color: #322916; }
+.homepage .time-for-you p { max-width: 620px; margin: 0 auto 16px; color: #574b33; font-size: 1.05rem; }
+.homepage .time-for-you .time-for-you-closing { margin: 28px auto 0; color: #493b20; }
+html:not([data-theme="light"]) .homepage .time-for-you { background: linear-gradient(135deg, #42391e 0%, #25271e 50%, #18232b 100%); border-color: #635534; color: #f9efcf; }
+html:not([data-theme="light"]) .homepage .time-for-you h2 { color: #fff1ba; }
+html:not([data-theme="light"]) .homepage .time-for-you p { color: #e8dfc9; }
+html:not([data-theme="light"]) .homepage .time-for-you .time-for-you-closing { color: #fff1ba; }
+@media (max-width: 768px) {
+  .homepage.container { padding: 20px; }
+  .homepage header { margin: 0 0 32px; padding-top: 12px; }
+  .homepage header .site-logo img { height: 88px; }
+  .homepage .section-nav { max-width: 100%; gap: 8px 16px; }
+  .homepage .section-nav a { padding: 10px 12px; font-size: 1.05rem; }
+  .homepage .time-for-you { padding: 36px 20px; margin-bottom: 56px; }
+}
+@media (max-width: 480px) {
+  .homepage .section-nav { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .homepage *, .theme-toggle { transition: none; }
+}

@@ -23,7 +23,7 @@
 
   <url>
     <loc>https://www.offisen.app/support/codes/</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -87,6 +87,13 @@
   <url>
     <loc>https://www.offisen.app/support/codes/OFS-1504/</loc>
     <lastmod>2026-09-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://www.offisen.app/support/codes/OFS-1505/</loc>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -157,6 +164,13 @@
   <url>
     <loc>https://www.offisen.app/support/codes/OFS-1810/</loc>
     <lastmod>2026-09-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://www.offisen.app/support/codes/OFS-1811/</loc>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
