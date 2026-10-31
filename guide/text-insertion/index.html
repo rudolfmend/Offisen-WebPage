@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Text insertion | Offisen User Guide</title>
+  <meta name="description" content="How Recorded, Current at start and Always current decide where Offisen types, with examples for parts and text without a click.">
+  <meta name="robots" content="index, follow">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#38bdf8">
+
+  <link rel="canonical" href="https://www.offisen.app/guide/text-insertion/">
+  <link rel="icon" type="image/x-icon" href="/assets/favicon/favicon.ico">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="/assets/favicon/site.webmanifest">
+  <script src="/JS/theme-init.js?v=1"></script>
+  <link rel="stylesheet" href="/CSS/style.css?v=12">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.offisen.app/guide/text-insertion/">
+  <meta property="og:title" content="Text insertion | Offisen User Guide">
+  <meta property="og:description" content="Decide whether a sequence types where it was recorded or at the text cursor you are using now.">
+  <meta property="og:image" content="https://www.offisen.app/assets/Offisen-hero-trsp-bg-2048x2048.webp">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <button class="theme-toggle" aria-label="Switch to dark theme" title="Switch to dark theme">
+    <span id="theme-icon" aria-hidden="true">🌙</span>
+  </button>
+
+  <div class="container page-docs">
+    <a href="/guide/" class="back-link" aria-label="Go back to the User Guide">← User Guide</a>
+
+    <header>
+      <p class="eyebrow">Offisen User Guide</p>
+      <h1>Text insertion</h1>
+      <p class="subtitle">Decide whether a sequence types where it was recorded or at the text cursor you are using now.</p>
+    </header>
+
+    <main id="main-content">
+      <nav class="docs-nav" aria-label="Guide chapters">
+        <strong>Guide chapters</strong>
+        <ul>
+          <li><a href="/guide/editing-sequences/">Edit a sequence</a></li>
+          <li><a href="/guide/merging-sequences/">Merge sequences</a></li>
+          <li><a href="/guide/text-insertion/" aria-current="page">Text insertion</a></li>
+          <li><a href="/guide/attached-sequences/">Attached sequences</a></li>
+          <li><a href="/guide/run-history/">Run History</a></li>
+          <li><a href="/guide/workday-timer/">Workday &amp; Timer</a></li>
+        </ul>
+      </nav>
+
+      <section class="support-summary" aria-labelledby="purpose-heading">
+        <h2 id="purpose-heading">Choose a mode</h2>
+        <p>Use <strong>Recorded</strong> when the text belongs in the same field every time. Use a current-cursor mode when the same text should go into whichever field you are working in, such as a template inserted into different documents.</p>
+        <div class="table-scroll" role="region" aria-label="Text insertion modes" tabindex="0">
+          <table class="details-table">
+            <thead><tr><th scope="col">Mode</th><th scope="col">Shown in summaries as</th><th scope="col">What it does</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Recorded</strong></td><td>As recorded</td><td>Types into the recorded window and field. This is the default.</td></tr>
+              <tr><td><strong>Current at start</strong></td><td>Current cursor for the first block</td><td>At most the first text block goes to the current cursor. Later blocks use their recorded place.</td></tr>
+              <tr><td><strong>Always current</strong></td><td>Current cursor for every block</td><td>Text blocks that start with a click into a field go to the current cursor.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Select the mode under <strong>Text insertion</strong> in the main window. <span class="coming-badge">Coming in version 1.0.9</span> You can also select <strong>Change</strong> in the Sequence Editor, or choose the mode while editing text there.</p>
+      </section>
+
+      <section aria-labelledby="block-heading">
+        <h2 id="block-heading">What counts as a text block</h2>
+        <p>A block starts with a click recorded in a text field, directly followed by typing or by keys and then typing. In a current-cursor block, Offisen skips that click so it does not move your cursor. The keys and text that follow go to the current field until a different kind of step appears.</p>
+        <p><strong>Text without a click before it never uses the current cursor.</strong> If you began typing during recording without clicking first, those steps use their recorded place. Waits and key presses alone are not text blocks.</p>
+      </section>
+
+      <section aria-labelledby="examples-heading">
+        <h2 id="examples-heading">Examples</h2>
+        <p>In each example, “current” means the current cursor and “recorded” means the recorded place.</p>
+        <div class="table-scroll" role="region" aria-label="Text insertion examples" tabindex="0">
+          <table class="details-table">
+            <thead><tr><th scope="col">Recorded steps</th><th scope="col">Current at start</th><th scope="col">Always current</th></tr></thead>
+            <tbody>
+              <tr><td>Click field A, type “one”, Tab, click field B, Down, type “two”</td><td>“one” and Tab: current. Click B runs, then Down and “two”: recorded.</td><td>Both clicks are skipped. Everything else: current.</td></tr>
+              <tr><td>Type “one”, click field B, type “two”</td><td>Everything is recorded, because the first text block has no click.</td><td>“one”: recorded. Click B is skipped, “two”: current.</td></tr>
+              <tr><td>Wait, click field A, type “one”, click field B, Down, type “two”</td><td>The wait does not count. “one”: current. Click B runs, then Down and “two”: recorded.</td><td>The wait runs. Both clicks are skipped. All text: current.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>With <strong>Recorded</strong>, all of these steps run as recorded.</p>
+      </section>
+
+      <section aria-labelledby="target-heading">
+        <h2 id="target-heading">When Offisen chooses the field</h2>
+        <p>Offisen does not pick one field for the whole run, and it does not capture the cursor when a part begins. It checks when playback reaches each step that uses the current cursor:</p>
+        <div class="table-scroll" role="region" aria-label="How the text target is chosen" tabindex="0">
+          <table class="details-table">
+            <thead><tr><th scope="col">At that moment</th><th scope="col">Result</th></tr></thead>
+            <tbody>
+              <tr><td>Another application is in the foreground with a text field active</td><td>The text goes into that field.</td></tr>
+              <tr><td>Offisen itself is in the foreground, for example after you selected <strong>PLAY</strong></td><td>Offisen checks and reactivates the field it remembered when the run started.</td></tr>
+              <tr><td>Another application is in the foreground without an editable field</td><td>Playback stops with <a href="/support/codes/OFS-1504/">OFS-1504</a>. Offisen does not fall back to the remembered field.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Offisen remembers one field per run, before the first step. If it shows a target confirmation before the run, it keeps the field from before that confirmation. If a different window is active when the first step needs the cursor, playback stops with OFS-1504.</p>
+        <h3>Try it</h3>
+        <ol>
+          <li>Click into the field where the text should go.</li>
+          <li>Start the sequence. <strong>PLAY</strong> works, because Offisen returns to the remembered field.</li>
+          <li>Leave that field active until the text has been typed.</li>
+        </ol>
+        <p>The text appears at your cursor, not in the field used during recording.</p>
+      </section>
+
+      <section aria-labelledby="parts-heading">
+        <h2 id="parts-heading">Sequences with parts</h2>
+        <p>A merged sequence can use a different mode for each part. Each part is judged on its own:</p>
+        <ul>
+          <li>In a <strong>Current at start</strong> part, the first text block of that part can use the current cursor. A part that opens with text without a click plays as recorded, and the next part is still judged separately.</li>
+          <li>A click at the end of one part is never joined with text at the start of the next part.</li>
+          <li>The wait between merged sequences does not count as a text block.</li>
+        </ul>
+        <p>In a later part, the current field is whatever is active when that part reaches its text. That is often where the previous part finished, not where the cursor was when the whole sequence started.</p>
+        <p>In the main window, <strong>Use for all parts</strong> changes every part and saves the sequence right away.</p>
+      </section>
+
+      <section aria-labelledby="attached-heading">
+        <h2 id="attached-heading">After an attached sequence <span class="coming-badge">Coming in version 1.0.9</span></h2>
+        <p>An <a href="/guide/attached-sequences/">attached sequence</a> always inserts its own text as recorded and can move the foreground to its window.</p>
+        <ul>
+          <li><strong>If the attached sequence ran:</strong> the next current-cursor text goes back to the field remembered at the start of the run, not into the attached sequence's window. That is not necessarily the field used most recently.</li>
+          <li><strong>If that field cannot be restored:</strong> for example because it was closed, playback stops with OFS-1504 and nothing is typed elsewhere.</li>
+          <li><strong>If the attached sequence was skipped:</strong> nothing changes, and the current cursor is checked as usual.</li>
+        </ul>
+        <p>An attached sequence also separates text blocks. A click before it is never joined with typing after it, even when it is skipped. <strong>Current at start</strong> still means only the first text block of the main sequence or part.</p>
+      </section>
+
+      <section aria-labelledby="limits-heading">
+        <h2 id="limits-heading">When it stops</h2>
+        <p>Offisen sends text only after confirming an editable field. If it cannot, it stops with <a href="/support/codes/OFS-1504/">OFS-1504</a>; earlier steps of the run may already have typed text. Applications that report little about their fields can trigger this even though a field looks active. In that case, use <strong>Recorded</strong>.</p>
+      </section>
+    </main>
+
+    <footer>
+      <p><a href="/guide/">User Guide</a> · <a href="/support/codes/">Diagnostic codes</a> · <a href="/">Offisen homepage</a> · <a href="/privacy-policy/">Privacy Policy</a></p>
+      <p>&copy; 2026 Rudolf Mendzezof. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script src="/JS/theme.js?v=2" defer></script>
+</body>
+</html>

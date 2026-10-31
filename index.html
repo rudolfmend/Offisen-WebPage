@@ -4,25 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Offisen Gives You Time Back | Desktop Automation for Windows</title>
-  <meta name="description" content="Record routine desktop work once and let Offisen repeat it when you need it. Straightforward Windows automation without programming.">
+  <meta name="description" content="Record clicks and typing in Windows applications, edit the steps and run them again without programming. Available on Microsoft Store.">
   <meta name="robots" content="index, follow">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://static.cloudflareinsights.com; script-src-elem 'self' https://static.cloudflareinsights.com; style-src 'self'; img-src 'self' data: https:; connect-src 'self' https://cloudflareinsights.com https://static.cloudflareinsights.com; font-src 'self' data:; object-src 'none'; base-uri 'self';">
   <link rel="canonical" href="https://www.offisen.app/">
   <meta name="theme-color" content="#38bdf8">
   <!-- Automatic theme issues solution -->
-  <meta name="color-scheme" content="light dark">
+  <meta name="color-scheme" content="light">
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Offisen">
   <meta property="og:url" content="https://www.offisen.app/">
   <meta property="og:title" content="Offisen Gives You Time Back">
-  <meta property="og:description" content="Record routine desktop work once and let Offisen repeat it when you need it — without programming.">
+  <meta property="og:description" content="Record clicks and typing in Windows applications, edit the steps and run them again, without programming.">
   <meta property="og:image" content="https://www.offisen.app/assets/Offisen-hero-trsp-bg-2048x2048.webp">
   <meta property="og:locale" content="en_US">
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Offisen Gives You Time Back">
-  <meta name="twitter:description" content="Straightforward desktop automation for the work you repeat.">
+  <meta name="twitter:description" content="Record, edit and repeat routine work in Windows applications, without programming.">
   <meta name="twitter:image" content="https://www.offisen.app/assets/Offisen-hero-trsp-bg-2048x2048.webp">
   <meta name="twitter:site" content="@offisenapp">
   <meta name="twitter:creator" content="@rudolfmend">
@@ -35,13 +35,14 @@
   <meta name="apple-mobile-web-app-title" content="Offisen">
   <meta name="msapplication-TileColor" content="#38bdf8">
   <meta name="msapplication-TileImage" content="/assets/favicon/mstile-150x150.png">
-  <link rel="stylesheet" href="/CSS/style.css?v=11">
+  <script src="/JS/theme-init.js?v=1"></script>
+  <link rel="stylesheet" href="/CSS/style.css?v=12">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": "Offisen",
-    "description": "Windows desktop automation for routine work. Record a task once and let Offisen repeat it when you need it, without programming.",
+    "description": "Windows desktop automation for routine work. Record clicks and typing, edit the steps and run them again, without programming.",
     "operatingSystem": "Windows",
     "applicationCategory": "BusinessApplication",
     "url": "https://www.offisen.app/",
@@ -71,8 +72,8 @@
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
-  <button class="theme-toggle" aria-label="Toggle light and dark mode">
-    <span id="theme-icon">🌙</span>
+  <button class="theme-toggle" aria-label="Switch to dark theme" title="Switch to dark theme">
+    <span id="theme-icon" aria-hidden="true">🌙</span>
   </button>
   <div class="container homepage">
     <!-- HEADER / HERO -->
@@ -88,12 +89,15 @@
     <nav class="section-nav" aria-label="Main navigation">
       <a href="#why-offisen">Why Offisen</a>
       <a href="#how-it-works">How it works</a>
+      <a href="#features">Features</a>
+      <a href="#pricing">Subscription</a>
       <a href="#time-for-you">Time for you</a>
       <a href="/guide/">User guide</a>
     </nav>
     <p class="eyebrow">Desktop automation for everyday work</p>
     <h1>Offisen gives you time back.</h1>
-    <p class="subtitle">Record routine desktop work once. Let Offisen repeat it when you need it — without programming.</p>
+    <p class="subtitle">Record your clicks and typing in Windows applications, save them as a sequence and run them again. Edit the recorded steps when you need to. No programming required.</p>
+    <p class="header-cta"><a class="cta-button" href="https://apps.microsoft.com/detail/9NQ13MNJ5KTF" target="_blank" rel="noopener">Get Offisen from Microsoft Store</a></p>
     <p class="header-guide"><a class="guide-link" href="/guide/#first-automation">See how it works <span aria-hidden="true">→</span></a></p>
   </header>
     <!-- MAIN CONTENT -->
@@ -101,110 +105,182 @@
       <!-- INTRO -->
       <section id="why-offisen" aria-labelledby="intro-heading" class="hero">
         <p class="hero-kicker">Show it once. Run it again.</p>
-        <h2 id="intro-heading">Less repetitive work. Fewer mistakes to fix.</h2>
-        <p>The same fields. The same clicks. After a while, staying focused gets harder — and small mistakes mean more work.</p>
-        <p>Record the steps once and let Offisen repeat them. A tested sequence helps reduce missed steps and typing mistakes, leaving your attention for work that needs you.</p>
+        <h2 id="intro-heading">Less repetitive work. More attention for everything else.</h2>
+        <p>The same fields. The same clicks. After a while, staying focused gets harder, and small mistakes mean more work.</p>
+        <p>Offisen records your clicks and typing in Windows applications and saves them as a sequence you can use again. A tested sequence helps reduce missed steps and typing mistakes, leaving your attention for work that needs you.</p>
       </section>
       <!-- PLATFORM -->
       <section aria-labelledby="platforms-heading" class="platforms">
         <h2 id="platforms-heading">Built for Windows desktop work</h2>
-        <p class="section-intro">Offisen works with the applications you already use by interacting with their windows, buttons, fields, and dialogs.</p>
+        <p class="section-intro">Offisen works with application windows, buttons, fields and dialogs, so you can start with the tools you already use. Applications differ, so test each routine in yours.</p>
         <div class="platform-badges" >
-          <div class="platform-badge store-status" aria-label="Offisen for Windows is coming soon to Microsoft Store">
+          <a class="platform-badge" href="https://apps.microsoft.com/detail/9NQ13MNJ5KTF" target="_blank" rel="noopener" aria-label="Get Offisen for Windows from Microsoft Store (opens in new tab)">
             <svg class="platform-icon" viewBox="0 0 88 88" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
               <path d="M0 12.402l35.687-4.86.016 34.423-35.67.203zm35.67 33.529l.028 34.453L.028 75.48.026 45.7zm4.326-39.025L87.314 0v41.527l-47.318.376zm47.329 39.349l-.011 41.34-47.318-6.678-.066-34.739z"/>
             </svg>
             <div>
               <div class="badge-title">Microsoft Store</div>
-              <div class="badge-subtitle">Offisen for Windows — coming soon</div>
+              <div class="badge-subtitle">Offisen for Windows — available now</div>
             </div>
-          </div>
+          </a>
         </div>
       </section>
       <!-- VALUE -->
       <section aria-labelledby="value-heading" class="value">
-        <h2 id="value-heading">More than faster clicking</h2>
-        <p class="section-intro">Spend less time and attention on the steps you repeat.</p>
+        <h2 id="value-heading">Good for work you repeat the same way</h2>
+        <p class="section-intro">Offisen repeats the steps you recorded. It works best when a routine starts from the same place and follows the same path.</p>
         <div class="value-grid">
           <article class="value-card">
-            <h3>Free your attention</h3>
-            <p>Stop holding every familiar step in your head and give your focus to work that requires judgment.</p>
+            <h3>Familiar screens</h3>
+            <p>Go through the same menus, dialogs and buttons, such as the steps of a weekly export.</p>
           </article>
           <article class="value-card">
-            <h3>Spend less time correcting mistakes</h3>
-            <p>A tested sequence repeats the same recorded steps, helping reduce mistakes caused by fatigue and distraction.</p>
+            <h3>Fixed entries</h3>
+            <p>Fill in fields that get the same values each time, in the order you recorded.</p>
           </article>
           <article class="value-card">
-            <h3>Work at your pace</h3>
-            <p>The time you get back is yours — for another priority, a customer, careful thinking, or a short break.</p>
+            <h3>Standard text</h3>
+            <p>Insert the same text at your current text cursor, in the document you are working on.</p>
           </article>
         </div>
       </section>
       <!-- HOW IT WORKS -->
       <section id="how-it-works" aria-labelledby="how-it-works-heading" class="how-it-works">
         <h2 id="how-it-works-heading">How Offisen works</h2>
-        <p class="section-intro">From a familiar task to a reusable automation in three clear steps.</p>
+        <p class="section-intro">From a familiar task to a reusable sequence in three steps, with no programming.</p>
         <div class="how-steps">
           <article class="how-step">
             <span class="step-number" aria-hidden="true">1</span>
-            <h3>Show Offisen the task</h3>
-            <p>Start recording and perform the routine in your desktop application as you normally would.</p>
+            <h3>Record the task</h3>
+            <p>Select REC and perform the routine in your desktop application as you normally would.</p>
           </article>
           <article class="how-step">
             <span class="step-number" aria-hidden="true">2</span>
-            <h3>Save the sequence</h3>
-            <p>Give the recorded sequence a clear name and keep it ready for the next time you need it.</p>
+            <h3>Edit and save the sequence</h3>
+            <p>Give it a clear name, and correct text or waits if something needs to change.</p>
           </article>
           <article class="how-step">
             <span class="step-number" aria-hidden="true">3</span>
-            <h3>Let it run again</h3>
-            <p>Start the saved sequence whenever the same routine returns, and pause or stop it when you need control.</p>
+            <h3>Prepare and play it again</h3>
+            <p>Return the target application to the starting state and select PLAY. Repeat it as many times as you choose.</p>
           </article>
         </div>
-        <p class="guide-prompt"><a class="guide-link" href="/guide/">Follow the step-by-step guide <span aria-hidden="true">→</span></a></p>
+        <p class="guide-prompt"><a class="guide-link" href="/guide/#first-automation">Follow the step-by-step guide <span aria-hidden="true">→</span></a></p>
       </section>
       <!-- FEATURES -->
-      <section aria-labelledby="features-heading" class="features">
-        <h2 id="features-heading">Straightforward by design</h2>
+      <section id="features" aria-labelledby="features-heading" class="features">
+        <h2 id="features-heading">Change and combine what you recorded</h2>
         <div class="features-grid" >
           <article class="feature">
-            <h3>No programming required</h3>
-            <p>Create an automation by performing the task instead of writing scripts.</p>
+            <h3>Edit recorded steps</h3>
+            <p>Change typed text and waits, delete steps or insert a new recording, without recording everything again.</p>
+            <p><span class="coming-badge">Coming in version 1.0.9</span> Change the order of steps.</p>
+            <p><a href="/guide/editing-sequences/">Edit a sequence</a></p>
           </article>
           <article class="feature">
-            <h3>Works with desktop applications</h3>
-            <p>Interact directly with application windows and controls, including tools without an API.</p>
+            <h3>Merge saved sequences</h3>
+            <p>Combine sequences into a new one that runs them in order. Your originals stay unchanged.</p>
+            <p><a href="/guide/merging-sequences/">Merge sequences</a></p>
           </article>
           <article class="feature">
-            <h3>Reusable sequences</h3>
-            <p>Save your recorded work and use it again after restarting Offisen.</p>
+            <h3>Attach an optional copy</h3>
+            <p><span class="coming-badge">Coming in version 1.0.9</span> Add a copy of a saved sequence that runs only if its window is open.</p>
+            <p><a href="/guide/attached-sequences/">Attached sequences</a></p>
           </article>
           <article class="feature">
-            <h3>Repeat when needed</h3>
-            <p>Run a sequence once, a chosen number of times, or continuously until you stop it.</p>
+            <h3>See how each run ended</h3>
+            <p>Run History shows the result of every run and its details.</p>
+            <p><span class="coming-badge">Coming in version 1.0.9</span> It also shows which attached sequences ran or were skipped.</p>
+            <p><a href="/guide/run-history/">Run History</a></p>
           </article>
           <article class="feature">
-            <h3>Stay in control</h3>
-            <p>Pause, resume, or stop playback when your workday requires a change of plan.</p>
+            <h3>Choose where text goes</h3>
+            <p>Type in the recorded place, or at the text cursor you are using now.</p>
+            <p><a href="/guide/text-insertion/">Text insertion</a></p>
           </article>
           <article class="feature">
-            <h3>Local by default</h3>
-            <p>Your automation sequences remain stored on your device.</p>
+            <h3>Stored on your device</h3>
+            <p>Your sequences and settings are stored locally. Offisen goes online for Microsoft Store subscription checks, and for optional diagnostic counts only when you confirm sending them.</p>
+            <p><a href="/privacy-policy/">Privacy Policy</a></p>
+          </article>
+        </div>
+      </section>
+      <!-- EXAMPLE -->
+      <section id="example" aria-labelledby="example-heading" class="how-it-works">
+        <h2 id="example-heading">Example: one optional step</h2>
+        <p class="section-intro"><span class="coming-badge">Coming in version 1.0.9</span> You sometimes keep a notes application open, and sometimes not.</p>
+        <div class="how-steps">
+          <article class="how-step">
+            <span class="step-number" aria-hidden="true">1</span>
+            <h3>Main steps run</h3>
+            <p>The main sequence fills in a form in your accounting application.</p>
+          </article>
+          <article class="how-step">
+            <span class="step-number" aria-hidden="true">2</span>
+            <h3>Offisen checks one window</h3>
+            <p>If the right notes window is open, the attached sequence adds a note. If that window is not open, the attached sequence is skipped.</p>
+          </article>
+          <article class="how-step">
+            <span class="step-number" aria-hidden="true">3</span>
+            <h3>Main steps continue</h3>
+            <p>The main sequence goes back to the accounting application and finishes its work.</p>
+          </article>
+        </div>
+        <p class="section-note">A missing window is a normal skip. It is different when several windows fit, when the check itself fails, or when the window closes during the attached sequence: Offisen then stops the run instead of guessing. The check covers only whether that window is open, so Offisen does not evaluate other conditions or adapt to changes in an application.</p>
+      </section>
+      <!-- CONTROL -->
+      <section id="control" aria-labelledby="control-heading" class="features">
+        <h2 id="control-heading">You stay in control of playback</h2>
+        <div class="features-grid" >
+          <article class="feature">
+            <h3>Pause, resume or stop</h3>
+            <p>Pause a run, resume it when you are ready, or stop it whenever plans change.</p>
+          </article>
+          <article class="feature">
+            <h3>Check the results</h3>
+            <p>Run History shows which runs succeeded, failed or were stopped, so you know where to look.</p>
+          </article>
+          <article class="feature">
+            <h3>Target safety checks</h3>
+            <p>Offisen checks its target windows and stops when it cannot identify one safely, to avoid sending input to the wrong place. Some steps may already have run by then.</p>
+          </article>
+          <article class="feature">
+            <h3>Watch the first run</h3>
+            <p>Observe the first run of every new or edited sequence, and test it with data that is safe to change.</p>
+          </article>
+        </div>
+      </section>
+      <!-- PRICING -->
+      <section id="pricing" aria-labelledby="pricing-heading" class="value">
+        <h2 id="pricing-heading">Subscription</h2>
+        <p class="section-intro">Offisen is free to download, but it is not a permanently free app. Recording and playback require an active monthly subscription. Without one, you can still view your saved sequences.</p>
+        <div class="value-grid">
+          <article class="value-card">
+            <h3>Free first month</h3>
+            <p>Try Offisen free for one month through Microsoft Store, when the offer is available for your account. The Store button may say “Buy”.</p>
+          </article>
+          <article class="value-card">
+            <h3>Then monthly</h3>
+            <p>After the free month, the subscription renews automatically. Microsoft Store shows the price for your region before you confirm.</p>
+          </article>
+          <article class="value-card">
+            <h3>Cancel any time</h3>
+            <p>Cancel in your <a href="https://account.microsoft.com/services" target="_blank" rel="noopener">Microsoft account (opens in new tab)</a>. If you cancel before the free month ends, you won't be charged.</p>
           </article>
         </div>
       </section>
       <!-- TIME FOR YOU -->
       <section id="time-for-you" aria-labelledby="time-for-you-heading" class="time-for-you">
         <h2 id="time-for-you-heading">A little time for yourself.</h2>
-        <p>Record your routine once and let Offisen repeat it as many times as you need.</p>
+        <p>Record your routine once and let Offisen repeat it as many times as you choose.</p>
         <p>While it handles the familiar steps, stretch, have some water, or take a moment to breathe.</p>
         <p class="time-for-you-closing">What you do with the time you save is up to you.<br>Maybe all anyone notices is your smile.</p>
       </section>
       <!-- CTA -->
       <section aria-labelledby="cta-heading" class="cta">
         <h2 id="cta-heading">Do it once. Let Offisen repeat it.</h2>
-        <p>Offisen for Windows is being prepared for release on Microsoft Store.</p>
-        <span class="cta-status">Coming soon</span>
+        <p>Offisen for Windows is available on Microsoft Store, with a free first month when the offer is available for your account.</p>
+        <a class="cta-button" href="https://apps.microsoft.com/detail/9NQ13MNJ5KTF" target="_blank" rel="noopener">Get Offisen from Microsoft Store</a>
       </section>
     </main>
     <!-- FOOTER -->
@@ -223,8 +299,9 @@
             <h4>Resources</h4>
             <p><a href="/guide/">User Guide</a></p>
             <p><a href="/support/codes/">Diagnostic codes</a></p>
+            <p><a href="/support/optional-diagnostics/">Optional diagnostic data</a></p>
             <p><a href="https://github.com/rudolfmend" target="_blank" rel="noopener" aria-label="Visit our GitHub profile (opens in new tab)">GitHub</a></p>
-            <p>Microsoft Store — coming soon</p>
+            <p><a href="https://apps.microsoft.com/detail/9NQ13MNJ5KTF" target="_blank" rel="noopener">Microsoft Store</a></p>
           </div>
           <div class="footer-section">
             <h4>Legal</h4>
@@ -233,10 +310,11 @@
         </div>
       </nav>
       <div class="footer-bottom">
-        <p>&copy; 2026 Offisen. &nbsp; All rights reserved. &nbsp; Designed by Rudolf Mendzezof</p>
+        <p>&copy; 2026 Rudolf Mendzezof. All rights reserved.</p>
       </div>
     </footer>
   </div>
-  <script src="/JS/theme.js" defer></script>
+  <script src="/JS/theme.js?v=2" defer></script>
+
 </body>
 </html>

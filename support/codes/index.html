@@ -7,7 +7,7 @@
   <title>Offisen Diagnostic Codes | Support</title>
   <meta name="description" content="Find explanations and recommended actions for every public Offisen diagnostic code.">
   <meta name="robots" content="index, follow">
-  <meta name="color-scheme" content="light dark">
+  <meta name="color-scheme" content="light">
   <meta name="theme-color" content="#38bdf8">
 
   <link rel="canonical" href="https://www.offisen.app/support/codes/">
@@ -16,7 +16,8 @@
   <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
   <link rel="manifest" href="/assets/favicon/site.webmanifest">
-  <link rel="stylesheet" href="/CSS/style.css?v=10">
+  <script src="/JS/theme-init.js?v=1"></script>
+  <link rel="stylesheet" href="/CSS/style.css?v=12">
 
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.offisen.app/support/codes/">
@@ -27,8 +28,8 @@
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <button class="theme-toggle" aria-label="Toggle light and dark mode">
-    <span id="theme-icon">🌙</span>
+  <button class="theme-toggle" aria-label="Switch to dark theme" title="Switch to dark theme">
+    <span id="theme-icon" aria-hidden="true">🌙</span>
   </button>
 
   <div class="container page-docs">
@@ -45,6 +46,7 @@
         <h2 id="find-code-heading">Find your code</h2>
         <p>Codes stay the same in every Offisen language. Select the exact <strong>OFS-XXXX</strong> code shown in the problem dialog or diagnostic report.</p>
         <p>Blocking errors stop an unsafe action. Warnings explain a limitation or changed behavior but may allow the operation to continue.</p>
+        <p>A copied or exported diagnostic report can contain technical context beyond the code and count. Review it before sharing. The privacy labels on individual code pages describe support-report context. Optional diagnostic-summary uploads contain only the app version, code, severity and count, and a random one-time batch identifier. See the <a href="/support/optional-diagnostics/">optional diagnostics explanation</a> and <a href="/privacy-policy/#diagnostics-heading">Privacy Policy</a>.</p>
       </section>
 
       <section aria-labelledby="environment-permissions-and-input">
@@ -55,6 +57,8 @@
             <tbody>
               <tr><td><a href="/support/codes/OFS-1001/">OFS-1001</a></td><td>Target application requires higher permissions</td><td>Blocking error</td></tr>
               <tr><td><a href="/support/codes/OFS-1103/">OFS-1103</a></td><td>Keyboard layout could not be identified</td><td>Warning</td></tr>
+              <tr><td><a href="/support/codes/OFS-1104/">OFS-1104</a></td><td>Key input may be incomplete</td><td>Blocking error</td></tr>
+              <tr><td><a href="/support/codes/OFS-1105/">OFS-1105</a></td><td>Key press may have taken effect</td><td>Blocking error</td></tr>
               <tr><td><a href="/support/codes/OFS-1202/">OFS-1202</a></td><td>FilterKeys may affect keyboard input</td><td>Warning</td></tr>
               <tr><td><a href="/support/codes/OFS-1301/">OFS-1301</a></td><td>Input method (IME) text may not be captured correctly</td><td>Warning</td></tr>
               <tr><td><a href="/support/codes/OFS-1402/">OFS-1402</a></td><td>Pointer position could not be converted</td><td>Blocking error</td></tr>
@@ -124,10 +128,11 @@
 
     <footer>
       <p><a href="/guide/">User Guide</a> · <a href="/">Offisen homepage</a> · <a href="/privacy-policy/">Privacy Policy</a></p>
-      <p>&copy; 2026 Offisen. All rights reserved. Designed by Rudolf Mendzezof</p>
+      <p>&copy; 2026 Rudolf Mendzezof. All rights reserved.</p>
     </footer>
   </div>
 
-  <script src="/JS/theme.js" defer></script>
+  <script src="/JS/theme.js?v=2" defer></script>
+
 </body>
 </html>

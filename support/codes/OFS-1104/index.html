@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>OFS-1104: Key input may be incomplete | Offisen Support</title>
+  <meta name="description" content="What Offisen error OFS-1104 means when a key press may have been sent and the release of all keys could not be confirmed.">
+  <meta name="robots" content="index, follow">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#38bdf8">
+
+  <link rel="canonical" href="https://www.offisen.app/support/codes/OFS-1104/">
+  <link rel="icon" type="image/x-icon" href="/assets/favicon/favicon.ico">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="/assets/favicon/site.webmanifest">
+  <script src="/JS/theme-init.js?v=1"></script>
+  <link rel="stylesheet" href="/CSS/style.css?v=12">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.offisen.app/support/codes/OFS-1104/">
+  <meta property="og:title" content="OFS-1104: Key input may be incomplete">
+  <meta property="og:description" content="A key press may have been sent completely or only in part, and Offisen could not confirm that all keys were released. Offisen did not repeat it and stopped playback.">
+  <meta property="og:image" content="https://www.offisen.app/assets/Offisen-hero-trsp-bg-2048x2048.webp">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <button class="theme-toggle" aria-label="Switch to dark theme" title="Switch to dark theme">
+    <span id="theme-icon" aria-hidden="true">🌙</span>
+  </button>
+
+  <div class="container page-docs">
+    <a href="/support/codes/" class="back-link" aria-label="Go back to all diagnostic codes">← All diagnostic codes</a>
+
+    <header>
+      <span class="error-code">OFS-1104</span>
+      <h1>Key input may be incomplete</h1>
+      <p class="subtitle">A key press may have been sent completely or only in part, and Offisen could not confirm that all keys were released. Offisen did not repeat the key press and stopped playback.</p>
+    </header>
+
+    <main id="main-content">
+      <section class="support-summary" aria-labelledby="meaning-heading">
+        <h2 id="meaning-heading">What this means</h2>
+        <p>While playing a key or a shortcut such as Ctrl+V or Enter, Offisen could not tell how much of it was sent. The key press may already have taken effect in the target application, or it may not have.</p>
+        <p>Offisen also could not confirm that every key was released, so Ctrl, Shift or Alt may still be held down in Windows.</p>
+        <p>Offisen does not repeat the key press, because repeating it could paste, confirm or delete a second time. Playback stops even when <strong>Stop sequence when a command fails</strong> is turned off.</p>
+      </section>
+
+      <section class="support-action" aria-labelledby="action-heading">
+        <h2 id="action-heading">What to do</h2>
+        <ol>
+          <li>Do not run the sequence again yet. Earlier steps and this key press may already have taken effect, and a new run would perform them again.</li>
+          <li>Check the result in the target application. For example, text may already be pasted, or a dialog may already be confirmed.</li>
+          <li>Press and release Ctrl, Shift and Alt once, so that no modifier key stays held down.</li>
+          <li>Correct the target application if needed. Run playback again only when the sequence can safely start from that state.</li>
+        </ol>
+      </section>
+
+      <section aria-labelledby="why-heading">
+        <h2 id="why-heading">Why this can happen</h2>
+        <ul>
+          <li>Windows accepted only part of the key press.</li>
+          <li>The request to send the key press ended without a clear result.</li>
+          <li>Offisen tried to release the keys, but the release failed or its result is unknown.</li>
+          <li>Offisen has no record of how the key press ended.</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="example-heading">
+        <h2 id="example-heading">Example</h2>
+        <p>A sequence presses Ctrl+V and the code appears. The text may be pasted, may not be pasted, and Ctrl may still be held down. If you pressed Ctrl+V or ran the sequence again without checking, the text could appear twice.</p>
+      </section>
+
+      <section aria-labelledby="difference-heading">
+        <h2 id="difference-heading">How this differs from OFS-1105</h2>
+        <p>Both codes mean that a key press may have taken effect and was not repeated. Offisen reports <strong>OFS-1104</strong> when the release of all keys could not be confirmed. It reports <a href="/support/codes/OFS-1105/">OFS-1105</a> when it sent a release for all of the keys.</p>
+      </section>
+
+      <section aria-labelledby="details-heading">
+        <h2 id="details-heading">Diagnostic details</h2>
+        <p>Windows reports how many keyboard events it placed in its input stream. It does not report whether the target application received or acted on them, so this code never confirms what happened in that application.</p>
+        <div class="table-scroll" role="region" aria-label="OFS-1104 diagnostic details" tabindex="0">
+          <table class="details-table">
+            <tbody>
+              <tr><th scope="row">Code</th><td>OFS-1104</td></tr>
+              <tr><th scope="row">Symbol</th><td>KeyboardInputIncomplete</td></tr>
+              <tr><th scope="row">Domain</th><td>Keyboard and layout</td></tr>
+              <tr><th scope="row">Layer</th><td>Command execution</td></tr>
+              <tr><th scope="row">Phase</th><td>Playback</td></tr>
+              <tr><th scope="row">Severity</th><td>Blocking error</td></tr>
+              <tr><th scope="row">Retryable</th><td>No; the key press is not repeated</td></tr>
+              <tr><th scope="row">Privacy</th><td>Safe support context: command type, event counts and modifier names such as Ctrl+Shift. It does not contain the key, typed text, clipboard content or window titles.</td></tr>
+              <tr><th scope="row">Safety policy</th><td>Playback always stops</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section aria-labelledby="support-heading">
+        <h2 id="support-heading">If the problem continues</h2>
+        <p>Check whether security tools, remote-desktop software or other software that intercepts input is filtering simulated keys. Also check whether the target application runs with higher permissions than Offisen; see <a href="/support/codes/OFS-1001/">OFS-1001</a>.</p>
+        <p>Include the error code, correlation ID, timestamp, Offisen version, target application when relevant, and a short description of what happened. Review the report before sharing it and remove anything you do not want to send.</p>
+        <p>Contact <a href="mailto:info@offisen.app">info@offisen.app</a>.</p>
+      </section>
+    </main>
+
+    <footer>
+      <p><a href="/support/codes/">Diagnostic codes</a> · <a href="/guide/">User Guide</a> · <a href="/">Offisen homepage</a> · <a href="/privacy-policy/">Privacy Policy</a></p>
+      <p>&copy; 2026 Rudolf Mendzezof. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script src="/JS/theme.js?v=2" defer></script>
+</body>
+</html>

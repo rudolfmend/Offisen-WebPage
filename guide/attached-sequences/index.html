@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Attached sequences with a condition | Offisen User Guide</title>
+  <meta name="description" content="Add an optional copy of a saved Offisen sequence that runs only if its window is open, and learn when it is skipped or stops the run.">
+  <meta name="robots" content="index, follow">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#38bdf8">
+
+  <link rel="canonical" href="https://www.offisen.app/guide/attached-sequences/">
+  <link rel="icon" type="image/x-icon" href="/assets/favicon/favicon.ico">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="/assets/favicon/site.webmanifest">
+  <script src="/JS/theme-init.js?v=1"></script>
+  <link rel="stylesheet" href="/CSS/style.css?v=12">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.offisen.app/guide/attached-sequences/">
+  <meta property="og:title" content="Attached sequences with a condition | Offisen User Guide">
+  <meta property="og:description" content="Add optional steps that run only when their window is open.">
+  <meta property="og:image" content="https://www.offisen.app/assets/Offisen-hero-trsp-bg-2048x2048.webp">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <button class="theme-toggle" aria-label="Switch to dark theme" title="Switch to dark theme">
+    <span id="theme-icon" aria-hidden="true">🌙</span>
+  </button>
+
+  <div class="container page-docs">
+    <a href="/guide/" class="back-link" aria-label="Go back to the User Guide">← User Guide</a>
+
+    <header>
+      <p class="eyebrow">Offisen User Guide</p>
+      <h1>Attached sequences with a condition</h1>
+      <p class="subtitle">Add optional steps that run only when their window is open.</p>
+    </header>
+
+    <main id="main-content">
+      <nav class="docs-nav" aria-label="Guide chapters">
+        <strong>Guide chapters</strong>
+        <ul>
+          <li><a href="/guide/editing-sequences/">Edit a sequence</a></li>
+          <li><a href="/guide/merging-sequences/">Merge sequences</a></li>
+          <li><a href="/guide/text-insertion/">Text insertion</a></li>
+          <li><a href="/guide/attached-sequences/" aria-current="page">Attached sequences</a></li>
+          <li><a href="/guide/run-history/">Run History</a></li>
+          <li><a href="/guide/workday-timer/">Workday &amp; Timer</a></li>
+        </ul>
+      </nav>
+
+      <p class="coming-note"><span class="coming-badge">Coming in version 1.0.9</span> Everything on this page describes a future version. It is not available in Offisen 1.0.8.0.</p>
+
+      <section class="support-summary" aria-labelledby="purpose-heading">
+        <h2 id="purpose-heading">What it does</h2>
+        <p>An attached sequence is a saved copy of another sequence, placed inside the sequence you are editing. When playback reaches it, Offisen checks whether its window is open. If it is, the copy runs. If not, the copy is skipped and the run continues.</p>
+        <h3>Example</h3>
+        <ol>
+          <li>The main sequence fills in a form in your accounting application.</li>
+          <li>An attached sequence adds a note in a second application. It runs only if that application's window is open, and is skipped otherwise.</li>
+          <li>The main sequence continues in the accounting application and selects <strong>Save</strong>.</li>
+        </ol>
+      </section>
+
+      <section aria-labelledby="attach-heading">
+        <h2 id="attach-heading">Attach a sequence</h2>
+        <ol>
+          <li><a href="/guide/editing-sequences/#open-heading">Open the Sequence Editor</a>.</li>
+          <li>Select <strong>Attach sequence</strong> on a card, or <strong>Attach sequence at the start</strong> above the steps.</li>
+          <li>Choose a saved sequence.</li>
+          <li>Under <strong>Which window meets the condition</strong>, choose an option and read the condition shown.</li>
+          <li>Select <strong>Apply</strong>, then save the sequence.</li>
+        </ol>
+        <p>A card appears with a caption such as <strong>Attached sequence “Add note” – plays only if the window “Notes” is open</strong>. Its first and last steps are shown as <strong>Window check</strong> and <strong>End of the attached sequence</strong>.</p>
+        <p>The steps are copied. Later changes to the original do not change the copy, and deleting the original does not remove it. The playback settings of the original are not used; the settings of the main sequence apply.</p>
+      </section>
+
+      <section aria-labelledby="condition-heading">
+        <h2 id="condition-heading">Which window meets the condition</h2>
+        <p>Choose <strong>Only the window with exactly this title</strong> when the title identifies the right window. It is the default. Choose <strong>Any window of the same application</strong> when the title changes, for example with the open document.</p>
+        <div class="table-scroll" role="region" aria-label="Results of the window check" tabindex="0">
+          <table class="details-table">
+            <thead><tr><th scope="col">Open windows</th><th scope="col">Only the window with exactly this title</th><th scope="col">Any window of the same application</th></tr></thead>
+            <tbody>
+              <tr><td>No matching window</td><td>Skipped. A window with a different title does not match.</td><td>Skipped.</td></tr>
+              <tr><td>One matching window</td><td>Runs.</td><td>Runs, whatever the title.</td></tr>
+              <tr><td>Several windows</td><td>Stops with <a href="/support/codes/OFS-1806/">OFS-1806</a> if several match equally well.</td><td>The recorded title decides. If none or several of them have it, stops with <a href="/support/codes/OFS-1806/">OFS-1806</a>.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Offisen never guesses between windows and does not choose the most recently used one.</p>
+      </section>
+
+      <section aria-labelledby="check-heading">
+        <h2 id="check-heading">How the check works</h2>
+        <ul>
+          <li><strong>One check, no waiting.</strong> Offisen checks once when playback reaches the copy. It does not wait for the window to open, so add a wait before the copy if the window needs time.</li>
+          <li><strong>Every repeat checks again.</strong> When the main sequence repeats, the copy can run in one repeat and be skipped in another.</li>
+          <li><strong>The start is not affected.</strong> The copy's windows are not checked before the run starts, also with <strong>Run only if target is ready</strong>.</li>
+          <li><strong>A window is not the same as ready.</strong> The condition confirms that the window is there. It does not confirm that buttons or fields inside it are ready. The copy's steps go through the usual playback checks.</li>
+          <li><strong>Other windows are not part of the condition.</strong> When the editor says that steps look for their window on their own, those steps find their window when they run. If that fails, the run can stop.</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="result-heading">
+        <h2 id="result-heading">Run, skip or stop</h2>
+        <div class="table-scroll" role="region" aria-label="Possible results" tabindex="0">
+          <table class="details-table">
+            <thead><tr><th scope="col">Situation</th><th scope="col">Result</th></tr></thead>
+            <tbody>
+              <tr><td>The window is found</td><td>The copy runs, then the main sequence continues.</td></tr>
+              <tr><td>The window is not open</td><td>The copy is skipped and the main sequence continues. This is not an error. <a href="/guide/run-history/">Run History</a> records it.</td></tr>
+              <tr><td>Several windows fit and none can be chosen</td><td>The whole run stops with <a href="/support/codes/OFS-1806/">OFS-1806</a>.</td></tr>
+              <tr><td>The check itself fails, or the window changes while it is being confirmed</td><td>The whole run stops with <a href="/support/codes/OFS-1809/">OFS-1809</a>. This does not prove that the window is missing.</td></tr>
+              <tr><td>The window closes or changes after the copy has started</td><td>The whole run stops with <a href="/support/codes/OFS-1809/">OFS-1809</a>. The rest of the copy is not skipped, and nothing is typed elsewhere.</td></tr>
+              <tr><td>An ordinary command in the copy fails</td><td>The <strong>Stop sequence when a command fails</strong> setting of the main sequence decides.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>These safety stops end the run even when <strong>Stop sequence when a command fails</strong> is off. Stopping playback yourself also ends the whole run. Keep the copy's window open until the run finishes.</p>
+      </section>
+
+      <section aria-labelledby="edit-heading">
+        <h2 id="edit-heading">Change a copy</h2>
+        <div class="table-scroll" role="region" aria-label="Supported changes" tabindex="0">
+          <table class="details-table">
+            <thead><tr><th scope="col">Change</th><th scope="col">How it works</th></tr></thead>
+            <tbody>
+              <tr><td>Text and waits</td><td><strong>Edit text</strong> and <strong>Edit wait</strong> work on steps inside the copy. No other step inside it can be changed, inserted or removed.</td></tr>
+              <tr><td>Condition</td><td><strong>Change condition</strong> changes only the condition and works without the original. If the window has no application name, only its exact title can be checked.</td></tr>
+              <tr><td>Delete</td><td>Delete removes the whole copy.</td></tr>
+              <tr><td>Move</td><td><strong>Move up</strong> and <strong>Move down</strong> move the whole copy. In a sequence with parts, the copy is its own part and does not move.</td></tr>
+              <tr><td>Update</td><td><strong>Update from original</strong> replaces the copy with the current steps of the saved sequence. <strong>Changes made to the copy, such as texts and waits, are lost.</strong> It is offered only if a saved file with the original's name exists.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Each of these changes is one <strong>Undo</strong> step and takes effect when you save. Steps after an attached copy get new numbers, so their target check exceptions end. See <a href="/guide/editing-sequences/#effects-heading">What saving changes</a>.</p>
+      </section>
+
+      <section aria-labelledby="limits-heading">
+        <h2 id="limits-heading">Limits</h2>
+        <ul>
+          <li><strong>One level only:</strong> a sequence that already contains an attached sequence cannot be attached.</li>
+          <li><strong>Text insertion:</strong> only a sequence that inserts text as recorded can be attached, and the copy always plays that way. The main sequence can still use the current cursor. See <a href="/guide/text-insertion/#attached-heading">Text insertion after an attached sequence</a>.</li>
+          <li><strong>No application launch:</strong> a sequence with a step that starts an application cannot be attached.</li>
+          <li><strong>A window to check:</strong> the sequence needs a step in a window with a title.</li>
+          <li><strong>Merging:</strong> a sequence containing an attached sequence <a href="/guide/merging-sequences/#limits-heading">cannot be merged</a>.</li>
+          <li><strong>Parts:</strong> in a sequence with parts, the copy becomes its own part and new steps cannot be inserted into it.</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="compatibility-heading">
+        <h2 id="compatibility-heading">Using the file in other versions</h2>
+        <p>A sequence with an attached copy is saved in a newer file format. Offisen 1.0.8.0 and earlier do not list that file, do not play it and do not change it. Keep this in mind when you share the file with someone on an older version, or return to one yourself.</p>
+        <p>Sequences without an attached copy keep their existing format.</p>
+      </section>
+    </main>
+
+    <footer>
+      <p><a href="/guide/">User Guide</a> · <a href="/support/codes/">Diagnostic codes</a> · <a href="/">Offisen homepage</a> · <a href="/privacy-policy/">Privacy Policy</a></p>
+      <p>&copy; 2026 Rudolf Mendzezof. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script src="/JS/theme.js?v=2" defer></script>
+</body>
+</html>

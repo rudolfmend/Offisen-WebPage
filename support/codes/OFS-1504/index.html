@@ -7,7 +7,7 @@
   <title>OFS-1504: Current text cursor position could not be used | Offisen Support</title>
   <meta name="description" content="How to resolve Offisen error OFS-1504 when Use current text cursor position has no verified editable target.">
   <meta name="robots" content="index, follow">
-  <meta name="color-scheme" content="light dark">
+  <meta name="color-scheme" content="light">
   <meta name="theme-color" content="#38bdf8">
 
   <link rel="canonical" href="https://www.offisen.app/support/codes/OFS-1504/">
@@ -16,7 +16,8 @@
   <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
   <link rel="manifest" href="/assets/favicon/site.webmanifest">
-  <link rel="stylesheet" href="/CSS/style.css?v=10">
+  <script src="/JS/theme-init.js?v=1"></script>
+  <link rel="stylesheet" href="/CSS/style.css?v=12">
 
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.offisen.app/support/codes/OFS-1504/">
@@ -27,8 +28,8 @@
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <button class="theme-toggle" aria-label="Toggle light and dark mode">
-    <span id="theme-icon">🌙</span>
+  <button class="theme-toggle" aria-label="Switch to dark theme" title="Switch to dark theme">
+    <span id="theme-icon" aria-hidden="true">🌙</span>
   </button>
 
   <div class="container page-docs">
@@ -37,23 +38,26 @@
     <header>
       <span class="error-code">OFS-1504</span>
       <h1>Current text cursor position could not be used</h1>
-      <p class="subtitle">“Use current text cursor position” is enabled, but Offisen could not confirm a valid editable field in the application currently in focus.</p>
+      <p class="subtitle">The sequence inserts text at the current text cursor, but Offisen could not safely confirm an editable field to type into. Playback was stopped.</p>
     </header>
 
     <main id="main-content">
       <section class="support-summary" aria-labelledby="meaning-heading">
         <h2 id="meaning-heading">What this means</h2>
-        <p>This mode intentionally uses the field that is focused at playback time instead of activating the originally recorded field. Offisen found no recognizable editable target and therefore sent no text or key input.</p>
+        <p>With <strong>Text insertion</strong> set to <strong>Current at start</strong> or <strong>Always current</strong>, a text block can use the field that is active during playback instead of the recorded field. Offisen found no safe editable target for this step, so it sent no input for the step and ended the run.</p>
+        <p>The run is over and cannot be resumed. Text typed by earlier steps of the same run may already be in the field. The problem dialog may call this setting “Use current text cursor position”.</p>
       </section>
 
       <section class="support-action" aria-labelledby="action-heading">
         <h2 id="action-heading">What to do</h2>
         <ol>
-          <li>Open the application where the text should be entered.</li>
+          <li>Check the target application for text or changes made by earlier steps, and correct them if necessary.</li>
+          <li>Prepare the application so the sequence can start again from its beginning.</li>
           <li>Click directly inside the intended editable text field so the caret is visible.</li>
-          <li>Resume or retry playback.</li>
-          <li>If the problem continues, turn off “Use current text cursor position” for this recording and use its recorded target instead.</li>
+          <li>Start a new run.</li>
+          <li>If the problem continues, set <strong>Text insertion</strong> to <strong>Recorded</strong> for this sequence so it uses its recorded target.</li>
         </ol>
+        <p>Read <a href="/guide/text-insertion/#target-heading">When Offisen chooses the field</a> for details.</p>
       </section>
 
       <section aria-labelledby="why-heading">
@@ -63,7 +67,14 @@
           <li>The focused control is not recognized as editable.</li>
           <li>Focus moved back to Offisen or to a non-editable part of the target application.</li>
           <li>The target application exposes insufficient focus information.</li>
+          <li>The field remembered at the start of the run could no longer be restored.</li>
         </ul>
+      </section>
+
+      <section aria-labelledby="attached-heading">
+        <h2 id="attached-heading">After an attached sequence <span class="coming-badge">Coming in version 1.0.9</span></h2>
+        <p>An <a href="/guide/attached-sequences/">attached sequence</a> that ran can move the foreground to its own window. The next current-cursor text therefore goes back to the field remembered at the start of the run. If that field cannot be restored, for example because it was closed while the attached sequence played, Offisen shows this code and types nothing into any other window.</p>
+        <p>Keep the original field open until the run finishes. If you want the next text to go elsewhere, use <strong>Recorded</strong> for that part of the work. An attached sequence that was skipped does not cause this situation.</p>
       </section>
 
       <section aria-labelledby="example-heading">
@@ -100,10 +111,10 @@
 
     <footer>
       <p><a href="/support/codes/">Diagnostic codes</a> · <a href="/guide/">User Guide</a> · <a href="/">Offisen homepage</a> · <a href="/privacy-policy/">Privacy Policy</a></p>
-      <p>&copy; 2026 Offisen. All rights reserved. Designed by Rudolf Mendzezof</p>
+      <p>&copy; 2026 Rudolf Mendzezof. All rights reserved.</p>
     </footer>
   </div>
 
-  <script src="/JS/theme.js" defer></script>
+  <script src="/JS/theme.js?v=2" defer></script>
 </body>
 </html>
