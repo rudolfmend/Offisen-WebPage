@@ -1,0 +1,25 @@
+/* Homepage-only enhancement. Existing chapter styles remain untouched. */
+.homepage .section-nav { max-width: 100%; gap: 8px clamp(8px, 1.6vw, 24px); }
+.homepage .section-nav a { padding-inline: 10px; white-space: nowrap; }
+.homepage .reveal-scene { position: relative; isolation: isolate; overflow: hidden; border-radius: 20px; margin: 0 0 80px; min-height: 680px; display: flex; align-items: center; padding: 64px 32px; }
+.reveal-image { position: absolute; inset: -100px 0; z-index: -1; background: url('../assets/offisen-parallax.webp') center / cover no-repeat; pointer-events: none; }
+.reveal-scene.is-animated .reveal-image { opacity: 0; will-change: transform, opacity; }
+.homepage .reveal-scene .hero { width: 44%; margin: 0; padding: 28px; text-align: left; background: #f8fafc; }
+.homepage .reveal-scene .hero h2 { font-size: clamp(1.5rem, 2.4vw, 2rem); }
+.homepage .reveal-scene .hero p { font-size: 1.05rem; }
+html[data-theme="dark"] .homepage .reveal-scene .hero { background: #0f172a; }
+@media (min-width: 1000px) { .homepage .section-nav { flex-wrap: nowrap; } }
+@media (max-width: 999px) {
+  .homepage .section-nav { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+  .homepage .reveal-scene { display: block; min-height: 0; padding: 0; }
+  .reveal-image { position: relative; inset: auto; height: clamp(260px, 55vw, 480px); background-position: 72% center; }
+  .homepage .reveal-scene .hero { width: 100%; border-radius: 0 0 20px 20px; padding: 28px; }
+}
+@media (max-width: 580px) {
+  .homepage .section-nav { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .homepage .section-nav a { white-space: normal; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal-scene.is-animated .reveal-image { opacity: 1; transform: none; will-change: auto; }
+}
+@media (forced-colors: active) { .reveal-image { display: none; } .homepage .reveal-scene { min-height: 0; } .homepage .reveal-scene .hero { width: 100%; } }
