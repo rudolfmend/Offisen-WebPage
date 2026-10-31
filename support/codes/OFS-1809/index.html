@@ -16,7 +16,7 @@
   <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
   <link rel="manifest" href="/assets/favicon/site.webmanifest">
-  <link rel="stylesheet" href="/CSS/style.css?v=10">
+  <link rel="stylesheet" href="/CSS/style.css?v=11">
 
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.offisen.app/support/codes/OFS-1809/">
@@ -60,6 +60,29 @@
       <section aria-labelledby="example-heading">
         <h2 id="example-heading">Example</h2>
         <p>If a sequence was recorded in a browser window and that window is now closed, renamed, or displaying a different application state, Offisen may be unable to resolve it safely. Open the intended browser window, return to the expected page, and retry.</p>
+      </section>
+
+      <section aria-labelledby="attached-heading">
+        <h2 id="attached-heading">With attached sequences <span class="coming-badge">Coming in version 1.0.9</span></h2>
+        <p>An <a href="/guide/attached-sequences/">attached sequence</a> runs only if its window is open. A window that is simply not open is a normal skip, not this error. The cases below differ:</p>
+        <div class="table-scroll" role="region" aria-label="Attached sequence results" tabindex="0">
+          <table class="details-table">
+            <thead><tr><th scope="col">Situation</th><th scope="col">Result</th></tr></thead>
+            <tbody>
+              <tr><td>Offisen checked the open windows and the window is not among them</td><td>The attached sequence is skipped and the run continues. No code appears.</td></tr>
+              <tr><td>The check itself failed, for example Windows could not list the open windows</td><td>OFS-1809. This is not evidence that the window does not exist, so the attached sequence is not treated as skipped.</td></tr>
+              <tr><td>The window changed while Offisen was confirming it</td><td>OFS-1809.</td></tr>
+              <tr><td>The attached sequence already started and its window closed or changed</td><td>OFS-1809. Its remaining steps are not treated as skipped, and Offisen does not look for another window.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Each of these errors ends the whole run, even when <strong>Stop sequence when a command fails</strong> is off.</p>
+        <ol>
+          <li>Check the target applications, because the main sequence and part of the attached sequence may already have run.</li>
+          <li>If its window closed, keep it open during the next run.</li>
+          <li>If the check failed, start again once you have checked the applications. If it repeats, keep the report and contact support.</li>
+        </ol>
+        <p>Multiple matching windows are a different problem; see <a href="/support/codes/OFS-1806/">OFS-1806</a>.</p>
       </section>
 
       <section aria-labelledby="details-heading">

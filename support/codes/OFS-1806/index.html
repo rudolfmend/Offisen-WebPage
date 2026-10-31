@@ -16,7 +16,7 @@
   <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
   <link rel="manifest" href="/assets/favicon/site.webmanifest">
-  <link rel="stylesheet" href="/CSS/style.css?v=10">
+  <link rel="stylesheet" href="/CSS/style.css?v=11">
 
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.offisen.app/support/codes/OFS-1806/">
@@ -49,7 +49,7 @@
       <section class="support-action" aria-labelledby="action-heading">
         <h2 id="action-heading">What to do</h2>
         <ol>
-          <li>Identify the windows belonging to the recorded target application.</li>
+          <li>Check which windows are open before starting again. Identify the ones belonging to the recorded target application.</li>
           <li>Close the extra matching window or change its title or state so the intended target is unique.</li>
           <li>Bring the intended window to the expected starting screen.</li>
           <li>Retry playback.</li>
@@ -69,6 +69,15 @@
       <section aria-labelledby="example-heading">
         <h2 id="example-heading">Example</h2>
         <p>Two browser windows display the same page title. Both match the recorded target equally well, so Offisen refuses to choose one and risk entering data into the wrong window.</p>
+      </section>
+
+      <section aria-labelledby="attached-heading">
+        <h2 id="attached-heading">During an attached sequence check <span class="coming-badge">Coming in version 1.0.9</span></h2>
+        <p>The same protection applies when playback reaches an <a href="/guide/attached-sequences/">attached sequence</a>. If its window cannot be identified uniquely, the attached sequence neither runs nor counts as skipped. The whole run ends, even when <strong>Stop sequence when a command fails</strong> is off.</p>
+        <p>The duplicate window may belong to the attached sequence, not to the main sequence.</p>
+        <h3>“Any window of the same application” is not a random choice</h3>
+        <p>With <strong>Any window of the same application</strong>, one open window of that application is enough, whatever its title. With several open windows, the recorded title decides. If none of them or more than one has that title, Offisen shows this code. It never picks a window at random or chooses the most recently used one.</p>
+        <p>Before starting again, keep only one window of that application open, or keep open the one window with the recorded title.</p>
       </section>
 
       <section aria-labelledby="details-heading">
