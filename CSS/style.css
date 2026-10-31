@@ -811,3 +811,18 @@ html:not([data-theme="light"]) .homepage .time-for-you .time-for-you-closing { c
 .page-docs main a[aria-current="page"] { font-weight: 700; text-decoration: none; }
 .coming-badge { display: inline-block; padding: 0.05rem 0.5rem; border: 1px solid var(--color-accent); border-radius: 0.4rem; background: var(--color-card); color: var(--color-text-main); font-size: 0.85rem; font-weight: 600; line-height: 1.5; white-space: normal; }
 .coming-note { padding: 0.65rem 0.85rem; border-left: 4px solid var(--color-accent); background: var(--color-card); }
+.homepage .header-cta { margin: 20px 0 12px; }
+.homepage .feature p + p { margin-top: 10px; }
+.homepage .section-note { max-width: 800px; margin: 28px auto 0; color: var(--color-text-muted); text-align: center; }
+.homepage .value-card a { overflow-wrap: anywhere; }
+.homepage .feature, .homepage .value-card, .homepage .how-step { min-width: 0; overflow-wrap: break-word; }
+.homepage .cta-button { max-width: 100%; }
+.homepage .cta-button, .homepage .platform-badge { box-sizing: border-box; max-width: 100%; min-width: 0; white-space: normal; }
+.homepage .cta-button { padding-inline: clamp(12px, 4vw, 40px); text-align: center; }
+.homepage .platform-badge > div { min-width: 0; }
+.homepage .platform-badges { flex-wrap: wrap; max-width: 100%; }
+.homepage .features-grid { grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); }
+.homepage .how-steps { grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); }
+.homepage .section-nav a { min-width: 0; overflow-wrap: anywhere; }
+.homepage .footer-content { grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr)); }
+.homepage footer { overflow-wrap: anywhere; }
