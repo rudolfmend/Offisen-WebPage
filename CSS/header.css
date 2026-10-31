@@ -15,6 +15,10 @@
   z-index: 1;
 }
 .homepage header .site-logo img { height: 175px; width: 175px; margin-block: -25px; }
+/* The light logo stays hidden, and lazy, until the dark theme asks for it. */
+.site-logo .logo-on-dark { display: none; }
+html[data-theme="dark"] .site-logo .logo-on-light { display: none; }
+html[data-theme="dark"] .site-logo .logo-on-dark { display: block; }
 .homepage header .section-nav {
   grid-column: 2;
   grid-row: 1;
