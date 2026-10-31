@@ -15,6 +15,48 @@
   </url>
 
   <url>
+    <loc>https://www.offisen.app/guide/editing-sequences/</loc>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.offisen.app/guide/merging-sequences/</loc>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.offisen.app/guide/text-insertion/</loc>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.offisen.app/guide/attached-sequences/</loc>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.offisen.app/guide/run-history/</loc>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.offisen.app/guide/workday-timer/</loc>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://www.offisen.app/support/function-keys/</loc>
     <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
@@ -107,7 +149,7 @@
 
   <url>
     <loc>https://www.offisen.app/support/codes/OFS-1504/</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -156,7 +198,7 @@
 
   <url>
     <loc>https://www.offisen.app/support/codes/OFS-1806/</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -177,7 +219,7 @@
 
   <url>
     <loc>https://www.offisen.app/support/codes/OFS-1809/</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>

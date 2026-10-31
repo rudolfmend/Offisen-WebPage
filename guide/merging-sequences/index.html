@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Merge sequences | Offisen User Guide</title>
+  <meta name="description" content="Combine saved Offisen sequences into a new one, choose their order and waits, and set text insertion for each part.">
+  <meta name="robots" content="index, follow">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#38bdf8">
+
+  <link rel="canonical" href="https://www.offisen.app/guide/merging-sequences/">
+  <link rel="icon" type="image/x-icon" href="/assets/favicon/favicon.ico">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="/assets/favicon/site.webmanifest">
+  <link rel="stylesheet" href="/CSS/style.css?v=11">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.offisen.app/guide/merging-sequences/">
+  <meta property="og:title" content="Merge sequences | Offisen User Guide">
+  <meta property="og:description" content="Combine saved sequences into one new sequence that always runs them in order.">
+  <meta property="og:image" content="https://www.offisen.app/assets/Offisen-hero-trsp-bg-2048x2048.webp">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <button class="theme-toggle" aria-label="Toggle light and dark mode">
+    <span id="theme-icon">🌙</span>
+  </button>
+
+  <div class="container page-docs">
+    <a href="/guide/" class="back-link" aria-label="Go back to the User Guide">← User Guide</a>
+
+    <header>
+      <p class="eyebrow">Offisen User Guide</p>
+      <h1>Merge sequences</h1>
+      <p class="subtitle">Combine saved sequences into one new sequence that always runs them in order.</p>
+    </header>
+
+    <main id="main-content">
+      <nav class="docs-nav" aria-label="Guide chapters">
+        <strong>Guide chapters</strong>
+        <ul>
+          <li><a href="/guide/editing-sequences/">Edit a sequence</a></li>
+          <li><a href="/guide/merging-sequences/" aria-current="page">Merge sequences</a></li>
+          <li><a href="/guide/text-insertion/">Text insertion</a></li>
+          <li><a href="/guide/attached-sequences/">Attached sequences</a></li>
+          <li><a href="/guide/run-history/">Run History</a></li>
+          <li><a href="/guide/workday-timer/">Workday &amp; Timer</a></li>
+        </ul>
+      </nav>
+
+      <section class="support-summary" aria-labelledby="purpose-heading">
+        <h2 id="purpose-heading">When to merge</h2>
+        <p>Merge sequences when the same routines should always run one after another. The result is a new file; the original sequences stay unchanged.</p>
+      </section>
+
+      <section aria-labelledby="create-heading">
+        <h2 id="create-heading">Create a merged sequence</h2>
+        <ol>
+          <li>Choose <strong>Tools → Merge sequences...</strong>, or right-click a sequence and choose <strong>Merge with...</strong>.</li>
+          <li>Under <strong>Saved sequences</strong>, find a sequence and select <strong>Add</strong>. Add at least two. The same sequence can be added more than once.</li>
+          <li>Under <strong>Merge order</strong>, move or remove entries until the order is right.</li>
+          <li>Enter the <strong>Name of the new sequence</strong>.</li>
+          <li>Keep or turn off <strong>Wait between sequences</strong>. It is on by default, for 1 second, and accepts 0.1 to 600 seconds.</li>
+          <li>Resolve anything listed under <strong>Playback settings that differ</strong> and <strong>Problems that prevent creating</strong>.</li>
+          <li>Select <strong>Create</strong>.</li>
+        </ol>
+        <p>The new sequence appears in the main list. Each source becomes a part named after that source. A source that already has parts keeps them. If a source changed after it was checked, Offisen repeats the check and asks you to review the result and select <strong>Create</strong> again.</p>
+        <p>You can create the sequence only while nothing is being recorded or played. The manual time of the sources is not carried over.</p>
+      </section>
+
+      <section aria-labelledby="settings-heading">
+        <h2 id="settings-heading">Settings of the new sequence</h2>
+        <h3>Playback settings</h3>
+        <p>When the sources differ in <strong>Stop sequence when a command fails</strong>, <strong>Run only if target is ready</strong> or the wait time for the target, choose one value. It applies to the whole new sequence.</p>
+        <h3>Text insertion for each part</h3>
+        <p>Each part keeps the text insertion of the sequence it comes from. To change one part, select <strong>Change</strong> beside it. To use one value everywhere, turn on <strong>Use the same setting for all parts</strong>. Offisen still applies the setting to each part separately, so <strong>Current at start</strong> uses the current cursor for the first text block of each part. See <a href="/guide/text-insertion/">Text insertion</a>.</p>
+        <h3>Windows needed at the start</h3>
+        <p>Playback looks for the listed windows before the first step, including windows of later sequences. They must already be open when the new sequence starts, and the wait between sequences does not change this. The list is a cautious estimate.</p>
+      </section>
+
+      <section aria-labelledby="difference-heading">
+        <h2 id="difference-heading">Merging or attaching</h2>
+        <p>Merging and attaching both copy steps, but they answer different questions. Attaching is <span class="coming-badge">Coming in version 1.0.9</span></p>
+        <div class="table-scroll" role="region" aria-label="Comparison of merged and attached sequences" tabindex="0">
+          <table class="details-table">
+            <thead><tr><th scope="col"></th><th scope="col">Merge</th><th scope="col"><a href="/guide/attached-sequences/">Attach with a condition</a></th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Result</th><td>A new sequence file</td><td>A copy inside the sequence you are editing</td></tr>
+              <tr><th scope="row">Does it always run?</th><td>Yes, every part in order</td><td>Only if its window is open when playback reaches it</td></tr>
+              <tr><th scope="row">Missing window</th><td>Stops the run or prevents its start, according to the safety checks</td><td>A missing window skips the copy</td></tr>
+              <tr><th scope="row">Windows at the start</th><td>Checked before the first step, with the exceptions Offisen lists</td><td>The copy's windows are not checked before the start</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section aria-labelledby="limits-heading">
+        <h2 id="limits-heading">Limits</h2>
+        <ul>
+          <li>Older versions of Offisen will not show a sequence that needs text insertion by parts. Offisen tells you when this applies.</li>
+          <li>Offisen cannot create the sequence if a source file is missing, unreadable or empty, or if its window roles are damaged. Remove that source from the order.</li>
+          <li>Extra data stored for a whole source file is not carried over. Offisen lists this under <strong>Information</strong>.</li>
+          <li><span class="coming-badge">Coming in version 1.0.9</span> A sequence that contains an attached sequence cannot be merged.</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <p><a href="/guide/">User Guide</a> · <a href="/support/codes/">Diagnostic codes</a> · <a href="/">Offisen homepage</a> · <a href="/privacy-policy/">Privacy Policy</a></p>
+      <p>&copy; 2026 Offisen. All rights reserved. Designed by Rudolf Mendzezof</p>
+    </footer>
+  </div>
+
+  <script src="/JS/theme.js" defer></script>
+</body>
+</html>

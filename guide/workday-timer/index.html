@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Workday &amp; Timer | Offisen User Guide</title>
+  <meta name="description" content="Set a daily workday end alarm and a countdown in Offisen, and learn when Windows delivers their notifications.">
+  <meta name="robots" content="index, follow">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#38bdf8">
+
+  <link rel="canonical" href="https://www.offisen.app/guide/workday-timer/">
+  <link rel="icon" type="image/x-icon" href="/assets/favicon/favicon.ico">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="/assets/favicon/site.webmanifest">
+  <link rel="stylesheet" href="/CSS/style.css?v=11">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.offisen.app/guide/workday-timer/">
+  <meta property="og:title" content="Workday &amp; Timer | Offisen User Guide">
+  <meta property="og:description" content="Get a reminder when the workday ends or when a countdown finishes.">
+  <meta property="og:image" content="https://www.offisen.app/assets/Offisen-hero-trsp-bg-2048x2048.webp">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <button class="theme-toggle" aria-label="Toggle light and dark mode">
+    <span id="theme-icon">🌙</span>
+  </button>
+
+  <div class="container page-docs">
+    <a href="/guide/" class="back-link" aria-label="Go back to the User Guide">← User Guide</a>
+
+    <header>
+      <p class="eyebrow">Offisen User Guide</p>
+      <h1>Workday &amp; Timer</h1>
+      <p class="subtitle">Get a reminder when the workday ends or when a countdown finishes.</p>
+    </header>
+
+    <main id="main-content">
+      <nav class="docs-nav" aria-label="Guide chapters">
+        <strong>Guide chapters</strong>
+        <ul>
+          <li><a href="/guide/editing-sequences/">Edit a sequence</a></li>
+          <li><a href="/guide/merging-sequences/">Merge sequences</a></li>
+          <li><a href="/guide/text-insertion/">Text insertion</a></li>
+          <li><a href="/guide/attached-sequences/">Attached sequences</a></li>
+          <li><a href="/guide/run-history/">Run History</a></li>
+          <li><a href="/guide/workday-timer/" aria-current="page">Workday &amp; Timer</a></li>
+        </ul>
+      </nav>
+
+      <section class="support-summary" aria-labelledby="purpose-heading">
+        <h2 id="purpose-heading">What it is for</h2>
+        <p>The <strong>Workday &amp; Timer</strong> window has two independent reminders: a daily alarm and a countdown. Neither affects recording or playback.</p>
+      </section>
+
+      <section aria-labelledby="open-heading">
+        <h2 id="open-heading">Open the window</h2>
+        <p>In version 1.0.8.0, select the timer icon in the main window.</p>
+        <p><span class="coming-badge">Coming in version 1.0.9</span> The icon is removed. Choose <strong>Tools → Workday &amp; Timer</strong> instead, or select an active status button. If the window is already open, Offisen brings it forward.</p>
+      </section>
+
+      <section aria-labelledby="alarm-heading">
+        <h2 id="alarm-heading">Workday end alarm</h2>
+        <ol>
+          <li>Turn on <strong>Enable workday end alarm</strong>.</li>
+          <li>Set the time under <strong>End at</strong>. The default is 17:00.</li>
+        </ol>
+        <p><strong>Next</strong> shows when the alarm will notify you. If today's time has already passed, the next alarm is tomorrow. The alarm repeats every day, including weekends, until you turn it off.</p>
+      </section>
+
+      <section aria-labelledby="countdown-heading">
+        <h2 id="countdown-heading">Countdown</h2>
+        <ol>
+          <li>Enter <strong>Hours</strong>, <strong>Minutes</strong> and <strong>Seconds</strong>. The shortest countdown is 6 seconds.</li>
+          <li>Select <strong>Start</strong>.</li>
+        </ol>
+        <div class="table-scroll" role="region" aria-label="Countdown controls" tabindex="0">
+          <table class="details-table">
+            <thead><tr><th scope="col">Control</th><th scope="col">Result</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Pause</strong></td><td>Holds the remaining time. The pending notification is cancelled.</td></tr>
+              <tr><td><strong>Resume</strong></td><td>Continues from the remaining time and schedules the notification again.</td></tr>
+              <tr><td><strong>Reset</strong></td><td>Ends the countdown without a notification and returns it to <strong>Idle</strong>.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>A running countdown continues by real time. If you close Offisen, it keeps counting; time spent closed does not reduce a paused countdown. When it reaches zero, <strong>Status</strong> shows <strong>Completed</strong>.</p>
+      </section>
+
+      <section aria-labelledby="status-heading">
+        <h2 id="status-heading">Status on the main page <span class="coming-badge">Coming in version 1.0.9</span></h2>
+        <p>While something is active, the main page shows a short status button. Selecting it opens the <strong>Workday &amp; Timer</strong> window; it does not change the alarm or countdown.</p>
+        <div class="table-scroll" role="region" aria-label="Status buttons" tabindex="0">
+          <table class="details-table">
+            <thead><tr><th scope="col">Button</th><th scope="col">Visible</th><th scope="col">Disappears</th></tr></thead>
+            <tbody>
+              <tr><td>Workday end · date and time</td><td>While the alarm is on</td><td>When you turn the alarm off</td></tr>
+              <tr><td>Countdown · Running or Paused · remaining time</td><td>While the countdown runs or is paused</td><td>After <strong>Reset</strong> or when it finishes</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>If both are active, both buttons appear. When nothing is active, the row disappears without leaving empty space.</p>
+      </section>
+
+      <section aria-labelledby="notifications-heading">
+        <h2 id="notifications-heading">When notifications arrive</h2>
+        <p>Offisen schedules a Windows notification reading <strong>It's time to end the workday.</strong> or <strong>Countdown finished.</strong> Once scheduled, Windows delivers it even if Offisen is closed. This notification is the only alert; Offisen does not show a separate message or play its own sound.</p>
+        <p>For a notification to be scheduled:</p>
+        <ul>
+          <li>Offisen must run as the installed app from Microsoft Store. Windows does not offer scheduled notifications to a build without an app package.</li>
+          <li>Offisen must not run as administrator.</li>
+        </ul>
+        <p>If these conditions are not met, the timer still works but no notification appears, and Offisen does not warn you about it.</p>
+        <p>The daily alarm is scheduled 30 days ahead. Offisen extends this when it starts and during a daily rollover while it is open, so open it at least once within that time. Windows notification settings, such as Do Not Disturb, can also hide notifications. Change them in Windows.</p>
+      </section>
+    </main>
+
+    <footer>
+      <p><a href="/guide/">User Guide</a> · <a href="/support/codes/">Diagnostic codes</a> · <a href="/">Offisen homepage</a> · <a href="/privacy-policy/">Privacy Policy</a></p>
+      <p>&copy; 2026 Offisen. All rights reserved. Designed by Rudolf Mendzezof</p>
+    </footer>
+  </div>
+
+  <script src="/JS/theme.js" defer></script>
+</body>
+</html>

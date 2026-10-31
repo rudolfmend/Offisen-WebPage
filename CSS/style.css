@@ -800,3 +800,14 @@ html:not([data-theme="light"]) .homepage .time-for-you .time-for-you-closing { c
   html { scroll-behavior: auto; }
   .homepage *, .theme-toggle { transition: none; }
 }
+
+/* User guide chapters and code articles */
+.table-scroll { overflow-x: auto; max-width: 100%; }
+.page-docs main table { border-collapse: collapse; width: 100%; }
+.page-docs main table th, .page-docs main table td { padding: 0.5rem 0.65rem; border: 1px solid var(--color-border); text-align: left; vertical-align: top; overflow-wrap: break-word; }
+.page-docs main { overflow-wrap: break-word; }
+.page-docs main table td { overflow-wrap: anywhere; }
+.page-docs header h1 { overflow-wrap: anywhere; }
+.page-docs main a[aria-current="page"] { font-weight: 700; text-decoration: none; }
+.coming-badge { display: inline-block; padding: 0.05rem 0.5rem; border: 1px solid var(--color-accent); border-radius: 0.4rem; background: var(--color-card); color: var(--color-text-main); font-size: 0.85rem; font-weight: 600; line-height: 1.5; white-space: normal; }
+.coming-note { padding: 0.65rem 0.85rem; border-left: 4px solid var(--color-accent); background: var(--color-card); }

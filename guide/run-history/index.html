@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Run History | Offisen User Guide</title>
+  <meta name="description" content="Read how each Offisen playback ended, open its details and decide when it is safe to use Retry.">
+  <meta name="robots" content="index, follow">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#38bdf8">
+
+  <link rel="canonical" href="https://www.offisen.app/guide/run-history/">
+  <link rel="icon" type="image/x-icon" href="/assets/favicon/favicon.ico">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="/assets/favicon/site.webmanifest">
+  <link rel="stylesheet" href="/CSS/style.css?v=11">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.offisen.app/guide/run-history/">
+  <meta property="og:title" content="Run History | Offisen User Guide">
+  <meta property="og:description" content="See how each run ended and decide what to do next.">
+  <meta property="og:image" content="https://www.offisen.app/assets/Offisen-hero-trsp-bg-2048x2048.webp">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <button class="theme-toggle" aria-label="Toggle light and dark mode">
+    <span id="theme-icon">🌙</span>
+  </button>
+
+  <div class="container page-docs">
+    <a href="/guide/" class="back-link" aria-label="Go back to the User Guide">← User Guide</a>
+
+    <header>
+      <p class="eyebrow">Offisen User Guide</p>
+      <h1>Run History</h1>
+      <p class="subtitle">See how each run ended and decide what to do next.</p>
+    </header>
+
+    <main id="main-content">
+      <nav class="docs-nav" aria-label="Guide chapters">
+        <strong>Guide chapters</strong>
+        <ul>
+          <li><a href="/guide/editing-sequences/">Edit a sequence</a></li>
+          <li><a href="/guide/merging-sequences/">Merge sequences</a></li>
+          <li><a href="/guide/text-insertion/">Text insertion</a></li>
+          <li><a href="/guide/attached-sequences/">Attached sequences</a></li>
+          <li><a href="/guide/run-history/" aria-current="page">Run History</a></li>
+          <li><a href="/guide/workday-timer/">Workday &amp; Timer</a></li>
+        </ul>
+      </nav>
+
+      <section class="support-summary" aria-labelledby="purpose-heading">
+        <h2 id="purpose-heading">What it shows</h2>
+        <p>Run History lists each playback session with its sequence, start time, duration and result. Running the same sequence twice creates two entries.</p>
+      </section>
+
+      <section aria-labelledby="open-heading">
+        <h2 id="open-heading">Open Run History</h2>
+        <p>Select the Run History icon in the main window. <span class="coming-badge">Coming in version 1.0.9</span> It is also available under <strong>Tools → Run History</strong>. If the window is already open, Offisen brings it forward.</p>
+      </section>
+
+      <section aria-labelledby="results-heading">
+        <h2 id="results-heading">Results</h2>
+        <div class="table-scroll" role="region" aria-label="Run results" tabindex="0">
+          <table class="details-table">
+            <thead><tr><th scope="col">Result</th><th scope="col">Meaning</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Running</strong></td><td>The run has not ended yet.</td></tr>
+              <tr><td><strong>Succeeded</strong></td><td>Playback reached the end with no playback errors.</td></tr>
+              <tr><td><strong>Completed with errors</strong></td><td>Playback reached the end, but one or more commands failed along the way.</td></tr>
+              <tr><td><strong>Failed</strong></td><td>A blocking problem ended the run before it finished.</td></tr>
+              <tr><td><strong>Stopped</strong></td><td>You or the application stopped the run.</td></tr>
+              <tr><td><strong>Interrupted</strong></td><td>The run had no normal end, for example because Offisen closed during playback.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>A sequence that never started, for example because its target was not ready, creates no entry.</p>
+        <p>Select <strong>Details</strong> to see available information about the run, such as the diagnostic code, correlation ID and failed step.</p>
+      </section>
+
+      <section aria-labelledby="attached-heading">
+        <h2 id="attached-heading">Attached sequences <span class="coming-badge">Coming in version 1.0.9</span></h2>
+        <p>For each <a href="/guide/attached-sequences/">attached sequence</a> the run reached, the entry says what happened:</p>
+        <ul>
+          <li><strong>Attached sequence “Add note” ran: its window was found.</strong></li>
+          <li><strong>Attached sequence “Add note” was skipped: its window was not found.</strong></li>
+          <li>With repeats: <strong>Attached sequence “Add note” ran 2× and was skipped 3× (window not found).</strong></li>
+        </ul>
+        <p>A skip alone is not an error, so a run with a skipped attached sequence can still be <strong>Succeeded</strong>. If you expected it to run, check that the window was open and that its title matched the condition. An attached sequence the run did not reach is not listed.</p>
+      </section>
+
+      <section aria-labelledby="retry-heading">
+        <h2 id="retry-heading">Retry</h2>
+        <p><strong>Retry</strong> starts the sequence again as a new run, from the beginning, and adds a new entry. It does not continue the failed run or change its entry. <strong>Retry last failed</strong> does the same for the most recent failed run only, never an older one.</p>
+        <p>Retry is available only if all of these are true:</p>
+        <ul>
+          <li>The run is <strong>Failed</strong> and is marked <strong>Retryable</strong>.</li>
+          <li>The sequence file can still be identified.</li>
+          <li>Nothing is being recorded or played.</li>
+        </ul>
+        <p><strong>Retryable means only that the problem may be fixable; it does not confirm that a new run is safe.</strong> Earlier steps of the failed run may already have typed text, saved data or confirmed a dialog, and a new run performs them again. Before selecting Retry:</p>
+        <ol>
+          <li>Check the target application.</li>
+          <li>Correct what the failed run already changed, if necessary.</li>
+          <li>Return the application to the state where the sequence starts.</li>
+          <li>Fix the cause described by the <a href="/support/codes/">diagnostic code</a>.</li>
+        </ol>
+      </section>
+    </main>
+
+    <footer>
+      <p><a href="/guide/">User Guide</a> · <a href="/support/codes/">Diagnostic codes</a> · <a href="/">Offisen homepage</a> · <a href="/privacy-policy/">Privacy Policy</a></p>
+      <p>&copy; 2026 Offisen. All rights reserved. Designed by Rudolf Mendzezof</p>
+    </footer>
+  </div>
+
+  <script src="/JS/theme.js" defer></script>
+</body>
+</html>

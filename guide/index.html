@@ -16,7 +16,7 @@
   <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
   <link rel="manifest" href="/assets/favicon/site.webmanifest">
-  <link rel="stylesheet" href="/CSS/style.css?v=10">
+  <link rel="stylesheet" href="/CSS/style.css?v=11">
 
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.offisen.app/guide/">
@@ -46,6 +46,7 @@
         <ul>
           <li><a href="#before-you-start">Before you start</a></li>
           <li><a href="#first-automation">Your first automation</a></li>
+          <li><a href="#detailed-guides">Detailed guides</a></li>
           <li><a href="#sequences">Working with sequences</a></li>
           <li><a href="#playback">Playback and repeat</a></li>
           <li><a href="#compact-mode">Compact mode</a></li>
@@ -87,6 +88,19 @@
         </ol>
       </section>
 
+      <section aria-labelledby="detailed-guides-heading">
+        <h2 id="detailed-guides-heading"><span id="detailed-guides">Detailed guides</span></h2>
+        <p>Go further once your first sequence works.</p>
+        <ul>
+          <li><a href="/guide/editing-sequences/">Edit a sequence</a>: change text and waits, insert recordings, delete steps and save.</li>
+          <li><a href="/guide/merging-sequences/">Merge sequences</a>: combine saved sequences into a new one.</li>
+          <li><a href="/guide/text-insertion/">Text insertion</a>: decide where a sequence types.</li>
+          <li><a href="/guide/attached-sequences/">Attached sequences</a>: add optional steps that run only if their window is open. <span class="coming-badge">Coming in version 1.0.9</span></li>
+          <li><a href="/guide/run-history/">Run History</a>: see how each run ended and when to use Retry.</li>
+          <li><a href="/guide/workday-timer/">Workday &amp; Timer</a>: set a daily alarm and a countdown.</li>
+        </ul>
+      </section>
+
       <section aria-labelledby="sequences-heading">
         <h2 id="sequences-heading"><span id="sequences">Working with sequences</span></h2>
         <p>A sequence is a saved set of recorded actions. Saved sequences remain available after Offisen is restarted.</p>
@@ -100,6 +114,7 @@
           </ul>
         </div>
         <p>You can select, rename, duplicate, delete, and move sequences in the main window. Review the selected sequence before changing its playback options.</p>
+        <p>To change the steps of a saved sequence, see <a href="/guide/editing-sequences/">Edit a sequence</a>. To combine sequences, see <a href="/guide/merging-sequences/">Merge sequences</a>.</p>
       </section>
 
       <section aria-labelledby="playback-heading">
@@ -115,17 +130,17 @@
         <h3>Start condition</h3>
         <p>If <strong>Run only if target is ready</strong> is enabled, Offisen waits up to the selected number of seconds for the intended target. Playback does not begin if the target cannot be resolved safely.</p>
 
-        <h3>Stop on error</h3>
-        <p>Enable <strong>Stop on error</strong> when playback should end instead of continuing after a command fails.</p>
+        <h3>Stop when a command fails</h3>
+        <p>Enable <strong>Stop sequence when a command fails</strong> when playback should end instead of continuing after an ordinary command fails. Safety-blocking failures always stop playback, even when this setting is off.</p>
 
-        <h3>Text position</h3>
-        <p>Choose how Offisen handles the text cursor when a sequence enters text.</p>
+        <h3>Text insertion</h3>
+        <p>Choose where Offisen types when a sequence enters text.</p>
         <ul>
-          <li><strong>Recorded:</strong> uses the cursor positions captured during recording. This is the default and most predictable mode.</li>
-          <li><strong>Current at start:</strong> the first text entry uses the current cursor position. Later text entries use their recorded positions.</li>
-          <li><strong>Always current:</strong> every text entry uses the current cursor position instead of the recorded position.</li>
+          <li><strong>Recorded:</strong> types in the recorded place. This is the default and most predictable mode.</li>
+          <li><strong>Current at start:</strong> at most the first text block goes to the current text cursor. Later blocks use their recorded place.</li>
+          <li><strong>Always current:</strong> text blocks that start with a click into a field go to the current text cursor.</li>
         </ul>
-        <p>Use <strong>Recorded</strong> when the sequence should reproduce the original text placement. Use one of the current-position modes when you intentionally want playback to continue from the text cursor position that is active when the sequence runs.</p>
+        <p>Text recorded without a click before it uses its recorded place in every mode. Read <a href="/guide/text-insertion/">Text insertion</a> for examples before relying on a current-cursor mode.</p>
 
         <h3>Pause, resume, and stop</h3>
         <p>You can pause a running sequence, resume it when ready, or stop it completely. After stopping, prepare the target application again before starting a new run.</p>
@@ -188,6 +203,9 @@
 
         <h3>A previously working sequence no longer works</h3>
         <p>Check whether the target application, window title, starting screen, or workflow has changed. If the change is permanent, record the sequence again from the new starting state.</p>
+
+        <h3>You want to check how a run ended</h3>
+        <p>Open <a href="/guide/run-history/">Run History</a> to see the result and details of each run.</p>
 
         <h3>You need more help</h3>
         <p>Keep the diagnostic report and its correlation ID. Contact <a href="mailto:info@offisen.app">info@offisen.app</a> and describe what you expected, what happened, and whether the issue can be repeated.</p>

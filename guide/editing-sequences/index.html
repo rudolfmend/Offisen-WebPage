@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Edit a saved sequence | Offisen User Guide</title>
+  <meta name="description" content="Change text and waits, insert and delete steps, and save a sequence safely in the Offisen Sequence Editor.">
+  <meta name="robots" content="index, follow">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#38bdf8">
+
+  <link rel="canonical" href="https://www.offisen.app/guide/editing-sequences/">
+  <link rel="icon" type="image/x-icon" href="/assets/favicon/favicon.ico">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="/assets/favicon/site.webmanifest">
+  <link rel="stylesheet" href="/CSS/style.css?v=11">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.offisen.app/guide/editing-sequences/">
+  <meta property="og:title" content="Edit a saved sequence | Offisen User Guide">
+  <meta property="og:description" content="Correct a saved sequence without recording it again.">
+  <meta property="og:image" content="https://www.offisen.app/assets/Offisen-hero-trsp-bg-2048x2048.webp">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <button class="theme-toggle" aria-label="Toggle light and dark mode">
+    <span id="theme-icon">🌙</span>
+  </button>
+
+  <div class="container page-docs">
+    <a href="/guide/" class="back-link" aria-label="Go back to the User Guide">← User Guide</a>
+
+    <header>
+      <p class="eyebrow">Offisen User Guide</p>
+      <h1>Edit a saved sequence</h1>
+      <p class="subtitle">Correct a saved sequence without recording it again.</p>
+    </header>
+
+    <main id="main-content">
+      <nav class="docs-nav" aria-label="Guide chapters">
+        <strong>Guide chapters</strong>
+        <ul>
+          <li><a href="/guide/editing-sequences/" aria-current="page">Edit a sequence</a></li>
+          <li><a href="/guide/merging-sequences/">Merge sequences</a></li>
+          <li><a href="/guide/text-insertion/">Text insertion</a></li>
+          <li><a href="/guide/attached-sequences/">Attached sequences</a></li>
+          <li><a href="/guide/run-history/">Run History</a></li>
+          <li><a href="/guide/workday-timer/">Workday &amp; Timer</a></li>
+        </ul>
+      </nav>
+
+      <section class="support-summary" aria-labelledby="purpose-heading">
+        <h2 id="purpose-heading">What the editor is for</h2>
+        <p>Use the Sequence Editor to fix typed text, adjust waits, add a short recording or remove steps. Your changes stay in the editor until you save them.</p>
+        <p class="coming-note"><span class="coming-badge">Coming in version 1.0.9</span> Move up and Move down, changing Text insertion in the editor and attached sequences. Everything else on this page is available in 1.0.8.0.</p>
+      </section>
+
+      <section aria-labelledby="open-heading">
+        <h2 id="open-heading">Open the editor</h2>
+        <ol>
+          <li>In the main window, right-click the sequence.</li>
+          <li>Choose <strong>Edit...</strong>.</li>
+        </ol>
+        <p>The <strong>Sequence Editor</strong> window opens with the steps of that sequence.</p>
+      </section>
+
+      <section aria-labelledby="steps-heading">
+        <h2 id="steps-heading">Steps, groups and recorded commands</h2>
+        <p>One action you performed can be saved as several recorded commands. The editor combines commands that belong together into one card, so you work with the action instead of each command.</p>
+        <div class="table-scroll" role="region" aria-label="Types of cards in the editor" tabindex="0">
+          <table class="details-table">
+            <thead><tr><th scope="col">Card</th><th scope="col">What it contains</th></tr></thead>
+            <tbody>
+              <tr><td>A single step</td><td>One command, such as <strong>Click</strong>, <strong>Press a key</strong> or <strong>Wait</strong></td></tr>
+              <tr><td><strong>Text entry: click and typing</strong></td><td>Clicks into a field with the keys and text that follow them</td></tr>
+              <tr><td><strong>Repeated block</strong></td><td>The steps of a recorded loop</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Select <strong>Show all</strong> on a group to see its individual commands, and <strong>Show less</strong> to fold them again. Delete and move always apply to the whole card. For example, a click into a text field is deleted together with its typing.</p>
+      </section>
+
+      <section aria-labelledby="change-heading">
+        <h2 id="change-heading">Change text and waits</h2>
+        <ol>
+          <li>Select <strong>Edit text</strong> or <strong>Edit wait</strong> on the step.</li>
+          <li>Enter the new text, or the length of the wait in seconds.</li>
+          <li>Select <strong>Apply</strong>.</li>
+        </ol>
+        <p>The card shows the new value and the editor reports <strong>Unsaved changes</strong>.</p>
+        <p>Text cannot be empty. If nothing should be typed, delete the step. A wait can last up to 600 seconds. Key presses cannot be changed; delete the step and insert a new recording instead.</p>
+      </section>
+
+      <section aria-labelledby="insert-heading">
+        <h2 id="insert-heading">Insert a wait or a recording</h2>
+        <h3>Insert a wait</h3>
+        <p>Select <strong>Insert wait</strong> on a card, enter the length and select <strong>Apply</strong>. The wait is added after that card.</p>
+        <h3>Insert a recording</h3>
+        <ol>
+          <li>Select <strong>Insert recording</strong> on a card, or <strong>Insert recording at the start</strong> above the steps.</li>
+          <li>Perform the new steps in the target application.</li>
+          <li>Select <strong>Stop recording</strong> in the editor, or stop recording as usual.</li>
+        </ol>
+        <p>The new steps appear in the chosen place. If you close the editor during this recording, the recording is saved as a new sequence instead. If nothing was recorded, nothing is inserted.</p>
+        <p>The windows used by a new recording are checked before the sequence starts, so they must already be open when you run it.</p>
+      </section>
+
+      <section aria-labelledby="delete-move-heading">
+        <h2 id="delete-move-heading">Delete and move</h2>
+        <h3>Delete</h3>
+        <p>Select <strong>Delete step</strong> or <strong>Delete group</strong>. The last remaining card cannot be deleted, because a sequence needs at least one step. Offisen asks for confirmation when the deletion changes which windows are checked before the run starts, for example when you delete a step that starts an application.</p>
+        <h3>Move <span class="coming-badge">Coming in version 1.0.9</span></h3>
+        <p>Select <strong>Move up</strong> or <strong>Move down</strong> to swap a card with its neighbour. Dragging is not available.</p>
+        <ul>
+          <li>The button is unavailable when the move would join steps that do not belong together, such as text moved directly after a click into another field.</li>
+          <li>The editor warns you if the move changes which windows are checked before the run starts, or which text block uses the current text cursor.</li>
+        </ul>
+        <h3>Sequences with parts</h3>
+        <p>A merged sequence is divided into parts, shown as <strong>Part 1: name</strong>. Inserted steps belong to the part where you insert them. Part headers do not move, and a card cannot move into another part.</p>
+      </section>
+
+      <section aria-labelledby="save-heading">
+        <h2 id="save-heading">Undo, save and close</h2>
+        <div class="table-scroll" role="region" aria-label="Editor commands" tabindex="0">
+          <table class="details-table">
+            <thead><tr><th scope="col">Command</th><th scope="col">Result</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Undo</strong></td><td>Reverses the last change. Select it again to go further back. The editor has no Redo.</td></tr>
+              <tr><td><strong>Save</strong></td><td>Writes the changes to this sequence and reports <strong>Saved.</strong></td></tr>
+              <tr><td><strong>Save as new...</strong></td><td>Creates another sequence under a new name and leaves this file unchanged.</td></tr>
+              <tr><td><strong>Close</strong></td><td>With unsaved changes, asks whether to <strong>Save</strong>, select <strong>Don't save</strong> to discard them, or cancel and keep editing.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>You can save only while nothing is being recorded or played. If the file changed or disappeared after the editor opened, <strong>Save</strong> is turned off so that the other change is not overwritten. Use <strong>Save as new...</strong>, or close without saving.</p>
+      </section>
+
+      <section aria-labelledby="effects-heading">
+        <h2 id="effects-heading">What saving changes</h2>
+        <ul>
+          <li><strong>Manual time:</strong> saving changed steps clears the recorded manual time used to estimate time saved. To get a new estimate, record the sequence again.</li>
+          <li><strong>Step numbers:</strong> steps are numbered again after edits.</li>
+          <li><strong>Target check exceptions:</strong> an exception belongs to one specific step. It ends if that step changes or gets a different number, so check <strong>Target check exceptions</strong> after editing.</li>
+          <li><strong>Text insertion:</strong> if an edit changes which text block uses the current cursor, the editor shows a notice. Review the steps before saving. See <a href="/guide/text-insertion/">Text insertion</a>.</li>
+        </ul>
+        <p>After saving, watch the next run to confirm that the sequence still does what you expect.</p>
+        <p><span class="coming-badge">Coming in version 1.0.9</span> Changing only Text insertion does not change the steps, so it keeps their numbers and the manual time.</p>
+      </section>
+    </main>
+
+    <footer>
+      <p><a href="/guide/">User Guide</a> · <a href="/support/codes/">Diagnostic codes</a> · <a href="/">Offisen homepage</a> · <a href="/privacy-policy/">Privacy Policy</a></p>
+      <p>&copy; 2026 Offisen. All rights reserved. Designed by Rudolf Mendzezof</p>
+    </footer>
+  </div>
+
+  <script src="/JS/theme.js" defer></script>
+</body>
+</html>
