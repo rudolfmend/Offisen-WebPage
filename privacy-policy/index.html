@@ -7,6 +7,7 @@
 
   <title>Privacy Policy – Offisen</title>
   <meta name="description" content="Privacy Policy for Offisen desktop automation application">
+  <meta name="robots" content="index, follow">
 
   <link rel="canonical" href="https://www.offisen.app/privacy-policy/">
 
@@ -47,7 +48,7 @@
 
       <header role="banner">
         <h1>Privacy Policy</h1>
-        <p class="effective-date">Last updated: <time datetime="2026-10-04">October 4, 2026</time></p>
+        <p class="effective-date">Effective date: <time datetime="2026-10-12">October 12, 2026</time></p>
       </header>
 
       <main id="main-content" role="main">
@@ -55,8 +56,8 @@
         <section aria-labelledby="introduction-heading">
           <h2 id="introduction-heading">1. Introduction and Scope</h2>
           <p>This Privacy Policy explains how Offisen uses and stores data when automating workflows, the control you have over that data, and when third-party services are involved.</p>
-          <p>This policy applies to the Offisen application. Third-party services, such as Microsoft Store, also have their own privacy policies.</p>
-          <p>Offisen is provided by Rudolf Mendzezof. You can send questions about privacy to <a href="mailto:info@offisen.app">info@offisen.app</a>.</p>
+          <p>This policy covers the Offisen application, the diagnostic summaries you choose to send to us, our support communications, and the Offisen website. Third-party services, such as Microsoft Store, also have their own privacy policies.</p>
+          <p>Offisen is published by <strong>Rudolf Mendzezof</strong>. For questions about privacy or to exercise your rights, contact <a href="mailto:info@offisen.app">info@offisen.app</a>.</p>
         </section>
 
         <section aria-labelledby="automation-data-heading">
@@ -74,11 +75,31 @@
         </section>
 
         <section aria-labelledby="diagnostics-heading">
-          <h2 id="diagnostics-heading">4. Diagnostics and Optional Features</h2>
-          <p>Offisen uses diagnostic information to identify and explain problems that occur while using the application. This may include error codes and descriptions, the time a problem occurred, and technical details related to the workflow being run. This information is processed locally to display messages and help troubleshoot problems.</p>
-          <p>A separate optional feature counts occurrences of diagnostic codes. This feature is disabled by default and can be enabled or disabled in settings. It records only the diagnostic code, its severity, and the number of occurrences; it does not include recorded text or workflow contents. In the current version, these summaries are stored locally and are not sent to the developer or a telemetry server. Disabling the feature stops further counting but does not automatically delete summaries already saved on your device.</p>
-          <p>If you choose to provide a diagnostic report or other materials when requesting support, review their contents before sending them and remove any information you do not wish to share. Information you provide for support is used to respond to your request and investigate the reported problem.</p>
-          <p>If a future version introduces transmission of optional diagnostic summaries outside your device, we will explain what information would be sent, why it would be sent, and who would receive it before you enable that transmission. Sending these summaries will require your explicit consent, which you will be able to withdraw in settings.</p>
+          <h2 id="diagnostics-heading">4. Diagnostics and Optional Counts</h2>
+          <p>Offisen processes diagnostic information locally to explain problems and help troubleshoot them. Problem messages, the Diagnostic Center, run history and exported reports work independently of optional diagnostic counting.</p>
+
+          <h3>Earlier versions and the upcoming update</h3>
+          <p>In Store versions released before this update, optional diagnostic counting is off by default and the summaries stay on your device. The revised choices and per-batch sending described below apply to the upcoming Offisen update.</p>
+
+          <h3>Your choice and the information collected</h3>
+          <p>Optional counting helps us identify and fix recurring problems. It stays off until you choose <strong>Turn on collection</strong> after the explanation. Declining, closing the window or doing nothing leaves it off and does not limit ordinary use. A saved choice to turn it off survives restarting and updating. If you enabled it in an older version, counting pauses until you confirm the new explanation.</p>
+          <p>Each entry contains only the Offisen version, diagnostic code, severity and number of occurrences. A batch has a random one-time identifier to recognise repeated delivery. This optional queue and its upload do not contain recorded text, sequences, window titles, file paths, your name or email address, exception text, full reports, or a permanent user or device identifier. These limits do not describe all data used by other local features.</p>
+
+          <h3>Sending and connection information</h3>
+          <p>Each batch requires a separate confirmation using <strong>Send</strong>; you can preview its entries first. There is no automatic sending or automatic retry. Occasional questions wait at least seven days after activation or turning questions on, and at least seven days between questions, while Offisen is idle. You can open the preview sooner. The question setting alone never enables collection or sending.</p>
+          <p>Confirmed batches are sent to Offisen over HTTPS, without cookies or sign-in credentials. Websupport provides hosting and the connection passes through Cloudflare. We use received counts to identify recurring problems and improve reliability.</p>
+          <p>Your connection's IP address is also processed when you send a batch. We use connection information to secure the service and prevent abuse. Our diagnostic receiver does not retain the IP address itself; it keeps a short-lived security record derived from it. Websupport and Cloudflare can process IP addresses and other connection information in separate operational and security logs.</p>
+
+          <h3>Retention and deletion</h3>
+          <p>Newly collected groups have one 90-day local period starting with the first occurrence in the group. Saving, preparing a batch, retrying and restarting do not renew it. Later counts in the group may be deleted sooner. Expired groups are removed without sending at the next queue check, at startup or when Offisen works with the queue. Cleanup does not run while it is closed and depends on the device's clock. Older data uses available original retention or snapshot dates; the exact age of every older occurrence may not be recoverable.</p>
+          <p>Received batches have a 180-day server retention period. The receiver's short-lived security records have a 48-hour period. Regular cleanup removes expired records, so deletion is not instantaneous. Hosting backups and provider logs have separate retention arrangements.</p>
+          <p>Turning collection off stops new counting and discards unsaved counts; saved counts remain until deletion or expiry. <strong>Delete collected diagnostic data...</strong> clears existing counts in memory and the saved queue, including the prepared batch. Offisen reports an incomplete deletion and offers a retry. New problems may be counted afterwards if collection remains on.</p>
+          <p>Local deletion does not delete workflows, run history, exported reports, settings, backups or server data, and does not recall an upload already started. A sent batch is removed from the local queue only after the server confirms receipt or confirms that it already received the same batch.</p>
+          <p>See <a href="/support/optional-diagnostics/">How Offisen collects and protects optional diagnostic data</a> for practical instructions.</p>
+
+          <h3>Reports and messages you send to support</h3>
+          <p>A report you copy or export can contain more technical detail than an optional summary, including system information, a timestamp and correlation ID, problem descriptions and selected error details. Copying or exporting it does not send it through the diagnostic-summary service.</p>
+          <p>If you send a report, screenshot, workflow or message to support, we receive its contents and the contact details used to send it. We use these to respond and investigate the problem. Review materials before sending and remove confidential information you do not wish to share. Share only information you are authorised to disclose.</p>
         </section>
 
         <section aria-labelledby="third-party-services-heading">
@@ -96,8 +117,23 @@
           <p>If you place files in cloud storage or a synchronized folder, or send them through a third-party service, that provider’s policies also apply to those copies. Deleting the original file in Offisen does not delete copies held in backups, by external services, or by recipients.</p>
         </section>
 
+        <section aria-labelledby="website-heading">
+          <h2 id="website-heading">7. The Offisen Website</h2>
+          <p>Visiting the website involves connection information processed by our hosting and security providers to deliver the pages and protect the service. This is separate from optional diagnostic collection in the application.</p>
+          <p>If you change the website's light or dark theme, the website saves that preference in your browser's local storage so it can remember your choice. You can remove it by clearing the site's stored data in your browser.</p>
+        </section>
+
+        <section aria-labelledby="rights-heading">
+          <h2 id="rights-heading">8. Your Privacy Rights</h2>
+          <p>Where the GDPR applies, you may request access to your personal data, correction, erasure, or restriction of processing, and data portability where its conditions are met. You may object to processing based on legitimate interests. Where processing is based on consent, you may withdraw that consent without affecting the lawfulness of processing carried out before withdrawal. These rights are subject to the conditions and exceptions in the applicable law.</p>
+          <p>Contact <a href="mailto:info@offisen.app">info@offisen.app</a> to make a request. Include only information needed to help us understand it. We will respond without undue delay and normally within one month. If an extension is permitted because of the complexity or number of requests, we will explain the reason within that month.</p>
+          <p>Diagnostic batches do not contain your name, email address or a permanent user or device identifier. We therefore cannot look up all your batches by your name or email address. If you have information that could identify a particular batch, you may provide it and we will assess whether we can locate it and verify that the request concerns you. We will explain if we cannot identify the relevant data. We do not require you to create a permanent identifier solely to make a request.</p>
+          <p>Turning collection off in Offisen stops future local collection; it does not itself erase data already sent to us. Requests concerning received batches, support correspondence and provider logs are assessed separately. We cannot retrieve local-only data from your device.</p>
+          <p>You may complain to your local data protection authority. In Slovakia, this is the <a href="https://www.dataprotection.gov.sk/" target="_blank" rel="noopener">Office for Personal Data Protection of the Slovak Republic</a>.</p>
+        </section>
+
         <section aria-labelledby="contact-updates-heading">
-          <h2 id="contact-updates-heading">7. Contact and Policy Updates</h2>
+          <h2 id="contact-updates-heading">9. Contact and Policy Updates</h2>
           <p>If you have questions about privacy in Offisen or information you have provided when requesting support, contact Rudolf Mendzezof at <a href="mailto:info@offisen.app">info@offisen.app</a>. Include only the information needed to address your request.</p>
           <p>We will update this policy to reflect changes in how data is processed or which services are used. The current version is available at <a href="https://www.offisen.app/privacy-policy/">https://www.offisen.app/privacy-policy/</a>. The date of the latest update appears at the beginning of this policy.</p>
           <p>We will notify you of material changes to how data is processed through the application or a notice accompanying an application update. Publishing an updated policy does not replace your consent where consent is required.</p>
@@ -113,5 +149,6 @@
 
     <script src="/JS/theme.js" defer></script>
 
-  </body>
+  
+</body>
 </html>

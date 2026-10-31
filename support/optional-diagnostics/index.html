@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How Offisen collects and protects optional diagnostic data</title>
+  <meta name="description" content="Understand Offisen's optional diagnostic counts: what is collected, when you can send it, how long it is kept and how to control it.">
+  <meta name="robots" content="index, follow">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#38bdf8">
+  <link rel="canonical" href="https://www.offisen.app/support/optional-diagnostics/">
+  <link rel="icon" type="image/x-icon" href="/assets/favicon/favicon.ico">
+  <link rel="stylesheet" href="/CSS/style.css?v=10">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.offisen.app/support/optional-diagnostics/">
+  <meta property="og:title" content="How Offisen collects and protects optional diagnostic data">
+  <meta property="og:description" content="Optional counts, a preview before sending, and controls you can change at any time.">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <button class="theme-toggle" aria-label="Toggle light and dark mode"><span id="theme-icon">🌙</span></button>
+  <div class="container page-docs">
+    <a href="/guide/" class="back-link">← Back to the User Guide</a>
+    <header>
+      <p class="eyebrow">Offisen Support</p>
+      <h1>How Offisen collects and protects optional diagnostic data</h1>
+      <p class="subtitle">You choose whether to collect counts and whether to send each batch.</p>
+    </header>
+    <main id="main-content">
+      <section aria-labelledby="how-heading">
+        <h2 id="how-heading">How diagnostic counts work</h2>
+        <p>Optional diagnostic counts help us find recurring problems and prioritise fixes in Offisen. Collection is off until you choose <strong>Turn on collection</strong> after the explanation. Declining or closing the window leaves it off and does not limit ordinary use.</p>
+        <h3>What is collected</h3>
+        <p>Each entry contains the Offisen version, a diagnostic code such as OFS-1807, its severity and the number of occurrences.</p>
+        <p>A batch has a random one-time identifier to recognise repeated delivery. It contains no recorded text, sequences, window titles, file paths, name, email address or permanent user or device identifier. This feature does not send usage statistics, exception text or full crash reports.</p>
+        <p>A report you copy or export for support can contain more technical detail. Review it before sharing.</p>
+        <h3>When it is sent</h3>
+        <p>You can preview each batch and decide whether to select <strong>Send</strong>. Each batch needs a separate confirmation. There is no automatic sending or automatic retry. Failed attempts leave the batch for a manual retry, deletion or expiry; confirmed receipt removes it from the local queue.</p>
+        <p>Occasional questions wait at least seven days after you activate collection or turn questions on. Further questions are at least seven days apart and appear only while Offisen is idle. You can open the preview yourself sooner.</p>
+      </section>
+      <section aria-labelledby="protection-heading">
+        <h2 id="protection-heading">How we protect your data</h2>
+        <p>Confirmed batches go to Offisen over an encrypted HTTPS connection. Websupport provides hosting and the connection passes through Cloudflare. The upload does not send cookies or sign-in credentials.</p>
+        <p>Your connection’s IP address is also processed to secure the service and prevent abuse. Our diagnostic receiver keeps a short-lived security record derived from it, rather than the IP address itself. Websupport and Cloudflare may retain separate connection and security logs.</p>
+        <h3>How long counts are kept</h3>
+        <p><strong>On your device:</strong> each new group has one 90-day period starting with its first occurrence. Later counts, saving or preparing the batch, retrying and restarting do not renew it. Expired groups are removed without sending at the next check at startup or when Offisen works with the queue, not while it is closed. Older saved data uses available original dates.</p>
+        <p><strong>On the server:</strong> received batches have a 180-day retention period and the receiver’s short-lived security records have a 48-hour period. Regular cleanup removes expired records. Hosting backups and provider logs have separate retention arrangements.</p>
+      </section>
+      <section aria-labelledby="controls-heading">
+        <h2 id="controls-heading">You are in control</h2>
+        <p>Open <strong>Settings → Help improve Offisen</strong>.</p>
+        <ul>
+          <li><strong>Start or stop counting:</strong> use <strong>Collect diagnostic data and ask before sending</strong>. Turning it on opens the explanation; choose <strong>Turn on collection</strong> to start. Turning it off stops new counting and discards unsaved counts. Saved counts remain until deletion or expiry.</li>
+          <li><strong>Review a batch:</strong> choose <strong>Review and send diagnostic data...</strong>. Select <strong>Send</strong> only if you want to share it. <strong>Not now</strong> sends nothing.</li>
+          <li><strong>Stop questions:</strong> turn off <strong>Ask me occasionally to send the data</strong> or select <strong>Don't ask again</strong>. This does not send or delete counts, and the question setting alone cannot turn collection on.</li>
+          <li><strong>Delete local counts:</strong> choose <strong>Delete collected diagnostic data...</strong> and confirm. This clears existing counts in memory and the saved queue. Offisen reports if deletion is incomplete and lets you retry.</li>
+        </ul>
+        <p>Local deletion does not remove sequences, run history, exported reports or server data, and cannot recall an upload already started. New problems can be counted afterwards if collection remains on.</p>
+        <p>A saved choice to turn counting off survives restarting and updating. An older saved activation pauses until you confirm the new explanation. The initial offer is shown once and remains available in settings.</p>
+        <p>Offisen is published by <strong>Rudolf Mendzezof</strong>. For questions or privacy requests, contact <a href="mailto:info@offisen.app">info@offisen.app</a>. See the <a href="/privacy-policy/">Privacy Policy</a> for further information and your rights.</p>
+      </section>
+    </main>
+    <footer>
+      <p><a href="/guide/">User Guide</a> · <a href="/privacy-policy/">Privacy Policy</a> · <a href="/">Offisen homepage</a></p>
+      <p>&copy; 2026 Offisen. All rights reserved.</p>
+    </footer>
+  </div>
+  <script src="/JS/theme.js" defer></script>
+
+</body>
+</html>
+
