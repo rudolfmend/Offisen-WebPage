@@ -37,7 +37,7 @@
   <meta name="msapplication-TileImage" content="/assets/favicon/mstile-150x150.png">
   <script src="/JS/theme-init.js?v=1"></script>
   <link rel="stylesheet" href="/CSS/style.css?v=12">
-  <link rel="stylesheet" href="/CSS/parallax.css?v=1">
+  <link rel="stylesheet" href="/CSS/parallax.css?v=4">
   <link rel="stylesheet" href="/CSS/header.css?v=2">
   <link rel="preload" href="/assets/fonts/fira-sans-latin-700-italic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/CSS/hero-font.css?v=1">
@@ -291,10 +291,16 @@
         <p class="time-for-you-closing">What you do with the time you save is up to you.<br>Maybe all anyone notices is your smile.</p>
       </section>
       <!-- CTA -->
-      <section aria-labelledby="cta-heading" class="cta">
-        <h2 id="cta-heading">Do it once. Let Offisen repeat it.</h2>
-        <p>Offisen for Windows is available on Microsoft Store, with a free first month when the offer is available for your account.</p>
-        <a class="cta-button" href="https://apps.microsoft.com/detail/9NQ13MNJ5KTF" target="_blank" rel="noopener">Get Offisen from Microsoft Store</a>
+      <section aria-labelledby="cta-heading" class="cta cta-scene">
+        <div class="cta-scene-image" aria-hidden="true">
+          <img class="cta-on-light" src="/assets/offisen-cta-light-3840x2161.webp" alt="" width="3840" height="2161" loading="lazy" decoding="async">
+          <img class="cta-on-dark" src="/assets/offisen-cta-dark-3840x2161.webp" alt="" width="3840" height="2161" loading="lazy" decoding="async">
+        </div>
+        <div class="cta-scene-content">
+          <h2 id="cta-heading">Do it once. Let Offisen repeat it.</h2>
+          <p>Offisen for Windows is available on Microsoft Store, with a free first month when the offer is available for your account.</p>
+          <a class="cta-button" href="https://apps.microsoft.com/detail/9NQ13MNJ5KTF" target="_blank" rel="noopener">Get Offisen from Microsoft Store</a>
+        </div>
       </section>
     </main>
     <!-- FOOTER -->
@@ -329,7 +335,7 @@
     </footer>
   </div>
   <script src="/JS/theme.js?v=2" defer></script>
-  <script src="/JS/parallax.js?v=1" defer></script>
+  <script src="/JS/parallax.js?v=4" defer></script>
 
 </body>
 </html>
