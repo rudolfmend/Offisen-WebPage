@@ -10,6 +10,17 @@ const PARALLAX_RATE = 0.23;
   const desktop = matchMedia('(min-width: 1000px)');
   let frame = 0;
   const clamp = (v, min, max) => Math.min(max, Math.max(min, v));
+  // Too late: the CSS fallback has already started showing the image, so it stays static until the next load.
+  if (desktop.matches && !motion.matches && getComputedStyle(image).opacity !== '0') {
+    const settle = () => scene.classList.add('is-static');
+    if (getComputedStyle(image).opacity === '1') {
+      settle();
+    } else {
+      image.addEventListener('animationend', settle, { once: true });
+      image.addEventListener('animationcancel', settle, { once: true });
+    }
+    return;
+  }
   function render() {
     frame = 0;
     const enabled = desktop.matches && !motion.matches;

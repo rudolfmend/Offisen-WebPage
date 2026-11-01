@@ -7,7 +7,7 @@
 .reveal-scene.is-animated .reveal-image { opacity: 0; will-change: transform, opacity; }
 /* Hidden from the first paint until parallax.js takes over. If it never does, the image still appears. */
 @media (min-width: 1000px) and (prefers-reduced-motion: no-preference) {
-  html.js .reveal-scene:not(.is-animated) .reveal-image { opacity: 0; animation: reveal-fallback .6s ease 6s forwards; }
+  html.js .reveal-scene:not(.is-animated):not(.is-static) .reveal-image { opacity: 0; animation: reveal-fallback .6s ease 6s forwards; }
 }
 @keyframes reveal-fallback { to { opacity: 1; } }
 .homepage .reveal-scene .hero { width: 44%; margin: 0; padding: 28px; text-align: left; background: #f8fafc; }
