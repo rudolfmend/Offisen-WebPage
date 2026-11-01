@@ -2,7 +2,8 @@
 .homepage .section-nav { max-width: 100%; gap: 8px clamp(8px, 1.6vw, 24px); }
 .homepage .section-nav a { padding-inline: 10px; white-space: nowrap; }
 .homepage .reveal-scene { position: relative; isolation: isolate; overflow: hidden; border-radius: 20px; margin: 0 0 80px; min-height: 680px; display: flex; align-items: center; padding: 64px 32px; }
-.reveal-image { position: absolute; inset: -100px 0; z-index: -1; background: url('../assets/offisen-parallax.webp') center / cover no-repeat; pointer-events: none; }
+/* 160px of overscan covers the 150px limit in parallax.js. The taller layer enlarges the image, so it sits right of center to keep the person in view. */
+.reveal-image { position: absolute; inset: -160px 0; z-index: -1; background: url('../assets/offisen-parallax.webp') 68% center / cover no-repeat; pointer-events: none; }
 .reveal-scene.is-animated .reveal-image { opacity: 0; will-change: transform, opacity; }
 .homepage .reveal-scene .hero { width: 44%; margin: 0; padding: 28px; text-align: left; background: #f8fafc; }
 .homepage .reveal-scene .hero h2 { font-size: clamp(1.5rem, 2.4vw, 2rem); }
@@ -23,3 +24,34 @@ html[data-theme="dark"] .homepage .reveal-scene .hero { background: #0f172a; }
   .reveal-scene.is-animated .reveal-image { opacity: 1; transform: none; will-change: auto; }
 }
 @media (forced-colors: active) { .reveal-image { display: none; } .homepage .reveal-scene { min-height: 0; } .homepage .reveal-scene .hero { width: 100%; } }
+
+/* Closing call to action. The image is anchored right so the cursor stays in view at any width. */
+.homepage .cta.cta-scene { position: relative; isolation: isolate; overflow: hidden; display: flex; align-items: center; max-width: none; min-height: 460px; margin: 0 0 4rem; padding: 48px clamp(24px, 5vw, 56px); border: 0; border-radius: 20px; background: #f8fafc; text-align: left; }
+.cta-scene::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; background: linear-gradient(90deg, rgba(248, 250, 252, .97) 0%, rgba(248, 250, 252, .95) 46%, rgba(248, 250, 252, .6) 62%, rgba(248, 250, 252, 0) 78%); }
+.cta-scene-image { position: absolute; inset: -68px 0; z-index: -2; pointer-events: none; }
+/* Where it moves: 128px of overscan covers the 120px limit in parallax.js. */
+@media (min-width: 1000px) and (prefers-reduced-motion: no-preference) { .cta-scene-image { inset: -128px 0; } }
+.cta-scene-image img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 100% 45%; }
+.cta-scene.is-near .cta-scene-image { will-change: transform; }
+/* The inactive variant stays hidden, and lazy, until the section comes close. */
+.cta-scene-image .cta-on-dark { display: none; }
+html[data-theme="dark"] .cta-scene-image .cta-on-light { display: none; }
+html[data-theme="dark"] .cta-scene-image .cta-on-dark { display: block; }
+.cta-scene-content { width: 50%; min-width: 0; }
+.homepage .cta-scene h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); text-wrap: balance; }
+.homepage .cta-scene p { margin-bottom: 28px; color: var(--color-text-main); }
+html[data-theme="dark"] .homepage .cta.cta-scene { background: #0f172a; }
+html[data-theme="dark"] .cta-scene::before { background: linear-gradient(90deg, rgba(15, 23, 42, .97) 0%, rgba(15, 23, 42, .95) 46%, rgba(15, 23, 42, .6) 62%, rgba(15, 23, 42, 0) 78%); }
+/* Narrow screens: image above the text, without an overlay. */
+@media (max-width: 719px) {
+  .homepage .cta.cta-scene { display: block; min-height: 0; padding: 0; border: 1px solid var(--color-border); }
+  .cta-scene::before { display: none; }
+  .cta-scene-image { position: relative; inset: auto; z-index: auto; height: clamp(200px, 52vw, 340px); }
+  .cta-scene-content { width: 100%; padding: 28px 20px 32px; }
+}
+@media (forced-colors: active) {
+  .cta-scene::before, .cta-scene-image { display: none; }
+  .homepage .cta.cta-scene { display: block; min-height: 0; border: 1px solid CanvasText; }
+  .cta-scene-content { width: 100%; }
+  .homepage .cta-scene .cta-button { border: 2px solid LinkText; }
+}
