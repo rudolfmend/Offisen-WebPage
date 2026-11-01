@@ -5,6 +5,11 @@
 /* 160px of overscan covers the 150px limit in parallax.js. The taller layer enlarges the image, so it sits right of center to keep the person in view. */
 .reveal-image { position: absolute; inset: -160px 0; z-index: -1; background: url('../assets/offisen-parallax.webp') 68% center / cover no-repeat; pointer-events: none; }
 .reveal-scene.is-animated .reveal-image { opacity: 0; will-change: transform, opacity; }
+/* Hidden from the first paint until parallax.js takes over. If it never does, the image still appears. */
+@media (min-width: 1000px) and (prefers-reduced-motion: no-preference) {
+  html.js .reveal-scene:not(.is-animated) .reveal-image { opacity: 0; animation: reveal-fallback .6s ease 6s forwards; }
+}
+@keyframes reveal-fallback { to { opacity: 1; } }
 .homepage .reveal-scene .hero { width: 44%; margin: 0; padding: 28px; text-align: left; background: #f8fafc; }
 .homepage .reveal-scene .hero h2 { font-size: clamp(1.5rem, 2.4vw, 2rem); }
 .homepage .reveal-scene .hero p { font-size: 1.05rem; }
