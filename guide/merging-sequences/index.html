@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Merge sequences | Offisen User Guide</title>
-  <meta name="description" content="Combine saved Offisen sequences into a new one, choose their order and waits, and set text insertion for each part.">
+  <meta name="description" content="Combine saved Offisen sequences into a new one, choose their order and waits, and set text insertion for each part, and edit the result before saving.">
   <meta name="robots" content="index, follow">
   <meta name="color-scheme" content="light">
   <meta name="theme-color" content="#38bdf8">
@@ -72,6 +72,20 @@
         </ol>
         <p>The new sequence appears in the main list. Each source becomes a part named after that source. A source that already has parts keeps them. If a source changed after it was checked, Offisen repeats the check and asks you to review the result and select <strong>Create</strong> again.</p>
         <p>You can create the sequence only while nothing is being recorded or played. The manual time of the sources is not carried over.</p>
+        <p>If a sequence with that name already exists, Offisen saves nothing and asks you to enter another name. The existing sequence is not overwritten, and your merge order stays as it is.</p>
+      </section>
+
+      <section aria-labelledby="edit-result-heading">
+        <h2 id="edit-result-heading">Edit the result before saving</h2>
+        <p>To change the merged steps before the new sequence is saved, select <strong>Edit result...</strong> instead of <strong>Create</strong>. The same window moves to <strong>Step 2 of 2: Edit the result</strong>, where the editing works as in <a href="/guide/editing-sequences/">Edit a sequence</a>, including <strong>Undo</strong> and Ctrl+Z.</p>
+        <p>You are editing an independent copy. Nothing is written until you save, the original sequences stay unchanged, and the new sequence has no link to them later.</p>
+        <ol>
+          <li>Make your changes. <strong>Windows needed at the start</strong> follows the current steps.</li>
+          <li>Select <strong>Save as new sequence...</strong> and confirm or change the name. If the name is taken, Offisen saves nothing and asks for another one.</li>
+          <li>After saving, the sequence is in the main list and this copy can no longer be changed. To change it further, open the new sequence with <strong>Edit...</strong> in the main list.</li>
+        </ol>
+        <p>While you edit the result, the merge order is locked. To change it, select <strong>Back to composing</strong>. If you have made changes, Offisen asks first: <strong>Discard edits</strong> discards only your edits of the result, and <strong>Cancel</strong> keeps editing.</p>
+        <p>Closing the window or Offisen with an unsaved result asks whether to save it, even if you made no change or undid all of them. Target check permissions of the original sequences do not carry over to the new sequence.</p>
       </section>
 
       <section aria-labelledby="settings-heading">
